@@ -1,6 +1,19 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: black;
+}
 #nav-hero {
   background-image: url("hero.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
+}
+
+#hero-inky {
+  width: 349px;
+  height: 705px;
+  object-fit: cover;
 }
