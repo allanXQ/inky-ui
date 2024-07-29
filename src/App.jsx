@@ -52,6 +52,15 @@ const ButtonArrow = ({ text }) => {
   );
 };
 
+const messages = [
+  "Leadership",
+  "Teamwork",
+  "Excelling in the Midst of Adversity",
+  "Embracing Change",
+  "Mental Agility",
+  "Perseverance",
+];
+
 const Button = ({ text }) => {
   return (
     <div className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 ">
@@ -205,7 +214,7 @@ export default function App() {
       </div>
       <div
         id="booking"
-        className="flex flex-col items-center justify-center gap-2"
+        className="flex flex-col items-center justify-center gap-4"
       >
         <p>INKY JOHNSON IS CURRENTLY BOOKING FOR:</p>
         <div className="flex gap-4 items-center">
@@ -225,6 +234,17 @@ export default function App() {
             <Button text="Book Now" />
           </div>
         </div>
+      </div>
+      <div className="flex flex-col items-center gap-4">
+        <p>SIGNATURE MESSAGE TOPICS:</p>
+        <div className="flex items-center justify-center gap-4">
+          {messages.map((message) => (
+            <div className="flex  items-center justify-center gap-2 px-2 w-40 h-16 border border-white rounded-lg">
+              <p className="text-center">{message}</p>
+            </div>
+          ))}
+        </div>
+        <ButtonArrow text="Book Now" />
       </div>
     </main>
   );
