@@ -27,6 +27,31 @@ const ImageSlider = () => {
   );
 };
 
+const ButtonComponent = ({ text }) => {
+  return (
+    <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-40 ">
+      <button id="hero-book-btn" className=" px-5 py-2 border-r-2 border-black">
+        {text}
+      </button>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="size-8 pl-3"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+        />
+      </svg>
+    </div>
+  );
+};
+
 export default function App() {
   return (
     <main className="w-screen h-screen text-white flex flex-col gap-8">
@@ -87,29 +112,7 @@ export default function App() {
               </p>
             </div>
           </div>
-          <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36">
-            <button
-              id="hero-book-btn"
-              className=" px-4 py-2  border-r-2 border-black"
-            >
-              Book Inky
-            </button>
-
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-8 px-1"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-              />
-            </svg>
-          </div>
+          <ButtonComponent text="Book Inky" />
         </div>
       </div>
       <div
@@ -147,8 +150,9 @@ export default function App() {
             thought provoking and inspirational presentations. Whether the topic
             is leadership, teamwork, excelling in the midst of adversity,
             embracing change, mental agility or perseverance, Inky’s message is
-            effective and efficient.{" "}
+            effective and efficient.
           </p>
+          <ButtonComponent text="Learn More" />
         </div>
         <img src="./inky2.webp" />
       </div>
