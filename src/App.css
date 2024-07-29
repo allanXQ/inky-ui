@@ -36,8 +36,5 @@ body {
   grid-area: 7 / 1 / 8 / 2;
   justify-self: start;
   align-self: start;
-}
-
-#comp-ky2hvz0a {
-  --opacity: 1;
+  opacity: 1;
 }

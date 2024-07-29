@@ -27,7 +27,7 @@ const ImageSlider = () => {
   );
 };
 
-const ButtonComponent = ({ text }) => {
+const ButtonArrow = ({ text }) => {
   return (
     <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-40 ">
       <button id="hero-book-btn" className=" px-5 py-2 border-r-2 border-black">
@@ -48,6 +48,16 @@ const ButtonComponent = ({ text }) => {
           d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
         />
       </svg>
+    </div>
+  );
+};
+
+const Button = ({ text }) => {
+  return (
+    <div className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 ">
+      <button id="hero-book-btn" className="  py-2 ">
+        {text}
+      </button>
     </div>
   );
 };
@@ -112,7 +122,7 @@ export default function App() {
               </p>
             </div>
           </div>
-          <ButtonComponent text="Book Inky" />
+          <ButtonArrow text="Book Inky" />
         </div>
       </div>
       <div
@@ -152,7 +162,7 @@ export default function App() {
             embracing change, mental agility or perseverance, Inky’s message is
             effective and efficient.
           </p>
-          <ButtonComponent text="Learn More" />
+          <ButtonArrow text="Learn More" />
         </div>
         <img src="./inky2.webp" />
       </div>
@@ -161,15 +171,8 @@ export default function App() {
         className="flex flex-col items-center justify-center w-full relative"
       >
         <div>
-          <div
-            id="comp-ky2hvz0a"
-            class="comp-ky2hvz0a wixui-vector-image"
-            data-motion-enter="done"
-          >
-            <div
-              data-testid="svgRoot-comp-ky2hvz0a"
-              class="AKxYR5 VZYmYf comp-ky2hvz0a"
-            >
+          <div id="comp-ky2hvz0a" data-motion-enter="done">
+            <div data-testid="svgRoot-comp-ky2hvz0a">
               <svg
                 preserveAspectRatio="xMidYMid meet"
                 data-bbox="0 0 770.35 1260.4"
@@ -198,6 +201,29 @@ export default function App() {
             isn’t, my work ethic isn’t, my commitment isn’t.”
           </p>
           <p>-INKY</p>
+        </div>
+      </div>
+      <div
+        id="booking"
+        className="flex flex-col items-center justify-center gap-2"
+      >
+        <p>INKY JOHNSON IS CURRENTLY BOOKING FOR:</p>
+        <div className="flex gap-4 items-center">
+          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-white rounded-md">
+            <img src="./keynote.png" />
+            <p className="text-center">Live & Virtual Keynotes</p>
+            <Button text="Book Now" />
+          </div>
+          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-white rounded-md">
+            <img src="./breakout.png" />
+            <p className="text-center">Breakout Sessions</p>
+            <Button text="Book Now" />
+          </div>
+          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-white rounded-md">
+            <img src="./voiceovers.png" />
+            <p className="text-center">Voiceovers</p>
+            <Button text="Book Now" />
+          </div>
         </div>
       </div>
     </main>
