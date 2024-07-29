@@ -6,7 +6,7 @@ body {
   background-color: black;
 }
 #nav-hero {
-  background-image: url("hero.jpg");
+  background-image: url("../public/hero.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
