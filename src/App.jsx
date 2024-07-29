@@ -246,6 +246,16 @@ export default function App() {
         </div>
         <ButtonArrow text="Book Now" />
       </div>
+      <div
+        id="cta"
+        className="bg-[#F6C228] flex items-center justify-center h-72 mt-10"
+      >
+        <div>
+          <p>TEXT "INKSPIRATION" TO 404-948-5613</p>
+          <p>TO RECEIVE WEEKLY INKSPIRATIONAL MESSAGES FROM INKY</p>
+        </div>
+        <img src="./phone.webp" className="mb-6" />
+      </div>
     </main>
   );
 }
