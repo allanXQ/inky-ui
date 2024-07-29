@@ -32,7 +32,14 @@ export default function App() {
     <main className="w-screen h-screen text-white flex flex-col gap-8">
       <div id="nav-hero" className="h-screen">
         <nav className=" flex justify-between px-24 pt-5">
-          <div className="">LOGO</div>
+          <div className="ml-20">
+            <img
+              src="./inkylogo.png"
+              width={100}
+              height={100}
+              alt="Inky Logo"
+            />
+          </div>
           <ul className="flex gap-8">
             <li>
               <a href="#">Home</a>
@@ -52,7 +59,7 @@ export default function App() {
               src="./Inky.webp"
               width={349}
               height={700}
-              className="absolute left-40"
+              className="absolute left-52 top-20"
             />
             <div className="flex flex-col items-center justify-center gap-1 z-20">
               <p
@@ -105,7 +112,10 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div id="clients" className="flex flex-col items-center justify-center">
+      <div
+        id="clients"
+        className="flex flex-col items-center justify-center mt-52"
+      >
         <h2>SOME OF INKY'S CLIENTS INCLUDE</h2>
         <div className="animate-fade-down">
           <img src="./clientlogos.png" />
@@ -119,10 +129,7 @@ export default function App() {
           loop
           className="h-[480px] w-full object-cover"
         >
-          <source
-            src="https://video.wixstatic.com/video/b87d69_b8a10a1a464e43a8bdf5e78a6bdcb61f/720p/mp4/file.mp4"
-            type="video/mp4"
-          />
+          <source src="./file.mp4" type="video/mp4" />
         </video>
       </div>
     </main>
