@@ -1,8 +1,35 @@
+import React, { useEffect, useState } from "react";
+
 import "./App.css";
+
+const ImageSlider = () => {
+  const [startAnimation, setStartAnimation] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStartAnimation(true);
+    }, 3000); // Adjust the delay time as needed
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <div className="slider-container">
+      <div className={`image-set ${startAnimation ? "animate" : ""}`}>
+        <img src="path-to-image1.jpg" alt="Image 1" />
+        <img src="path-to-image2.jpg" alt="Image 2" />
+      </div>
+      <div className={`image-set ${startAnimation ? "animate" : ""}`}>
+        <img src="path-to-image3.jpg" alt="Image 3" />
+        <img src="path-to-image4.jpg" alt="Image 4" />
+      </div>
+      {/* Add more image sets as needed */}
+    </div>
+  );
+};
 
 export default function App() {
   return (
-    <main className="w-screen h-screen text-white">
+    <main className="w-screen h-screen text-white flex flex-col gap-8">
       <div id="nav-hero" className="h-screen">
         <nav className=" flex justify-between px-24 pt-5">
           <div className="">LOGO</div>
@@ -18,7 +45,7 @@ export default function App() {
             </li>
           </ul>
         </nav>
-        <div className="flex items-center justify-center min-w-full min-h-screen ">
+        <div className="flex flex-col  gap-4 items-center justify-center min-w-full min-h-screen ">
           <div className="flex items-center justify-center gap-4 w-2/3">
             <img
               id="hero-inky"
@@ -53,7 +80,50 @@ export default function App() {
               </p>
             </div>
           </div>
+          <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36">
+            <button
+              id="hero-book-btn"
+              className=" px-4 py-2  border-r-2 border-black"
+            >
+              Book Inky
+            </button>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-8 px-1"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </div>
         </div>
+      </div>
+      <div id="clients" className="flex flex-col items-center justify-center">
+        <h2>SOME OF INKY'S CLIENTS INCLUDE</h2>
+        <div className="animate-fade-down">
+          <img src="./clientlogos.png" />
+        </div>
+      </div>
+      <div className="">
+        <video
+          id="hero-video"
+          autoPlay
+          muted
+          loop
+          className="h-[480px] w-full object-cover"
+        >
+          <source
+            src="https://video.wixstatic.com/video/b87d69_b8a10a1a464e43a8bdf5e78a6bdcb61f/720p/mp4/file.mp4"
+            type="video/mp4"
+          />
+        </video>
       </div>
     </main>
   );

@@ -18,3 +18,10 @@ body {
   height: 705px;
   object-fit: cover;
 }
+
+#hero-book-btn {
+  &:hover {
+    color: #f9f9f9;
+    background-color: black;
+  }
+}
