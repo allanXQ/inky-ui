@@ -25,3 +25,19 @@ body {
     background-color: black;
   }
 }
+
+#comp-ky2hvz0a {
+  width: 134px;
+  height: 220px;
+  position: absolute;
+  margin: 0px 0px -57px calc((100% - 980px) * 0.5);
+  left: 471px;
+  top: -200px;
+  grid-area: 7 / 1 / 8 / 2;
+  justify-self: start;
+  align-self: start;
+}
+
+#comp-ky2hvz0a {
+  --opacity: 1;
+}
