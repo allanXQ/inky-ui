@@ -121,7 +121,7 @@ export default function App() {
           <img src="./clientlogos.png" />
         </div>
       </div>
-      <div className="">
+      <div id="video" className="">
         <video
           id="hero-video"
           autoPlay
@@ -131,6 +131,26 @@ export default function App() {
         >
           <source src="./file.mp4" type="video/mp4" />
         </video>
+      </div>
+      <div id="meetinky" className="flex items-center justify-center gap-4">
+        <img src="./lines.png" />
+        <div className="flex flex-col gap-4 max-w-80">
+          <p>MEET INKY</p>
+          <p>
+            Husband, father, collegiate athlete, entrepreneur and author, Inky
+            Johnson is one of the most highly sought after speakers in the
+            world.
+          </p>
+          <p>
+            For over a decade, executives, professional sports teams, business
+            owners and people all over have benefited from the raw energy of his
+            thought provoking and inspirational presentations. Whether the topic
+            is leadership, teamwork, excelling in the midst of adversity,
+            embracing change, mental agility or perseverance, Inky’s message is
+            effective and efficient.{" "}
+          </p>
+        </div>
+        <img src="./inky2.webp" />
       </div>
     </main>
   );
