@@ -203,7 +203,7 @@ export default function App() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-2 items-center w-[600px] border border-white rounded-lg p-10 ">
+          <div className="flex flex-col gap-2 items-center w-[600px] border border-[#636363] rounded-lg p-10 ">
             <p>
               The one thing we all have in common is that we will encounter
               adversity, but we have to decide how we respond to it. My arm and
@@ -219,17 +219,17 @@ export default function App() {
         >
           <p>INKY JOHNSON IS CURRENTLY BOOKING FOR:</p>
           <div className="flex gap-4 items-center">
-            <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-white rounded-md">
+            <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
               <img src="./keynote.png" />
               <p className="text-center">Live & Virtual Keynotes</p>
               <Button text="Book Now" />
             </div>
-            <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-white rounded-md">
+            <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
               <img src="./breakout.png" />
               <p className="text-center">Breakout Sessions</p>
               <Button text="Book Now" />
             </div>
-            <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-white rounded-md">
+            <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
               <img src="./voiceovers.png" />
               <p className="text-center">Voiceovers</p>
               <Button text="Book Now" />
@@ -240,12 +240,51 @@ export default function App() {
           <p>SIGNATURE MESSAGE TOPICS:</p>
           <div className="flex items-center justify-center gap-4">
             {messages.map((message) => (
-              <div className="flex  items-center justify-center gap-2 px-2 w-40 h-16 border border-white rounded-lg">
+              <div className="flex  items-center justify-center gap-2 px-2 w-40 h-16 border border-[#636363] rounded-lg">
                 <p className="text-center">{message}</p>
               </div>
             ))}
           </div>
           <ButtonArrow text="Book Now" />
+        </div>
+        <div
+          id="testimonials"
+          className="flex gap-10 items-center justify-center"
+        >
+          <div className="flex gap-4">
+            <img src="./lines.png" />
+            <div className="flex flex-col gap-4 items-center justify-center">
+              <p>BOOK INKY TODAY!</p>
+              <ButtonArrow text="Book Now" />
+            </div>
+          </div>
+          <div className="flex flex-col gap-4 border border-[#636363] max-w-[600px] p-10 relative">
+            <img
+              src="./topquote.png"
+              width={50}
+              height={50}
+              className="absolute top-[-30px] left-[-10px]"
+            />
+            <p>
+              The messages of dealing with adversity, building character and
+              having faith could not have been more timely. Throughout 2020 I
+              was always able to refer back to the message that Inky conveyed as
+              the people of Smithereen navigated an uncertain and challenging
+              time. I truly believe that Inky played a key role in my company's
+              continued success.
+            </p>
+            <div className="flex flex-col items-end gap-2">
+              <p>-JACK JENNINGS</p>
+              <p>PRESIDENT, SMITHEREEN PEST MANAGEMENT</p>
+              <ButtonArrow text="Read Full Testimonial" />
+            </div>
+            <img
+              src="./bottomquote.png"
+              width={50}
+              height={50}
+              className="absolute bottom-[-30px] right-[-10px]"
+            />
+          </div>
         </div>
         <div
           id="cta"

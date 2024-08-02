@@ -38,3 +38,11 @@ body {
   align-self: start;
   opacity: 1;
 }
+
+#testimonials {
+  background-image: url("../public/testbg.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+}
