@@ -56,7 +56,8 @@ body {
   height: 70vh;
 }
 
-#about #book {
+#about,
+#book {
   background-color: #f9f9f9;
 }
 
