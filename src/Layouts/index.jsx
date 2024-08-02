@@ -1,4 +1,5 @@
 import React, { Children } from "react";
+import { Outlet } from "react-router";
 
 const Layout = ({ children }) => {
   return (
@@ -19,7 +20,7 @@ const Layout = ({ children }) => {
           </li>
         </ul>
       </nav>
-      {children}
+      <Outlet />
       <footer className="flex flex-col items-center justify-center gap-2 mt-10 w-screen">
         <img src="./footerlogo.png" />
         <div className="flex items-center justify-center gap-2">
