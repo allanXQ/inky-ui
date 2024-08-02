@@ -56,7 +56,7 @@ body {
   height: 70vh;
 }
 
-#about {
+#about #book {
   background-color: #f9f9f9;
 }
 
@@ -68,3 +68,11 @@ body {
   height: 80vh;
   width: 75vw;
 }
+
+/* #book-hero {
+  background-image: url("../public/bookhero.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 50vh;
+} */
