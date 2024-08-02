@@ -5,7 +5,7 @@ const About = () => {
     <main id="about" className="w-screen ">
       <div id="about-hero"></div>
 
-      <div className="flex flex-col justify-center items-center gap-10 py-10">
+      <div className="flex flex-col justify-center items-center gap-10 pt-10">
         <div className="w-[60rem] flex flex-col gap-5">
           <p className="font-bold">
             Husband, father, collegiate athlete, entrepreneur and author, Inky
@@ -41,6 +41,26 @@ const About = () => {
           </p>
         </div>
         <div id="midbg"></div>
+        <div className="w-[60rem] flex flex-col gap-5">
+          <p>
+            Inky’s words have resonated all over the world— “The one thing we
+            all have in common is that we will encounter adversity, but we have
+            to decide how we respond to it. My arm and my hand are paralyzed but
+            my heart isn’t, my mind isn’t, my dedication isn’t, my work ethic
+            isn’t, my commitment isn’t.” Inky is on a mission to serve and is
+            someone that takes tremendous pride in what he does.
+          </p>
+          <p>
+            Inky is the host of Serendipity with Inky Johnson Podcast. He
+            devotes time to mentoring athletes and underprivileged youth and is
+            one of the founders of The Inky and Allison Johnson Foundation. Inky
+            and his wife, Allison, lives in Atlanta, Georgia with their two
+            children, Jada and Inky Jr and their puppy, Chase.
+          </p>
+        </div>
+        <div>
+          <img src="./aboutinkys.png" width={2000} />
+        </div>
       </div>
     </main>
   );
