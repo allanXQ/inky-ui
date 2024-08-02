@@ -3,8 +3,11 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: black;
   font-family: sans-serif;
+}
+
+#home {
+  background-color: black;
 }
 #nav-hero {
   background-image: url("../public/hero.jpg");
@@ -46,4 +49,12 @@ body {
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
+}
+
+#about-hero {
+  background-image: url("../public/about-hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 50vh;
 }

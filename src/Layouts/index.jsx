@@ -16,13 +16,13 @@ const Layout = ({ children }) => {
         </div>
         <ul className="flex items-center gap-8">
           <li>
-            <a href="#">Home</a>
+            <a href="/home">Home</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="/about">About</a>
           </li>
           <li className="bg-[#F6C228] text-black font-bold py-1 px-3 rounded-lg">
-            <a href="#">Book Now</a>
+            <a href="/book">Book Now</a>
           </li>
         </ul>
       </nav>

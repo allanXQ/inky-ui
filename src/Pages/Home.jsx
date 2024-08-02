@@ -71,7 +71,7 @@ const Button = ({ text }) => {
 
 export default function Home() {
   return (
-    <main className="w-screen  text-white flex flex-col gap-8">
+    <main id="home" className="w-screen  text-white flex flex-col gap-8">
       <div id="nav-hero" className="h-screen">
         <div className="flex flex-col  gap-4 items-center justify-center min-w-full min-h-screen ">
           <div className="flex items-center justify-center gap-4 w-2/3">
