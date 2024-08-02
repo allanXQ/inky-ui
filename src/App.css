@@ -4,6 +4,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   background-color: black;
+  font-family: sans-serif;
 }
 #nav-hero {
   background-image: url("../public/hero.jpg");

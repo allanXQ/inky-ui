@@ -1,6 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "Impact";
+  src: local("Impact"),
+    /* url('/fonts/MyCustomFont.woff') format('woff2'), Modern Browsers */
+      url("/fonts/impact.woff") format("woff"); /* Older browsers */
+  /* url('/fonts/MyCustomFont.ttf') format('truetype'); iOS and older */
+  font-weight: normal;
+  font-style: normal;
+}
 
 a {
   text-decoration: none;
