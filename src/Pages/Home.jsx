@@ -80,7 +80,7 @@ export default function Home() {
               src="./Inky.webp"
               width={349}
               height={700}
-              className="absolute left-52 top-20"
+              className="absolute left-48 top-20"
             />
             <div className="flex flex-col items-center justify-center gap-1 z-20">
               <p

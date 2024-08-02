@@ -3,10 +3,16 @@ import { Outlet } from "react-router";
 
 const Layout = ({ children }) => {
   return (
-    <div className="w-screen flex flex-col items-center justify-center">
-      <nav className="flex items-center justify-between text-white w-screen px-10">
+    <div className="w-screen flex flex-col items-center justify-center relative">
+      <nav className="flex items-center justify-between text-white w-screen px-10 absolute top-0">
         <div className="">
-          <img src="./inkylogo.png" width={100} height={100} alt="Inky Logo" />
+          <img
+            src="./inkylogo.png"
+            width={110}
+            height={110}
+            alt="Inky Logo"
+            className="ml-28 mt-2"
+          />
         </div>
         <ul className="flex items-center gap-8">
           <li>
