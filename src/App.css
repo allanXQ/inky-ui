@@ -59,3 +59,12 @@ body {
 #about {
   background-color: #f9f9f9;
 }
+
+#midbg {
+  background-image: url("../public/midbg.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 80vh;
+  width: 75vw;
+}

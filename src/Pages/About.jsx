@@ -5,8 +5,8 @@ const About = () => {
     <main id="about" className="w-screen ">
       <div id="about-hero"></div>
 
-      <div className="flex flex-col justify-center items-center py-10">
-        <div className="w-[70rem] flex flex-col gap-5">
+      <div className="flex flex-col justify-center items-center gap-10 py-10">
+        <div className="w-[60rem] flex flex-col gap-5">
           <p className="font-bold">
             Husband, father, collegiate athlete, entrepreneur and author, Inky
             Johnson is one of the most highly sought after speakers in the
@@ -40,6 +40,7 @@ const About = () => {
             use his situation and experiences to add value to people’s lives.
           </p>
         </div>
+        <div id="midbg"></div>
       </div>
     </main>
   );
