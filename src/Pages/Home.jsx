@@ -133,20 +133,27 @@ export default function Home() {
       </div>
       <div id="meetinky" className="flex items-center justify-center gap-4">
         <img src="./lines.png" />
-        <div className="flex flex-col gap-4 max-w-80">
-          <p>MEET MD</p>
-          <p>
-            Husband, father, collegiate athlete, entrepreneur and author, Inky
-            Johnson is one of the most highly sought after speakers in the
-            world.
+        <div className="flex flex-col gap-4 max-w-[480px]">
+          <p className="font-bold text-[#F6C228]">MEET MD</p>
+          <p className="font-bold">
+            MD is a dynamic personality and highly sought-after resource in
+            corporate & professional circles, small business owners, and
+            community/church leaders from all sectors of society striving to
+            expand prospects.
           </p>
           <p>
-            For over a decade, executives, professional sports teams, business
-            owners and people all over have benefited from the raw energy of his
-            thought provoking and inspirational presentations. Whether the topic
-            is leadership, teamwork, excelling in the midst of adversity,
-            embracing change, mental agility or perseverance, Inky’s message is
-            effective and efficient.
+            MD, is a trailblazing figure in the realms of Transformational
+            Leadership Coaching, Motivational Speaking and Customer service
+            Training. With a magnetic presence and an unwavering commitment to
+            igniting change, MD Has redefined the very essence of inspiration,
+            leaving an indelible mark on all who encounter his teachings.
+            Prepare to embark on a profound journey of transformation as MD
+            shares invaluable insights, equipping you with the essential tools,
+            mindset, and strategies needed to not only lead with purpose but to
+            soar to unparalleled heights of success. Through electrifying
+            presentations and unparalleled expertise, MD empowers individuals
+            and organizations alike to unlock their fullest potential, fostering
+            a culture of excellence and achievement
           </p>
           <ButtonArrow text="Learn More" />
         </div>
@@ -179,14 +186,40 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 items-center w-[600px] border border-[#636363] rounded-lg p-10 ">
+        <div className="flex flex-col gap-2 items-center max-w-[70rem] border border-[#636363] rounded-lg p-10 ">
           <p>
-            The one thing we all have in common is that we will encounter
-            adversity, but we have to decide how we respond to it. My arm and my
-            hand are paralyzed but my heart isn’t, my mind isn’t, my dedication
-            isn’t, my work ethic isn’t, my commitment isn’t.”
+            MD brings a rich reservoir of experience and proficiency, boasting a
+            distinguished history of triumph in leadership development and
+            business growth strategies, MD has finely tuned his skills through
+            years of devoted study, hands-on application, and coaching diverse
+            teams and leaders across industries and institutions. Acknowledged
+            for his knack for sparking transformation, MD is a highly
+            sought-after speaker and trainer. His educational background
+            includes a master's degree in strategic management, a bachelor's
+            degree in entrepreneurship, and a plethora of additional
+            certificates from esteemed institutions. These include
+            certifications in people management, corporate governance, business
+            analysis and process modeling, and trainer of trainers, among
+            others. Throughout his illustrious career spanning over a decade, he
+            has successfully worked with national and international
+            corporations, steadily progressing from a subordinate position to
+            ultimately becoming a respected business leader. MD's narrative
+            within the business sector exudes confidence and highlights
+            exponential development prospects. He captivates his audience by
+            emphasizing the importance of avoiding complacency and aiming high,
+            demonstrating how one can achieve great success and positively
+            impact others. It is not only his impressive personality but also
+            his exceptional way with words and life-changing anecdotes that
+            inspire people to take unprecedented action. MD's remarkable
+            credentials, combined with his inspiring stories and ability to
+            convey his message effectively, make him a truly influential figure
+            who motivates individuals to reach new heights and make a lasting
+            difference in their lives, the lives of others and that of the
+            organization. With a fervent dedication to achieving excellence in
+            every endeavor and a consistent history of remarkable
+            accomplishments,
           </p>
-          <p>-MD</p>
+          {/* <p>-MD</p> */}
         </div>
       </div>
       <div
@@ -247,7 +280,7 @@ export default function Home() {
             <ButtonArrow text="Book Now" />
           </div>
         </div>
-        <div className="flex flex-col gap-4 border border-[#636363] max-w-[600px] p-10 relative">
+        <div className="flex flex-col gap-4 border border-[#636363] max-w-[900px] p-10 relative">
           <img
             src="./topquote.png"
             width={50}
@@ -255,12 +288,26 @@ export default function Home() {
             className="absolute top-[-30px] left-[-10px]"
           />
           <p>
-            The messages of dealing with adversity, building character and
-            having faith could not have been more timely. Throughout 2020 I was
-            always able to refer back to the message that Inky conveyed as the
-            people of Smithereen navigated an uncertain and challenging time. I
-            truly believe that Inky played a key role in my company's continued
-            success.
+            MD offers a rich reservoir of knowledge and experience poised to
+            elevate any project or initiative. He brings a relentless commitment
+            to excellence, a keen eye for detail, and a collaborative spirit
+            that fosters synergy and drives results. His track record speaks
+            volumes, characterized by a string of successes and accolades that
+            underscore his ability to deliver tangible value and exceed
+            expectations. As He embark on new ventures, He remains steadfast in
+            his pursuit of excellence, poised to make a lasting impact and
+            inspire positive change. MD stands as a towering figure in the
+            realms of speaking and training, basking in widespread acclaim and
+            recognition garnered through a multitude of avenues. From delivering
+            spellbinding keynote addresses at prestigious conferences to making
+            impactful appearances in the media spotlight, MD's influence
+            resonates far and wide. Testimonials from esteemed executives serve
+            as a testament to the transformative power of MD's teachings, with
+            clients hailing the lasting change and exceptional results they have
+            witnessed firsthand. Through a seamless blend of expertise,
+            charisma, and unwavering dedication, MD continues to leave an
+            indelible mark on individuals and organizations alike, shaping
+            futures and inspiring greatness with each engagement.
           </p>
           <div className="flex flex-col items-end gap-2">
             <p>-JACK JENNINGS</p>
