@@ -4,7 +4,7 @@ const inputs = [
   {
     title: "About You",
     fields: [
-      { label: "First Name", id: "FirstName", type: "text", width: "normal" },
+      { label: "First Name", id: "FirstName", type: "text" },
       { label: "Last Name", id: "LastName", type: "text" },
       { label: "Position", id: "Position", type: "text" },
       { label: "Email", id: "Email", type: "email" },
@@ -161,7 +161,7 @@ const TextField = ({ label, id, type, width, placeholder }) => {
         id={id}
         name={id}
         placeholder={placeholder}
-        className="border border-gray-300 rounded-md p-2 bg-[#f6f6f6]"
+        className="border-2 border-gray-300 rounded-md p-2 bg-[#f6f6f6] hover:border-2 hover:border-[#F6C228] focus:border-[#F6C228]"
       />
     </div>
   );
