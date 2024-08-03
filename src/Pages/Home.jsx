@@ -439,15 +439,25 @@ export default function Home() {
           />
         </div>
       </div>
-      <div
-        id="cta"
-        className="bg-[#F6C228] flex items-center justify-center h-72 mt-10"
-      >
-        <div>
-          <p>TEXT "INKSPIRATION" TO 404-948-5613</p>
-          <p>TO RECEIVE WEEKLY INKSPIRATIONAL MESSAGES FROM INKY</p>
-        </div>
-        <img src="./phone.webp" className="mb-6" />
+      <div id="cta" className=" flex items-center justify-center mt-5">
+        <form>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div className="flex flex-col items-center gap-1">
+              <p className="text-white text-3xl">Ready to elevate your team?</p>
+              <p className="text-white text-sm">
+                Subscribe to our mailing list
+              </p>
+            </div>
+            <div className="flex flex-col items-center justify-center gap-4">
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                className="border border-white rounded-md w-64 px-4 py-2"
+              />
+              <Button text="Subscribe" />
+            </div>
+          </div>
+        </form>
       </div>
     </main>
   );
