@@ -151,15 +151,15 @@ export default function Home() {
       </div>
       <div id="meetinky" className="flex items-center justify-center gap-4">
         <img src="./lines.png" />
-        <div className="flex flex-col gap-4 max-w-[480px]">
-          <p className="font-bold text-[#F6C228]">MEET MD</p>
-          <p className="font-bold">
+        <div className="flex flex-col gap-4 max-w-[600px]">
+          <h3 className="about-h3 text-[#F6C228]">MEET MD</h3>
+          <p className="about-p1-text">
             MD is a dynamic personality and highly sought-after resource in
             corporate & professional circles, small business owners, and
             community/church leaders from all sectors of society striving to
             expand prospects.
           </p>
-          <p>
+          <p className="about-p2-text">
             MD, is a trailblazing figure in the realms of Transformational
             Leadership Coaching, Motivational Speaking and Customer service
             Training. With a magnetic presence and an unwavering commitment to
