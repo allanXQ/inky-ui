@@ -389,7 +389,9 @@ const BookForm = () => {
     <form className="flex flex-col gap-2 p-4 w-[70rem]">
       {inputs.map((input) => (
         <div className="flex flex-col gap-5 p-4 " key={input.title}>
-          <h2 className="text-lg font-semibold">{input.title}</h2>
+          <h2 className="text-[30px] font-bold text-[#F6C228] uppercase">
+            {input.title}
+          </h2>
           <div className="flex flex-wrap gap-6">
             {input.fields.map(
               ({ label, id, type, width, placeholder, options }) => {
