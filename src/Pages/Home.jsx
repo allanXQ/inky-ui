@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 const ImageSlider = () => {
   const [startAnimation, setStartAnimation] = useState(false);
@@ -70,17 +71,21 @@ const Button = ({ text }) => {
 };
 
 export default function Home() {
+  const navigate = useNavigate();
   return (
     <main id="home" className="w-screen  text-white flex flex-col gap-8">
       <div id="nav-hero" className="h-screen">
-        <div className="flex flex-col  gap-4 items-center justify-center min-w-full min-h-screen ">
+        <div
+          id="inner-hero"
+          className="flex flex-col  gap-4 items-center justify-center min-w-full min-h-screen "
+        >
           <div className="flex items-center justify-center gap-4 w-2/3">
             <img
               id="hero-inky"
               src="./Inky.webp"
               width={349}
               height={700}
-              className="absolute left-48 top-20"
+              className="absolute left-44 top-20"
             />
             <div
               id="hero-text"
@@ -92,14 +97,15 @@ export default function Home() {
                 <p className="hero-big">RESPECT IT.</p>
                 <p className="hero-big">EMBRACE IT.</p>
               </div>
-              <p className="hero-long max-w-[450px] text-center  text[#efefef]">
-                Inky Johnson inspires the masses with his story of faith and
-                perseverance.
+              <p className="hero-long max-w-[530px] text-center  text[#efefef]">
+                MD's insights, fueled by his personal story, spark leadership,
+                inspire greatness, and elevate service.
               </p>
               <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36 ">
                 <button
                   id="hero-book-btn"
                   className="py-2 px-4 border-r border-black"
+                  onClick={() => navigate("/book")}
                 >
                   <p className="text-sm">Book MD</p>
                 </button>
