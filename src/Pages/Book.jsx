@@ -31,7 +31,7 @@ const inputs = [
       {
         label: "Company Address",
         id: "CompanyAddress",
-        type: "textarea",
+        type: "text",
         width: "full",
       },
     ],
@@ -115,11 +115,13 @@ const inputs = [
         label: "Event Start Time",
         id: "EventStartTime",
         type: "time",
+        width: "half",
       },
       {
         label: "Speaking Time",
         id: "SpeakingTime",
         type: "text",
+        width: "half",
         placeholder: "Include the time MD would speak",
       },
       {
@@ -127,11 +129,13 @@ const inputs = [
         id: "ExpectedDuration",
         type: "text",
         placeholder: "30 min, 1 hour, etc",
+        width: "half",
       },
       {
         label: "Email",
         id: "Email",
         type: "email",
+        width: "half",
       },
       {
         label: "Additional Information",
@@ -146,14 +150,18 @@ const inputs = [
 
 const TextField = ({ label, id, type, width, placeholder }) => {
   return (
-    <div className={`flex flex-col gap-2 ${width === "full" ? "w-full" : ""}`}>
+    <div
+      className={`flex flex-col gap-2 ${
+        width === "full" ? "w-full" : width === "half" ? "w-1/2" : ""
+      }`}
+    >
       <label htmlFor={id}>{label}</label>
       <input
         type={type}
         id={id}
         name={id}
         placeholder={placeholder}
-        className="border border-gray-300 rounded-md p-2"
+        className="border border-gray-300 rounded-md p-2 bg-[#f6f6f6]"
       />
     </div>
   );
@@ -161,13 +169,17 @@ const TextField = ({ label, id, type, width, placeholder }) => {
 
 const TextArea = ({ label, id, type, width, placeholder }) => {
   return (
-    <div className={`flex flex-col gap-2 ${width === "full" ? "w-full" : ""}`}>
+    <div
+      className={`flex flex-col gap-2 ${
+        width === "full" ? "w-full" : width === "half" ? "w-1/2" : ""
+      }`}
+    >
       <label htmlFor={id}>{label}</label>
       <textarea
         id={id}
         name={id}
         placeholder={placeholder}
-        className="border border-gray-300 rounded-md p-2"
+        className="border border-gray-300 rounded-md p-2 bg-[#f6f6f6]"
       />
     </div>
   );
@@ -175,12 +187,12 @@ const TextArea = ({ label, id, type, width, placeholder }) => {
 
 const SelectField = ({ label, id, type, options }) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 ">
       <label htmlFor={id}>{label}</label>
       <select
         id={id}
         name={id}
-        className="border border-gray-300 rounded-md p-2"
+        className="border border-gray-300 rounded-sm p-2 max-w-52 bg-[#f6f6f6]"
       >
         {Array.isArray(options) &&
           options.map((option) => (
@@ -201,7 +213,13 @@ const RadioField = ({ label, id, type, options }) => {
         {Array.isArray(options) &&
           options.map((option) => (
             <div className="flex items-center gap-2" key={option}>
-              <input type="radio" id={option} name={id} value={option} />
+              <input
+                type="radio"
+                id={option}
+                name={id}
+                value={option}
+                className="bg-[#f6f6f6]"
+              />
               <label htmlFor={option}>{option}</label>
             </div>
           ))}
@@ -210,15 +228,37 @@ const RadioField = ({ label, id, type, options }) => {
   );
 };
 
-const TimeField = ({ label, id, type }) => {
+const TimeField = ({ label, id, type, width }) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div
+      className={`flex flex-col gap-2 ${
+        width === "full" ? "w-full" : width === "half" ? "w-1/2" : ""
+      }`}
+    >
       <label htmlFor={id}>{label}</label>
       <input
         type={type}
         id={id}
         name={id}
-        className="border border-gray-300 rounded-md p-2"
+        className="border border-gray-300 rounded-md p-2 bg-[#f6f6f6]"
+      />
+    </div>
+  );
+};
+
+const DateField = ({ label, id, type, width }) => {
+  return (
+    <div
+      className={`flex flex-col gap-2 ${
+        width === "full" ? "w-full" : width === "half" ? "w-1/2" : ""
+      }`}
+    >
+      <label htmlFor={id}>{label}</label>
+      <input
+        type={type}
+        id={id}
+        name={id}
+        className="border border-gray-300 rounded-md p-2 bg-[#f6f6f6]"
       />
     </div>
   );
@@ -226,12 +266,9 @@ const TimeField = ({ label, id, type }) => {
 
 const BookForm = () => {
   return (
-    <form className="flex flex-col gap-10 p-4 w-[60rem]">
+    <form className="flex flex-col gap-2 p-4 w-[60rem]">
       {inputs.map((input) => (
-        <div
-          className="flex flex-col gap-5 border p-4 rounded shadow"
-          key={input.title}
-        >
+        <div className="flex flex-col gap-5 p-4 " key={input.title}>
           <h2 className="text-lg font-semibold">{input.title}</h2>
           <div className="flex flex-wrap gap-4">
             {input.fields.map((field) => {
@@ -289,6 +326,15 @@ const BookForm = () => {
                       key={field.id}
                     />
                   );
+                case "date":
+                  return (
+                    <DateField
+                      label={field.label}
+                      id={field.id}
+                      type={field.type}
+                      key={field.id}
+                    />
+                  );
                 default:
                   return null;
               }
@@ -305,7 +351,7 @@ const BookForm = () => {
 
 const Book = () => {
   return (
-    <main id="book" className="w-screen ">
+    <main id="book" className=" ">
       <div id="book-hero">
         <img src="./bookhero.webp" />
       </div>
