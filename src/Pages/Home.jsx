@@ -337,11 +337,11 @@ export default function Home() {
       </div>
       <div
         id="testimonials"
-        className="flex gap-10 items-center justify-center"
+        className="flex gap-24 items-center justify-center"
       >
-        <div className="flex gap-4">
+        <div className="flex gap-5">
           <img src="./lines.png" />
-          <div className="flex flex-col gap-4  justify-center">
+          <div className="flex flex-col gap-10  justify-center">
             <div className="flex flex-col font-bold gap-2 text-5xl">
               <div className="flex  gap-2">
                 <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
@@ -374,7 +374,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 border border-[#636363] max-w-[900px] p-10 relative">
+        <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl max-w-[600px] min-h-[300px] p-10 relative ">
           <img
             src="./topquote.png"
             width={50}
@@ -382,30 +382,16 @@ export default function Home() {
             className="absolute top-[-30px] left-[-10px]"
           />
           <p>
-            MD offers a rich reservoir of knowledge and experience poised to
-            elevate any project or initiative. He brings a relentless commitment
-            to excellence, a keen eye for detail, and a collaborative spirit
-            that fosters synergy and drives results. His track record speaks
-            volumes, characterized by a string of successes and accolades that
-            underscore his ability to deliver tangible value and exceed
-            expectations. As He embark on new ventures, He remains steadfast in
-            his pursuit of excellence, poised to make a lasting impact and
-            inspire positive change. MD stands as a towering figure in the
-            realms of speaking and training, basking in widespread acclaim and
-            recognition garnered through a multitude of avenues. From delivering
-            spellbinding keynote addresses at prestigious conferences to making
-            impactful appearances in the media spotlight, MD's influence
-            resonates far and wide. Testimonials from esteemed executives serve
-            as a testament to the transformative power of MD's teachings, with
-            clients hailing the lasting change and exceptional results they have
-            witnessed firsthand. Through a seamless blend of expertise,
-            charisma, and unwavering dedication, MD continues to leave an
-            indelible mark on individuals and organizations alike, shaping
-            futures and inspiring greatness with each engagement.
+            The messages of dealing with adversity, building character and
+            having faith could not have been more timely. Throughout 2020 I was
+            always able to refer back to the message that Inky conveyed as the
+            people of Smithereen navigated an uncertain and challenging time. I
+            truly believe that Inky played a key role in my company's continued
+            success.
           </p>
           <div className="flex flex-col items-end gap-2">
-            <p>-JACK JENNINGS</p>
-            <p>PRESIDENT, SMITHEREEN PEST MANAGEMENT</p>
+            <p className="font-bold">-JACK JENNINGS</p>
+            <p className="clients-h2">PRESIDENT, SMITHEREEN PEST MANAGEMENT</p>
             <div className="flex items-center border border-white rounded-lg w-56 ">
               <button
                 id="about-btn"

@@ -74,6 +74,10 @@
   height: 100vh;
 }
 
+.testimonial-container {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 #about-hero {
   background-image: url("../public/about-hero.webp");
   background-size: cover;
