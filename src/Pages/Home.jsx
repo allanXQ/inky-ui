@@ -51,12 +51,12 @@ const ButtonArrow = ({ text }) => {
 };
 
 const messages = [
-  "Leadership",
-  "Teamwork",
-  "Excelling in the Midst of Adversity",
-  "Embracing Change",
-  "Mental Agility",
-  "Perseverance",
+  "Transformational leadership",
+  "Customer service excellence",
+  "Capacity Building",
+  "Mental health",
+  "Professional development",
+  "Personal branding",
 ];
 
 const Button = ({ text }) => {
@@ -108,14 +108,14 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <ButtonArrow text="Book Inky" />
+          <ButtonArrow text="Book MD" />
         </div>
       </div>
       <div
         id="clients"
         className="flex flex-col items-center justify-center mt-52"
       >
-        <h2>SOME OF INKY'S CLIENTS INCLUDE</h2>
+        <h2>SOME OF MD'S CLIENTS INCLUDE</h2>
         <div className="animate-fade-down">
           <img src="./clientlogos.png" />
         </div>
@@ -134,7 +134,7 @@ export default function Home() {
       <div id="meetinky" className="flex items-center justify-center gap-4">
         <img src="./lines.png" />
         <div className="flex flex-col gap-4 max-w-80">
-          <p>MEET INKY</p>
+          <p>MEET MD</p>
           <p>
             Husband, father, collegiate athlete, entrepreneur and author, Inky
             Johnson is one of the most highly sought after speakers in the
@@ -186,14 +186,14 @@ export default function Home() {
             hand are paralyzed but my heart isn’t, my mind isn’t, my dedication
             isn’t, my work ethic isn’t, my commitment isn’t.”
           </p>
-          <p>-INKY</p>
+          <p>-MD</p>
         </div>
       </div>
       <div
         id="booking"
         className="flex flex-col items-center justify-center gap-4"
       >
-        <p>INKY JOHNSON IS CURRENTLY BOOKING FOR:</p>
+        <p>MD IS CURRENTLY BOOKING FOR:</p>
         <div className="flex gap-4 items-center">
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./keynote.png" />
@@ -206,8 +206,18 @@ export default function Home() {
             <Button text="Book Now" />
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./voiceovers.png" />
-            <p className="text-center">Voiceovers</p>
+            <img src="./breakout.png" />
+            <p className="text-center">Corporate Emcee </p>
+            <Button text="Book Now" />
+          </div>
+          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
+            <img src="./breakout.png" />
+            <p className="text-center">Corporate Training </p>
+            <Button text="Book Now" />
+          </div>
+          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
+            <img src="./breakout.png" />
+            <p className="text-center">Team Building</p>
             <Button text="Book Now" />
           </div>
         </div>
@@ -233,7 +243,7 @@ export default function Home() {
         <div className="flex gap-4">
           <img src="./lines.png" />
           <div className="flex flex-col gap-4 items-center justify-center">
-            <p>BOOK INKY TODAY!</p>
+            <p>BOOK MD TODAY!</p>
             <ButtonArrow text="Book Now" />
           </div>
         </div>
