@@ -82,33 +82,45 @@ export default function Home() {
               height={700}
               className="absolute left-48 top-20"
             />
-            <div className="flex flex-col items-center justify-center gap-1 z-20">
-              <p
-                className="text-4xl font-normal 
-            font-stretch-100 
-             uppercase 
-             text-[#F6C228] text-center indent-0"
-              >
-                THE PROCESS:
-              </p>
-              <p
-                className="text-4xl font-normal not-italic 
-             uppercase 
-             text-white text-center indent-0"
-              >
-                TRUST IT.
-                <br />
-                RESPECT IT.
-                <br />
-                EMBRACE IT.
-              </p>
-              <p className="text-[19px] w-8/12 text-center tracking-wide">
+            <div
+              id="hero-text"
+              className="flex flex-col items-center justify-center z-20 mt-56 gap-6"
+            >
+              <div className="flex flex-col items-center justify-start leading-none gap-2">
+                <p className="hero-big text-[#F6C228]">THE PROCESS:</p>
+                <p className="hero-big">TRUST IT.</p>
+                <p className="hero-big">RESPECT IT.</p>
+                <p className="hero-big">EMBRACE IT.</p>
+              </div>
+              <p className="hero-long max-w-[450px] text-center  text[#efefef]">
                 Inky Johnson inspires the masses with his story of faith and
                 perseverance.
               </p>
+              <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36 ">
+                <button
+                  id="hero-book-btn"
+                  className="py-2 px-4 border-r border-black"
+                >
+                  <p className="text-sm">Book MD</p>
+                </button>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-8 pl-3"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
-          <ButtonArrow text="Book MD" />
         </div>
       </div>
       <div

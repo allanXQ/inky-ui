@@ -1,14 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
-  font-family: "Impact";
-  src: local("Impact"),
-    /* url('/fonts/MyCustomFont.woff') format('woff2'), Modern Browsers */
-      url("/fonts/impact.woff") format("woff"); /* Older browsers */
-  /* url('/fonts/MyCustomFont.ttf') format('truetype'); iOS and older */
-  font-weight: normal;
+  font-family: "Impact Regular";
   font-style: normal;
+  font-weight: normal;
+  src: local("Impact Regular"), url("../public/fonts/") format("woff");
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: black;
+  font-family: sans-serif;
 }
 
 a {
