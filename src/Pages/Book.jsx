@@ -137,6 +137,7 @@ const inputs = [
         label: "Additional Information",
         id: "AdditionalInformation",
         type: "textarea",
+        width: "full",
         notrequired: true,
       },
     ],
@@ -225,72 +226,79 @@ const TimeField = ({ label, id, type }) => {
 
 const BookForm = () => {
   return (
-    <form className="flex flex-col gap-10">
+    <form className="flex flex-col gap-10 p-4 w-[60rem]">
       {inputs.map((input) => (
-        <div className="flex flex-col gap-5" key={input.title}>
-          <h2>{input.title}</h2>
-          {input.fields.map((field) => {
-            switch (field.type) {
-              case "text":
-              case "email":
-              case "tel":
-                return (
-                  <TextField
-                    label={field.label}
-                    id={field.id}
-                    type={field.type}
-                    width={field.width}
-                    placeholder={field.placeholder}
-                    key={field.id}
-                  />
-                );
-              case "textarea":
-                return (
-                  <TextArea
-                    label={field.label}
-                    id={field.id}
-                    type={field.type}
-                    width={field.width}
-                    placeholder={field.placeholder}
-                    key={field.id}
-                  />
-                );
-              case "select":
-                return (
-                  <SelectField
-                    label={field.label}
-                    id={field.id}
-                    type={field.type}
-                    options={field.options}
-                    key={field.id}
-                  />
-                );
-              case "radio":
-                return (
-                  <RadioField
-                    label={field.label}
-                    id={field.id}
-                    type={field.type}
-                    options={field.options}
-                    key={field.id}
-                  />
-                );
-              case "time":
-                return (
-                  <TimeField
-                    label={field.label}
-                    id={field.id}
-                    type={field.type}
-                    key={field.id}
-                  />
-                );
-              default:
-                return null;
-            }
-          })}
+        <div
+          className="flex flex-col gap-5 border p-4 rounded shadow"
+          key={input.title}
+        >
+          <h2 className="text-lg font-semibold">{input.title}</h2>
+          <div className="flex flex-wrap gap-4">
+            {input.fields.map((field) => {
+              switch (field.type) {
+                case "text":
+                case "email":
+                case "tel":
+                  return (
+                    <TextField
+                      label={field.label}
+                      id={field.id}
+                      type={field.type}
+                      width={field.width}
+                      placeholder={field.placeholder}
+                      key={field.id}
+                    />
+                  );
+                case "textarea":
+                  return (
+                    <TextArea
+                      label={field.label}
+                      id={field.id}
+                      type={field.type}
+                      width={field.width}
+                      placeholder={field.placeholder}
+                      key={field.id}
+                    />
+                  );
+                case "select":
+                  return (
+                    <SelectField
+                      label={field.label}
+                      id={field.id}
+                      type={field.type}
+                      options={field.options}
+                      key={field.id}
+                    />
+                  );
+                case "radio":
+                  return (
+                    <RadioField
+                      label={field.label}
+                      id={field.id}
+                      type={field.type}
+                      options={field.options}
+                      key={field.id}
+                    />
+                  );
+                case "time":
+                  return (
+                    <TimeField
+                      label={field.label}
+                      id={field.id}
+                      type={field.type}
+                      key={field.id}
+                    />
+                  );
+                default:
+                  return null;
+              }
+            })}
+          </div>
         </div>
       ))}
-      <button className="bg-blue-500 text-white p-2 rounded-md">Submit</button>
+      <button className="mt-4 bg-blue-500 text-white p-2 rounded-md">
+        Submit
+      </button>
     </form>
   );
 };
