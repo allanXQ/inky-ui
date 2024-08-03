@@ -4,7 +4,7 @@ const inputs = [
   {
     title: "About You",
     fields: [
-      { label: "First Name", id: "FirstName", type: "text" },
+      { label: "First Name", id: "FirstName", type: "text", width: "normal" },
       { label: "Last Name", id: "LastName", type: "text" },
       { label: "Position", id: "Position", type: "text" },
       { label: "Email", id: "Email", type: "email" },
@@ -152,7 +152,7 @@ const TextField = ({ label, id, type, width, placeholder }) => {
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-1/2" : ""
+        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-56"
       }`}
     >
       <label htmlFor={id}>{label}</label>
@@ -171,7 +171,7 @@ const TextArea = ({ label, id, type, width, placeholder }) => {
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-1/2" : ""
+        width === "full" ? "w-full" : width === "half" ? "w-1/2" : "w-56"
       }`}
     >
       <label htmlFor={id}>{label}</label>
@@ -185,9 +185,13 @@ const TextArea = ({ label, id, type, width, placeholder }) => {
   );
 };
 
-const SelectField = ({ label, id, type, options }) => {
+const SelectField = ({ label, id, type, options, width }) => {
   return (
-    <div className="flex flex-col gap-2 ">
+    <div
+      className={`flex flex-col gap-2 ${
+        width === "full" ? "w-full" : width === "half" ? "w-1/2" : "w-56"
+      }`}
+    >
       <label htmlFor={id}>{label}</label>
       <select
         id={id}
@@ -232,7 +236,7 @@ const TimeField = ({ label, id, type, width }) => {
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-1/2" : ""
+        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-56"
       }`}
     >
       <label htmlFor={id}>{label}</label>
@@ -250,7 +254,7 @@ const DateField = ({ label, id, type, width }) => {
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-1/2" : ""
+        width === "full" ? "w-full" : width === "half" ? "w-1/2" : "w-56"
       }`}
     >
       <label htmlFor={id}>{label}</label>
@@ -266,11 +270,11 @@ const DateField = ({ label, id, type, width }) => {
 
 const BookForm = () => {
   return (
-    <form className="flex flex-col gap-2 p-4 w-[60rem]">
+    <form className="flex flex-col gap-2 p-4 w-[70rem]">
       {inputs.map((input) => (
         <div className="flex flex-col gap-5 p-4 " key={input.title}>
           <h2 className="text-lg font-semibold">{input.title}</h2>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-6">
             {input.fields.map((field) => {
               switch (field.type) {
                 case "text":
@@ -304,6 +308,7 @@ const BookForm = () => {
                       id={field.id}
                       type={field.type}
                       options={field.options}
+                      width={field.width}
                       key={field.id}
                     />
                   );
@@ -323,6 +328,7 @@ const BookForm = () => {
                       label={field.label}
                       id={field.id}
                       type={field.type}
+                      width={field.width}
                       key={field.id}
                     />
                   );
@@ -342,7 +348,7 @@ const BookForm = () => {
           </div>
         </div>
       ))}
-      <button className="mt-4 bg-blue-500 text-white p-2 rounded-md">
+      <button className="mt-4 ml-4 bg-[#F6C228] text-black p-2 rounded-md w-52">
         Submit
       </button>
     </form>
