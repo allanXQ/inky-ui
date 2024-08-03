@@ -406,7 +406,30 @@ export default function Home() {
           <div className="flex flex-col items-end gap-2">
             <p>-JACK JENNINGS</p>
             <p>PRESIDENT, SMITHEREEN PEST MANAGEMENT</p>
-            <ButtonArrow text="Read Full Testimonial" />
+            <div className="flex items-center border border-white rounded-lg w-56 ">
+              <button
+                id="about-btn"
+                className="py-2 px-4 border-r border-white"
+                onClick={() => navigate("/about")}
+              >
+                <p className="text-md">Read Full Testimonial</p>
+              </button>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-8 pl-3"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </div>
           </div>
           <img
             src="./bottomquote.png"
