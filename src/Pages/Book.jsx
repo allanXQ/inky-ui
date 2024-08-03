@@ -148,55 +148,104 @@ const inputs = [
   },
 ];
 
-const TextField = ({ label, id, type, width, placeholder }) => {
+const TextField = ({
+  label,
+  id,
+  type,
+  width,
+  placeholder,
+  required,
+  value,
+  onChange,
+  onBlur,
+  error,
+}) => {
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-56"
+        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
       }`}
     >
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
       <input
         type={type}
         id={id}
         name={id}
         placeholder={placeholder}
-        className="border-2 border-gray-300 rounded-md p-2 bg-[#f6f6f6] hover:border-2 hover:border-[#F6C228] focus:border-[#F6C228]"
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
+          error ? "border-red-500" : "border-gray-300"
+        } outline-none`}
       />
     </div>
   );
 };
 
-const TextArea = ({ label, id, type, width, placeholder }) => {
+const TextArea = ({
+  label,
+  id,
+  type,
+  width,
+  placeholder,
+  required,
+  value,
+  onChange,
+  onBlur,
+  error,
+}) => {
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-1/2" : "w-56"
+        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
       }`}
     >
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label} {!required && <span className="text-red-500">*</span>}
+      </label>
       <textarea
         id={id}
         name={id}
         placeholder={placeholder}
-        className="border border-gray-300 rounded-md p-2 bg-[#f6f6f6]"
+        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
+          error ? "border-red-500" : "border-gray-300"
+        } outline-none`}
       />
     </div>
   );
 };
 
-const SelectField = ({ label, id, type, options, width }) => {
+const SelectField = ({
+  label,
+  id,
+  type,
+  width,
+  placeholder,
+  required,
+  options,
+  value,
+  onChange,
+  onBlur,
+  error,
+}) => {
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-1/2" : "w-56"
+        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
       }`}
     >
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
       <select
         id={id}
         name={id}
-        className="border border-gray-300 rounded-sm p-2 max-w-52 bg-[#f6f6f6]"
+        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
+          error ? "border-red-500" : "border-gray-300"
+        } outline-none`}
       >
         {Array.isArray(options) &&
           options.map((option) => (
@@ -209,10 +258,24 @@ const SelectField = ({ label, id, type, options, width }) => {
   );
 };
 
-const RadioField = ({ label, id, type, options }) => {
+const RadioField = ({
+  label,
+  id,
+  type,
+  width,
+  placeholder,
+  required,
+  value,
+  onChange,
+  onBlur,
+  error,
+  options,
+}) => {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
       <div className="flex gap-2">
         {Array.isArray(options) &&
           options.map((option) => (
@@ -232,119 +295,185 @@ const RadioField = ({ label, id, type, options }) => {
   );
 };
 
-const TimeField = ({ label, id, type, width }) => {
+const TimeField = ({
+  label,
+  id,
+  type,
+  width,
+  placeholder,
+  required,
+  value,
+  onChange,
+  onBlur,
+  error,
+}) => {
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-56"
+        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
       }`}
     >
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
       <input
         type={type}
         id={id}
         name={id}
-        className="border border-gray-300 rounded-md p-2 bg-[#f6f6f6]"
+        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
+          error ? "border-red-500" : "border-gray-300"
+        } outline-none`}
       />
     </div>
   );
 };
 
-const DateField = ({ label, id, type, width }) => {
+const DateField = ({
+  label,
+  id,
+  type,
+  width,
+  placeholder,
+  required,
+  value,
+  onChange,
+  onBlur,
+  error,
+}) => {
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-1/2" : "w-56"
+        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
       }`}
     >
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        {label} {required && <span className="text-red-500">*</span>}
+      </label>
       <input
         type={type}
         id={id}
         name={id}
-        className="border border-gray-300 rounded-md p-2 bg-[#f6f6f6]"
+        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
+          error ? "border-red-500" : "border-gray-300"
+        } outline-none`}
       />
     </div>
   );
 };
 
 const BookForm = () => {
+  const [formData, setFormData] = useState(
+    inputs.reduce((acc, section) => {
+      section.fields.forEach((field) => {
+        acc[field.id] = "";
+      });
+      return acc;
+    }, {})
+  );
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (id, value) => {
+    setFormData({ ...formData, [id]: value });
+    if (errors[id]) {
+      setErrors({ ...errors, [id]: "" });
+    }
+  };
+
+  const handleBlur = (id, required) => {
+    if (required && !formData[id]) {
+      setErrors({ ...errors, [id]: "This field is required" });
+    }
+  };
+
   return (
     <form className="flex flex-col gap-2 p-4 w-[70rem]">
       {inputs.map((input) => (
         <div className="flex flex-col gap-5 p-4 " key={input.title}>
           <h2 className="text-lg font-semibold">{input.title}</h2>
           <div className="flex flex-wrap gap-6">
-            {input.fields.map((field) => {
-              switch (field.type) {
-                case "text":
-                case "email":
-                case "tel":
-                  return (
-                    <TextField
-                      label={field.label}
-                      id={field.id}
-                      type={field.type}
-                      width={field.width}
-                      placeholder={field.placeholder}
-                      key={field.id}
-                    />
-                  );
-                case "textarea":
-                  return (
-                    <TextArea
-                      label={field.label}
-                      id={field.id}
-                      type={field.type}
-                      width={field.width}
-                      placeholder={field.placeholder}
-                      key={field.id}
-                    />
-                  );
-                case "select":
-                  return (
-                    <SelectField
-                      label={field.label}
-                      id={field.id}
-                      type={field.type}
-                      options={field.options}
-                      width={field.width}
-                      key={field.id}
-                    />
-                  );
-                case "radio":
-                  return (
-                    <RadioField
-                      label={field.label}
-                      id={field.id}
-                      type={field.type}
-                      options={field.options}
-                      key={field.id}
-                    />
-                  );
-                case "time":
-                  return (
-                    <TimeField
-                      label={field.label}
-                      id={field.id}
-                      type={field.type}
-                      width={field.width}
-                      key={field.id}
-                    />
-                  );
-                case "date":
-                  return (
-                    <DateField
-                      label={field.label}
-                      id={field.id}
-                      type={field.type}
-                      key={field.id}
-                    />
-                  );
-                default:
-                  return null;
+            {input.fields.map(
+              ({ label, id, type, width, placeholder, options }) => {
+                const isRequired = !input.notrequired;
+                switch (type) {
+                  case "text":
+                  case "email":
+                  case "tel":
+                    return (
+                      <TextField
+                        key={id}
+                        label={label}
+                        id={id}
+                        type={type}
+                        width={width}
+                        placeholder={placeholder}
+                        required={isRequired}
+                        value={formData[id]}
+                        onChange={(e) => handleChange(id, e.target.value)}
+                        onBlur={() => handleBlur(id, isRequired)}
+                        error={errors[id]}
+                      />
+                    );
+                  case "textarea":
+                    return (
+                      <TextArea
+                        label={label}
+                        id={id}
+                        type={type}
+                        width={width}
+                        required={isRequired}
+                        placeholder={placeholder}
+                        key={id}
+                      />
+                    );
+                  case "select":
+                    return (
+                      <SelectField
+                        label={label}
+                        id={id}
+                        type={type}
+                        options={options}
+                        required={isRequired}
+                        width={width}
+                        key={id}
+                      />
+                    );
+                  case "radio":
+                    return (
+                      <RadioField
+                        label={label}
+                        id={id}
+                        type={type}
+                        options={options}
+                        required={isRequired}
+                        key={id}
+                      />
+                    );
+                  case "time":
+                    return (
+                      <TimeField
+                        label={label}
+                        id={id}
+                        type={type}
+                        width={width}
+                        required={isRequired}
+                        key={id}
+                      />
+                    );
+                  case "date":
+                    return (
+                      <DateField
+                        label={label}
+                        id={id}
+                        type={type}
+                        key={id}
+                        required={isRequired}
+                      />
+                    );
+                  default:
+                    return null;
+                }
               }
-            })}
+            )}
           </div>
         </div>
       ))}
