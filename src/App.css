@@ -39,8 +39,8 @@
 }
 .hero-long {
   font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-size: 19px;
+  /* font-optical-sizing: auto; */
+  font-size: 17px;
   letter-spacing: 1px;
 }
 
@@ -111,7 +111,14 @@
 .about-h3 {
   line-height: 31.2px;
   vertical-align: baseline;
-  letter-spacing: 4.8px;
+  letter-spacing: 2px;
   font-size: 19px;
   font-weight: 700;
+}
+
+.clients-h2 {
+  font-family: "Montserrat", sans-serif;
+  /* font-optical-sizing: auto; */
+  font-size: 15px;
+  letter-spacing: 1px;
 }

@@ -1,5 +1,6 @@
 import React, { Children } from "react";
 import { Outlet } from "react-router";
+import { NavLink } from "react-router-dom";
 
 const Layout = ({ children }) => {
   return (
@@ -16,13 +17,19 @@ const Layout = ({ children }) => {
         </div>
         <ul className="flex items-center gap-8">
           <li>
-            <a href="/home">Home</a>
+            <NavLink activeClassName="active" to="/home">
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href="/about">About</a>
+            <NavLink activeClassName="active" to="/about">
+              About
+            </NavLink>
           </li>
           <li className="bg-[#F6C228] text-black font-bold py-1 px-3 rounded-lg">
-            <a href="/book">Book Now</a>
+            <NavLink activeClassName="active" to="/book">
+              Book Now
+            </NavLink>
           </li>
         </ul>
       </nav>

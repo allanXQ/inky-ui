@@ -133,7 +133,9 @@ export default function Home() {
         id="clients"
         className="flex flex-col items-center justify-center mt-52"
       >
-        <h2>SOME OF MD'S CLIENTS INCLUDE</h2>
+        <h2 className="clients-h2 max-w-[530px] text-center text[#efefef]">
+          SOME OF MD'S CLIENTS INCLUDE
+        </h2>
         <div className="animate-fade-down">
           <img src="./clientlogos.png" />
         </div>
@@ -173,13 +175,13 @@ export default function Home() {
             and organizations alike to unlock their fullest potential, fostering
             a culture of excellence and achievement
           </p>
-          <div className="flex items-center border border-white rounded-lg w-36 ">
+          <div className="flex items-center border border-white rounded-lg w-40 ">
             <button
               id="about-btn"
               className="py-2 px-4 border-r border-white"
               onClick={() => navigate("/about")}
             >
-              <p className="text-sm">Learn More</p>
+              <p className="text-md">Learn More</p>
             </button>
 
             <svg
@@ -267,7 +269,7 @@ export default function Home() {
         id="booking"
         className="flex flex-col items-center justify-center gap-4"
       >
-        <p>MD IS CURRENTLY BOOKING FOR:</p>
+        <p className="about-h3 text-[#F6C228]">MD IS CURRENTLY BOOKING FOR:</p>
         <div className="flex gap-4 items-center">
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./keynote.png" />
@@ -296,8 +298,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-4">
-        <p>SIGNATURE MESSAGE TOPICS:</p>
+      <div className="flex flex-col items-center gap-8">
+        <p className="about-h3 text-[#F6C228]">SIGNATURE MESSAGE TOPICS:</p>
         <div className="flex items-center justify-center gap-4">
           {messages.map((message) => (
             <div
@@ -308,7 +310,30 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <ButtonArrow text="Book Now" />
+        <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36 ">
+          <button
+            id="hero-book-btn"
+            className="py-2 px-4 border-r border-black"
+            onClick={() => navigate("/book")}
+          >
+            <p className="text-md">Book Now</p>
+          </button>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-8 pl-3"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </div>
       </div>
       <div
         id="testimonials"

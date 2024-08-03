@@ -24,6 +24,13 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #f6c228;
+}
+.active {
+  color: #f6c228;
+}
+
 ul {
   list-style-type: none;
 }
