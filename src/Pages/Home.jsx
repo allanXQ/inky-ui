@@ -173,7 +173,30 @@ export default function Home() {
             and organizations alike to unlock their fullest potential, fostering
             a culture of excellence and achievement
           </p>
-          <ButtonArrow text="Learn More" />
+          <div className="flex items-center border border-white rounded-lg w-36 ">
+            <button
+              id="about-btn"
+              className="py-2 px-4 border-r border-white"
+              onClick={() => navigate("/about")}
+            >
+              <p className="text-sm">Learn More</p>
+            </button>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-8 pl-3"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </div>
         </div>
         <img src="./inky2.webp" />
       </div>
