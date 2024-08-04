@@ -229,40 +229,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 items-center max-w-[70rem] border border-[#636363] rounded-lg p-10 ">
-          <p>
-            MD brings a rich reservoir of experience and proficiency, boasting a
-            distinguished history of triumph in leadership development and
-            business growth strategies, MD has finely tuned his skills through
-            years of devoted study, hands-on application, and coaching diverse
-            teams and leaders across industries and institutions. Acknowledged
-            for his knack for sparking transformation, MD is a highly
-            sought-after speaker and trainer. His educational background
-            includes a master's degree in strategic management, a bachelor's
-            degree in entrepreneurship, and a plethora of additional
-            certificates from esteemed institutions. These include
-            certifications in people management, corporate governance, business
-            analysis and process modeling, and trainer of trainers, among
-            others. Throughout his illustrious career spanning over a decade, he
-            has successfully worked with national and international
-            corporations, steadily progressing from a subordinate position to
-            ultimately becoming a respected business leader. MD's narrative
-            within the business sector exudes confidence and highlights
-            exponential development prospects. He captivates his audience by
-            emphasizing the importance of avoiding complacency and aiming high,
-            demonstrating how one can achieve great success and positively
-            impact others. It is not only his impressive personality but also
-            his exceptional way with words and life-changing anecdotes that
-            inspire people to take unprecedented action. MD's remarkable
-            credentials, combined with his inspiring stories and ability to
-            convey his message effectively, make him a truly influential figure
-            who motivates individuals to reach new heights and make a lasting
-            difference in their lives, the lives of others and that of the
-            organization. With a fervent dedication to achieving excellence in
-            every endeavor and a consistent history of remarkable
-            accomplishments,
+        <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-16">
+          <p className="text-2xl">
+            The one thing we all have in common is that we will encounter
+            adversity, but we have to decide how we respond to it. My arm and my
+            hand are paralyzed but my heart isn’t, my mind isn’t, my dedication
+            isn’t, my work ethic isn’t, my commitment isn’t.”
           </p>
-          {/* <p>-MD</p> */}
+          <p className="font-bold text-xl">- MD</p>
         </div>
       </div>
       <div
