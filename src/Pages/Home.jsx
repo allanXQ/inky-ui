@@ -281,9 +281,9 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-8">
         <p className="about-h3 text-[#F6C228]">SIGNATURE MESSAGE TOPICS:</p>
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-4 flex-wrap">
           {messages.map((message) => (
             <div
               key={message}
@@ -318,7 +318,7 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      <div
+      {/* <div
         id="testimonials"
         className="flex gap-24 items-center justify-center"
       >
