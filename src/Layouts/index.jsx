@@ -64,7 +64,9 @@ const Layout = () => {
               </NavLink>
             </li>
             <li className="bg-[#F6C228] text-black font-bold py-1 px-3 rounded-lg">
-              <Link to="/book">Book Now</Link>
+              <Link to="/book" className="book-nav">
+                Book Now
+              </Link>
             </li>
           </ul>
           <div onClick={toggleSideNav} className="sm:hidden cursor-pointer">
@@ -123,7 +125,7 @@ const Layout = () => {
                 </NavLink>
               </li>
               <li className="bg-[#F6C228] text-black font-bold py-1 px-3 rounded-lg">
-                <Link to="/book" onClick={closeSideNav}>
+                <Link className="book-nav" to="/book" onClick={closeSideNav}>
                   Book Now
                 </Link>
               </li>
