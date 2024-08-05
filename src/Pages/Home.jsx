@@ -85,7 +85,7 @@ export default function Home() {
               src="./Inky.webp"
               width={349}
               height={700}
-              className="absolute left-10 md:left-48 top-32 md:top-20"
+              className="absolute  md:left-48 top-32 md:top-20"
             />
             <div
               id="hero-text"
@@ -322,16 +322,16 @@ export default function Home() {
       </div>
       <div
         id="testimonials"
-        className="flex flex-col sm:flex-row gap-10 md:gap24 items-center justify-center px-4 sm:px-0"
+        className="flex flex-col sm:flex-row gap-20 md:gap-24 items-center justify-center px-4 sm:px-0"
       >
         <div className="flex gap-5">
-          <div className="flex flex-col gap-10 sm:gap-1 flex-wrap items-center justify-center">
+          <div className="flex flex-col gap-10 sm:gap-4 flex-wrap items-center justify-center">
             <div className="flex items-center">
               <img src="./lines.png" className="hidden sm:block" />
               <div className="flex flex-col font-bold gap-2 text-5xl">
                 <div className="flex flex-col gap-4 items-center">
                   <div>
-                    <div className="flex  gap-2">
+                    <div className="flex flex-wrap gap-2">
                       <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
                     </div>
                     <p>TODAY!</p>
@@ -365,7 +365,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl max-w-[600px] min-h-[300px] p-10 relative ">
+        <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl max-w-[600px] h-fit p-10 relative ">
           <img
             src="./topquote.png"
             width={50}
@@ -416,7 +416,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div id="cta" className=" flex items-center justify-center mt-5">
+      {/* <div id="cta" className=" flex items-center justify-center mt-5">
         <form>
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex flex-col items-center gap-1">
@@ -437,7 +437,7 @@ export default function Home() {
             </div>
           </div>
         </form>
-      </div>
+      </div> */}
     </main>
   );
 }

@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 const Layout = () => {
   return (
     <div className="w-screen flex flex-col items-center justify-center relative">
-      <nav className="flex items-center justify-between text-white w-screen px-10 absolute top-0">
+      {/* <nav className="flex items-center justify-between text-white w-screen px-10 absolute top-0">
         <div className="">
           <img
             src="./inkylogo.png"
@@ -29,9 +29,9 @@ const Layout = () => {
             <Link to="/book">Book Now</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
       <Outlet />
-      <footer className="flex flex-col items-center justify-center gap-2 mt-10 w-screen">
+      {/* <footer className="flex flex-col items-center justify-center gap-2 mt-10 w-screen">
         <img src="./footerlogo.png" />
         <div className="flex items-center justify-center gap-2">
           <img src="./ig.webp" />
@@ -43,7 +43,7 @@ const Layout = () => {
         <p className="text-white text-center">
           © 2023 by Inky Johnson. All Rights Reserved.
         </p>
-      </footer>
+      </footer> */}
     </div>
   );
 };
