@@ -28,7 +28,10 @@ const Layout = () => {
           </li>
         </ul>
       </nav>
-      <nav className="p-5 bg-transparent absolute top-0 right-5">
+      <nav
+        id="side-nav"
+        className="flex sm:hidden py-10 px-5 bg-transparent absolute top-0 right-0 "
+      >
         <ul className="flex flex-col text-white items-center gap-8">
           <li>
             <NavLink activeClassName="active" to="/home">
