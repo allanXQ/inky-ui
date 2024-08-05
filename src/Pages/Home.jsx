@@ -80,7 +80,10 @@ export default function Home() {
           <img src="./clientlogos.png" />
         </div>
       </div>
-      <div id="video" className="video-container faded-top faded-bottom">
+      <div
+        id="video"
+        className="video-container faded-top faded-bottom relative"
+      >
         <video
           id="hero-video"
           autoPlay
@@ -94,7 +97,7 @@ export default function Home() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="white"
-          className="size-6"
+          className="size-28 z-20 absolute top-44 left-[42vw]"
         >
           <path
             fill-rule="evenodd"
