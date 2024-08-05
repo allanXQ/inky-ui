@@ -80,13 +80,13 @@ export default function Home() {
           <img src="./clientlogos.png" />
         </div>
       </div>
-      <div id="video" className="relative">
+      <div id="video" class="video-container faded-top faded-bottom">
         <video
           id="hero-video"
           autoPlay
           muted
           loop
-          className="h-[480px] w-full object-cover"
+          class="h-[480px] w-full object-cover"
         >
           <source src="./file.mp4" type="video/mp4" />
         </video>
