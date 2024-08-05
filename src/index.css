@@ -26,6 +26,7 @@ a {
 
 a:hover {
   color: #f6c228;
+  cursor: pointer;
 }
 .active {
   color: #f6c228;
