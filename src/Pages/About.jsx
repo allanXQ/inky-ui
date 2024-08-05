@@ -11,11 +11,11 @@ const About = () => {
           <p className="text-[#F6C228]">WHO IS</p>
           <p>MD?</p>
         </div>
-        <h2 className="clients-h2 max-w-[530px]  text[#efefef]">
+        {/* <h2 className="clients-h2 max-w-[520px]  text[#efefef]">
           MD is a highly sought-after speaker and trainer, with a rich reservoir
           of experience and proficiency in leadership development and business
           growth strategies.
-        </h2>
+        </h2> */}
       </div>
 
       <div className="flex flex-col justify-center items-center gap-10 pt-10 px-10 ">
@@ -58,7 +58,7 @@ const About = () => {
             accomplishments,
           </p>
         </div>
-        <div id="midbg"></div>
+        <div id="midbg" className="about-text"></div>
         <div className="flex flex-col gap-5">
           <p className="about-text">
             MD offers a rich reservoir of knowledge and experience poised to
@@ -87,7 +87,7 @@ const About = () => {
         </div>
       </div>
       <div>
-        <img src="./aboutinkys.png" width={2000} />
+        <img src="./aboutinkys.png" />
       </div>
     </main>
   );
