@@ -31,6 +31,12 @@
   }
 }
 
+.book-nav {
+  &:hover {
+    color: black;
+  }
+}
+
 .hero-big {
   font-weight: 900;
   font-size: 2.4rem;
