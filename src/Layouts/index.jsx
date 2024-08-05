@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Layout = () => {
   return (
@@ -26,7 +26,7 @@ const Layout = () => {
             </NavLink>
           </li>
           <li className="bg-[#F6C228] text-black font-bold py-1 px-3 rounded-lg">
-            <NavLink to="/book">Book Now</NavLink>
+            <Link to="/book">Book Now</Link>
           </li>
         </ul>
       </nav>
