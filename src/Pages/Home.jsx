@@ -31,11 +31,11 @@ export default function Home() {
               id="hero-text"
               className="flex flex-col items-center justify-center z-20 mt-60 sm:mt-56 gap-6"
             >
-              <div className="flex flex-col items-start sm:items-center justify-start leading-none gap-2">
+              <div className="flex flex-col items-start sm:items-center justify-start leading-none gap-2 uppercase">
                 <p className="hero-big text-[#F6C228]">THE PROCESS:</p>
-                <p className="hero-big">TRUST IT.</p>
-                <p className="hero-big">RESPECT IT.</p>
-                <p className="hero-big">EMBRACE IT.</p>
+                <p className="hero-big">Insight.</p>
+                <p className="hero-big">Inspiration.</p>
+                <p className="hero-big">Action.</p>
               </div>
               <p className="hero-long max-w-[530px] text-center  text[#efefef]">
                 MD's insights, fueled by his personal story, spark leadership,
@@ -80,16 +80,29 @@ export default function Home() {
           <img src="./clientlogos.png" />
         </div>
       </div>
-      <div id="video" class="video-container faded-top faded-bottom">
+      <div id="video" className="video-container faded-top faded-bottom">
         <video
           id="hero-video"
           autoPlay
           muted
           loop
-          class="h-[480px] w-full object-cover"
+          className="h-[480px] w-full object-cover"
         >
           <source src="./file.mp4" type="video/mp4" />
         </video>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="white"
+          className="size-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
         <div className="absolute inset-0 bg-gradient"></div>
       </div>
 
