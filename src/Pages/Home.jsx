@@ -1,36 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-
-const Modal = ({ show, onClose, children }) => {
-  if (!show) {
-    return null;
-  }
-
-  return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-      <div className="bg-black rounded-lg shadow-lg p-8 relative max-w-3xl w-full">
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-10 h-10"
-          >
-            <path
-              fillRule="evenodd"
-              d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </button>
-        {children}
-      </div>
-    </div>
-  );
-};
+import Modal from "../Components/Modal";
 
 const messages = [
   "Transformational leadership",
@@ -44,10 +14,30 @@ const messages = [
 export default function Home() {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  const openTestimonialModal = () => {
+    setModalContent(
+      <div>
+        <h2 className="text-2xl font-bold mb-4">Full Testimonial</h2>
+        <p>
+          The messages of dealing with adversity, building character and having
+          faith could not have been more timely. Throughout 2020 I was always
+          able to refer back to the message that Inky conveyed as the people of
+          Smithereen navigated an uncertain and challenging time. I truly
+          believe that Inky played a key role in my company's continued success.
+        </p>
+        <p className="mt-4 font-bold">- JACK JENNINGS</p>
+        <p className="clients-h2">PRESIDENT, SMITHEREEN PEST MANAGEMENT</p>
+      </div>
+    );
+    toggleModal();
+  };
+
   return (
     <main id="home" className="w-screen  text-white flex flex-col gap-8">
       <div id="nav-hero" className="h-screen">
@@ -133,13 +123,24 @@ export default function Home() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="white"
-          className="size-28 z-20 absolute top-44 left-[44vw]"
-          onClick={toggleModal} // Add click handler to open modal
+          className="size-28 z-20 absolute top-44 left-[44vw] cursor-pointer"
+          onClick={() => {
+            setModalContent(
+              <video
+                id="hero-video-modal"
+                controls
+                className="w-full h-full object-cover"
+              >
+                <source src="./file.mp4" type="video/mp4" />
+              </video>
+            );
+            toggleModal();
+          }}
         >
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z"
-            clip-rule="evenodd"
+            clipRule="evenodd"
           />
         </svg>
 
@@ -147,13 +148,7 @@ export default function Home() {
       </div>
 
       <Modal show={isModalOpen} onClose={toggleModal}>
-        <video
-          id="hero-video-modal"
-          controls
-          className="w-full h-full object-cover"
-        >
-          <source src="./file.mp4" type="video/mp4" />
-        </video>
+        {modalContent}
       </Modal>
 
       <div
@@ -389,7 +384,7 @@ export default function Home() {
                 <button
                   id="about-btn"
                   className="py-2 px-4 border-r border-white"
-                  onClick={() => navigate("/about")}
+                  onClick={openTestimonialModal}
                 >
                   <p className="text-md">Read Full Testimonial</p>
                 </button>
