@@ -131,7 +131,7 @@ export default function Home() {
       </div>
       <div
         id="clients"
-        className="flex flex-col items-center justify-center mt-52"
+        className="flex flex-col items-center justify-center mt-80 xl:mt-52"
       >
         <h2 className="clients-h2 max-w-[530px] text-center text[#efefef]">
           SOME OF MD'S CLIENTS INCLUDE
@@ -363,7 +363,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl lg:max-w-[30vw] h-fit p-10 relative ">
+          <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl lg:max-w-[40vw] h-fit p-10 relative ">
             <img
               src="./topquote.png"
               width={50}
