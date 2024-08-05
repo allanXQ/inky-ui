@@ -139,3 +139,16 @@
   background-origin: border-box;
   height: 70vh;
 }
+
+.bg-gradient {
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.5) 20%,
+    rgba(0, 0, 0, 0.7) 60%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+#video {
+  border-top: 1px solid black;
+}

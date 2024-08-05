@@ -80,7 +80,7 @@ export default function Home() {
           <img src="./clientlogos.png" />
         </div>
       </div>
-      <div id="video" className="">
+      <div id="video" className="relative">
         <video
           id="hero-video"
           autoPlay
@@ -90,7 +90,9 @@ export default function Home() {
         >
           <source src="./file.mp4" type="video/mp4" />
         </video>
+        <div className="absolute inset-0 bg-gradient"></div>
       </div>
+
       <div
         id="meetinky"
         className="flex items-center justify-center flex-wrap gap-4"
