@@ -324,7 +324,7 @@ const TimeField = ({
           ? "w-72 sm:w-80 md:w-96 lg:w-full"
           : width === "half"
           ? "w-[30rem]"
-          : "w-72 sm:w-80 lg:w-60"
+          : ""
       }`}
     >
       <label htmlFor={id}>
@@ -334,7 +334,7 @@ const TimeField = ({
         type={type}
         id={id}
         name={id}
-        className={`border-2 rounded-md p-2  bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
+        className={`border-2 rounded-md p-2 w-72 sm:w-80 lg:w-60 h-11 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
           error ? "border-red-500" : "border-gray-300"
         } outline-none`}
       />
@@ -361,7 +361,7 @@ const DateField = ({
           ? "w-72 sm:w-80 md:w-96 lg:w-full"
           : width === "half"
           ? "w-[30rem]"
-          : "w-72 sm:w-80 lg:w-60"
+          : ""
       }`}
     >
       <label htmlFor={id}>
@@ -371,7 +371,7 @@ const DateField = ({
         type={type}
         id={id}
         name={id}
-        className={`border-2 rounded-md  bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
+        className={`border-2 rounded-md w-72 sm:w-80 lg:w-60 h-11 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
           error ? "border-red-500" : "border-gray-300"
         } outline-none`}
       />
