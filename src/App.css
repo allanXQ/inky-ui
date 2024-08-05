@@ -35,10 +35,9 @@
 
 .hero-big {
   font-weight: 900;
-  font-size: 42px;
+  font-size: 2.4rem;
   letter-spacing: -3px;
-  transform: scaleY(1.4);
-  transform: scaleX(1);
+  word-spacing: 3px;
 }
 .hero-long {
   font-family: "Montserrat", sans-serif;

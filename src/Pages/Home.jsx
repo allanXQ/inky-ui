@@ -77,21 +77,21 @@ export default function Home() {
       <div id="nav-hero" className="h-screen">
         <div
           id="inner-hero"
-          className="flex flex-col  gap-4 items-center justify-center min-w-full min-h-screen "
+          className="flex flex-col  gap-4 items-center justify-center  min-h-screen "
         >
           <div className="flex items-center justify-center gap-4 w-2/3">
-            <img
+            {/* <img
               id="hero-inky"
               src="./Inky.webp"
               width={349}
               height={700}
               className="absolute left-44 top-20"
-            />
+            /> */}
             <div
               id="hero-text"
-              className="flex flex-col items-center justify-center z-20 mt-56 gap-6"
+              className="flex flex-col items-center justify-center z-20 mt-20 sm:mt-56 gap-6"
             >
-              <div className="flex flex-col items-center justify-start leading-none gap-2">
+              <div className="flex flex-col items-start sm:items-center justify-start leading-none gap-2">
                 <p className="hero-big text-[#F6C228]">THE PROCESS:</p>
                 <p className="hero-big">TRUST IT.</p>
                 <p className="hero-big">RESPECT IT.</p>
@@ -129,7 +129,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div
+      {/*  <div
         id="clients"
         className="flex flex-col items-center justify-center mt-52"
       >
@@ -244,7 +244,7 @@ export default function Home() {
         className="flex flex-col items-center justify-center gap-4"
       >
         <p className="about-h3 text-[#F6C228]">MD IS CURRENTLY BOOKING FOR:</p>
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center flex-wrap">
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./keynote.png" />
             <p className="text-center">Live & Virtual Keynotes</p>
@@ -418,7 +418,7 @@ export default function Home() {
             </div>
           </div>
         </form>
-      </div>
+      </div> */}
     </main>
   );
 }
