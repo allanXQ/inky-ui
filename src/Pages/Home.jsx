@@ -36,12 +36,15 @@ const messages = [
 ];
 
 const Button = ({ text }) => {
+  const navigate = useNavigate();
   return (
     <div
       id="hero-book-btn"
       className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 "
     >
-      <button className="py-2">{text}</button>
+      <button className="py-2" onClick={() => navigate("/about")}>
+        {text}
+      </button>
     </div>
   );
 };
