@@ -97,7 +97,7 @@ export default function Home() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="white"
-          className="size-28 z-20 absolute top-44 left-[42vw]"
+          className="size-28 z-20 absolute top-44 left-[44vw]"
         >
           <path
             fill-rule="evenodd"
