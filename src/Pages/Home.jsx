@@ -129,7 +129,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* <div
+      <div
         id="clients"
         className="flex flex-col items-center justify-center mt-52"
       >
@@ -150,8 +150,8 @@ export default function Home() {
         >
           <source src="./file.mp4" type="video/mp4" />
         </video>
-      </div> */}
-      {/* <div
+      </div>
+      <div
         id="meetinky"
         className="flex items-center justify-center flex-wrap gap-4"
       >
@@ -210,8 +210,8 @@ export default function Home() {
           </div>
         </div>
         <img src="./inky2.webp" />
-      </div> */}
-      {/* <div
+      </div>
+      <div
         id="quote"
         className="flex flex-col items-center justify-center w-full relative px-4"
       >
@@ -247,7 +247,7 @@ export default function Home() {
           </p>
           <p className="font-bold text-xl">- MD</p>
         </div>
-      </div> */}
+      </div>
       <div
         id="booking"
         className="flex flex-col items-center justify-center gap-4"
