@@ -15,9 +15,14 @@ export default function Home() {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const [isTestimonial, setIsTestimonial] = useState(false);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  const toggleTestimonial = () => {
+    setIsTestimonial(!isTestimonial);
   };
 
   const openTestimonialModal = () => {
@@ -36,6 +41,7 @@ export default function Home() {
       </div>
     );
     toggleModal();
+    toggleTestimonial();
   };
 
   return (
@@ -147,7 +153,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient"></div>
       </div>
 
-      <Modal show={isModalOpen} onClose={toggleModal}>
+      <Modal
+        show={isModalOpen}
+        onClose={toggleModal}
+        isTestimonial={isTestimonial}
+      >
         {modalContent}
       </Modal>
 

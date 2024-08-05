@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ show, onClose, children }) => {
+const Modal = ({ show, onClose, isTestimonial, children }) => {
   if (!show) {
     return null;
   }
@@ -8,6 +8,16 @@ const Modal = ({ show, onClose, children }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
       <div className="bg-black rounded-lg shadow-lg p-8 relative max-w-3xl w-full">
+        {/* {isTestimonial && ( */}
+        <div className="relative ">
+          <img
+            src="./topquote.png"
+            width={40}
+            height={40}
+            className="absolute top-[-52px] left-[-30px]"
+          />
+        </div>
+        {/* )} */}
         <button
           onClick={onClose}
           className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
@@ -26,6 +36,14 @@ const Modal = ({ show, onClose, children }) => {
           </svg>
         </button>
         {children}
+        <div className="relative ">
+          <img
+            src="./bottomquote.png"
+            width={40}
+            height={40}
+            className="absolute top-[12px] right-[-30px]"
+          />
+        </div>
       </div>
     </div>
   );
