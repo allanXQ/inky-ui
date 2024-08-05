@@ -412,11 +412,13 @@ export default function Home() {
           />
         </div>
       </div>
-      {/*<div id="cta" className=" flex items-center justify-center mt-5">
+      <div id="cta" className=" flex items-center justify-center mt-5">
         <form>
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex flex-col items-center gap-1">
-              <p className="text-white text-3xl">Ready to elevate your team?</p>
+              <p className="text-white text-3xl text-center">
+                Ready to elevate your team?
+              </p>
               <p className="text-white text-sm">
                 Subscribe to our mailing list
               </p>
@@ -431,7 +433,7 @@ export default function Home() {
             </div>
           </div>
         </form>
-      </div> */}
+      </div>
     </main>
   );
 }
