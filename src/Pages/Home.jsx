@@ -1,31 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
-const ImageSlider = () => {
-  const [startAnimation, setStartAnimation] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setStartAnimation(true);
-    }, 3000); // Adjust the delay time as needed
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <div className="slider-container">
-      <div className={`image-set ${startAnimation ? "animate" : ""}`}>
-        <img src="path-to-image1.jpg" alt="Image 1" />
-        <img src="path-to-image2.jpg" alt="Image 2" />
-      </div>
-      <div className={`image-set ${startAnimation ? "animate" : ""}`}>
-        <img src="path-to-image3.jpg" alt="Image 3" />
-        <img src="path-to-image4.jpg" alt="Image 4" />
-      </div>
-      {/* Add more image sets as needed */}
-    </div>
-  );
-};
-
 const messages = [
   "Transformational leadership",
   "Customer service excellence",
