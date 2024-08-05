@@ -151,7 +151,7 @@ export default function Home() {
           <source src="./file.mp4" type="video/mp4" />
         </video>
       </div> */}
-      <div
+      {/* <div
         id="meetinky"
         className="flex items-center justify-center flex-wrap gap-4"
       >
@@ -210,8 +210,8 @@ export default function Home() {
           </div>
         </div>
         <img src="./inky2.webp" />
-      </div>
-      <div
+      </div> */}
+      {/* <div
         id="quote"
         className="flex flex-col items-center justify-center w-full relative px-4"
       >
@@ -247,12 +247,14 @@ export default function Home() {
           </p>
           <p className="font-bold text-xl">- MD</p>
         </div>
-      </div>
+      </div> */}
       <div
         id="booking"
         className="flex flex-col items-center justify-center gap-4"
       >
-        <p className="about-h3 text-[#F6C228]">MD IS CURRENTLY BOOKING FOR:</p>
+        <p className="about-h3 text-[#F6C228] text-center">
+          MD IS CURRENTLY BOOKING FOR:
+        </p>
         <div className="flex gap-4 items-center justify-center flex-wrap">
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./keynote.png" />
@@ -318,18 +320,20 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      {/* <div
+      <div
         id="testimonials"
-        className="flex gap-24 items-center justify-center"
+        className="flex flex-col sm:flex-row gap-10 md:gap24 items-center justify-center px-4 sm:px-0"
       >
         <div className="flex gap-5">
-          <img src="./lines.png" />
-          <div className="flex flex-col gap-10  justify-center">
-            <div className="flex flex-col font-bold gap-2 text-5xl">
-              <div className="flex  gap-2">
-                <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
+          <div className="flex flex-col gap-10 sm:gap-5 flex-wrap items-center justify-center">
+            <div className="flex items-center">
+              <img src="./lines.png" className="hidden sm:block" />
+              <div className="flex flex-col font-bold gap-2 text-5xl">
+                <div className="flex  gap-2">
+                  <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
+                </div>
+                <p>TODAY!</p>
               </div>
-              <p>TODAY!</p>
             </div>
             <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36 ">
               <button
@@ -408,7 +412,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div id="cta" className=" flex items-center justify-center mt-5">
+      {/*<div id="cta" className=" flex items-center justify-center mt-5">
         <form>
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex flex-col items-center gap-1">
