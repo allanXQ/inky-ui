@@ -238,7 +238,9 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col items-center gap-8">
-        <p className="about-h3 text-[#F6C228]">SIGNATURE MESSAGE TOPICS:</p>
+        <p className="about-h3 text-[#F6C228] text-center">
+          SIGNATURE MESSAGE TOPICS:
+        </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           {messages.map((message) => (
             <div
@@ -320,9 +322,9 @@ export default function Home() {
           <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl lg:max-w-[40vw] h-fit p-10 relative ">
             <img
               src="./topquote.png"
-              width={50}
-              height={50}
-              className="absolute top-[-30px] left-[-10px]"
+              width={40}
+              height={40}
+              className="absolute top-[-30px] left-[1px]"
             />
             <p>
               The messages of dealing with adversity, building character and
@@ -364,9 +366,9 @@ export default function Home() {
             </div>
             <img
               src="./bottomquote.png"
-              width={50}
-              height={50}
-              className="absolute bottom-[-30px] right-[-10px]"
+              width={40}
+              height={40}
+              className="absolute bottom-[-30px] right-[1px]"
             />
           </div>
         </div>
