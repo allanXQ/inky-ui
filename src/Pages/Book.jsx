@@ -511,9 +511,9 @@ const Book = () => {
     <main id="book" className="w-full">
       <div
         id="book-hero"
-        className="flex flex-col justify-center text-white gap-2 pl-5  md:pl-60 pt-10"
+        className="flex flex-col justify-center text-white gap-2 pl-5  md:pl-52 pt-10"
       >
-        <div className="flex  gap-2 text-4xl text-wrap font-extrabold">
+        <div className="flex  gap-2 text-5xl text-wrap font-extrabold">
           <p className="text-[#F6C228]">BOOKING</p>
           <p>FORM</p>
         </div>
