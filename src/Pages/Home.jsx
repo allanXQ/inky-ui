@@ -211,9 +211,9 @@ export default function Home() {
         </div>
         <img src="./inky2.webp" />
       </div>
-      {/* <div
+      <div
         id="quote"
-        className="flex flex-col items-center justify-center w-full relative"
+        className="flex flex-col items-center justify-center w-full relative px-4"
       >
         <div>
           <div id="comp-ky2hvz0a" data-motion-enter="done">
@@ -238,7 +238,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-16">
+        <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
           <p className="text-2xl">
             The one thing we all have in common is that we will encounter
             adversity, but we have to decide how we respond to it. My arm and my
@@ -248,7 +248,7 @@ export default function Home() {
           <p className="font-bold text-xl">- MD</p>
         </div>
       </div>
-      <div
+      {/* <div
         id="booking"
         className="flex flex-col items-center justify-center gap-4"
       >
