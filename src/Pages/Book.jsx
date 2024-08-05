@@ -321,7 +321,7 @@ const TimeField = ({
     <div
       className={`flex flex-col gap-2 ${
         width === "full"
-          ? "w-[65rem]"
+          ? "w-72 sm:w-80 md:w-96 lg:w-full"
           : width === "half"
           ? "w-[30rem]"
           : "w-72 sm:w-80 lg:w-60"
@@ -334,7 +334,7 @@ const TimeField = ({
         type={type}
         id={id}
         name={id}
-        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
+        className={`border-2 rounded-md p-2 w-72 h-11 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
           error ? "border-red-500" : "border-gray-300"
         } outline-none`}
       />
@@ -358,7 +358,7 @@ const DateField = ({
     <div
       className={`flex flex-col gap-2 ${
         width === "full"
-          ? "w-[65rem]"
+          ? "w-72 sm:w-80 md:w-96 lg:w-full"
           : width === "half"
           ? "w-[30rem]"
           : "w-72 sm:w-80 lg:w-60"
@@ -371,7 +371,7 @@ const DateField = ({
         type={type}
         id={id}
         name={id}
-        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
+        className={`border-2 rounded-md w-72 h-11 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
           error ? "border-red-500" : "border-gray-300"
         } outline-none`}
       />
@@ -511,9 +511,9 @@ const Book = () => {
     <main id="book" className="w-full">
       <div
         id="book-hero"
-        // className="flex flex-col justify-center text-white gap-2 px-2 md:pl-60 pt-10"
+        className="flex flex-col justify-center text-white gap-2 px-2 md:pl-60 pt-10"
       >
-        {/* <div className="flex  gap-2 text-xl text-wrap font-extrabold">
+        <div className="flex  gap-2 text-xl text-wrap font-extrabold">
           <p className="text-[#F6C228]">BOOKING</p>
           <p>FORM</p>
         </div>
@@ -549,7 +549,7 @@ const Book = () => {
             </svg>
             <p>booking@md.com</p>
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div className="flex justify-center items-center pt-10">
