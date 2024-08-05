@@ -10,20 +10,6 @@ const messages = [
   "Personal branding",
 ];
 
-const Button = ({ text }) => {
-  const navigate = useNavigate();
-  return (
-    <div
-      id="hero-book-btn"
-      className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 "
-    >
-      <button className="py-2" onClick={() => navigate("/about")}>
-        {text}
-      </button>
-    </div>
-  );
-};
-
 export default function Home() {
   const navigate = useNavigate();
   return (
@@ -213,27 +199,22 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./keynote.png" />
             <p className="text-center">Live & Virtual Keynotes</p>
-            <Button text="Book Now" />
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./breakout.png" />
             <p className="text-center">Breakout Sessions</p>
-            <Button text="Book Now" />
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./breakout.png" />
             <p className="text-center">Corporate Emcee </p>
-            <Button text="Book Now" />
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./breakout.png" />
             <p className="text-center">Corporate Training </p>
-            <Button text="Book Now" />
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./breakout.png" />
             <p className="text-center">Team Building</p>
-            <Button text="Book Now" />
           </div>
         </div>
       </div>
@@ -372,28 +353,6 @@ export default function Home() {
             />
           </div>
         </div>
-      </div>
-      <div id="cta" className=" flex items-center justify-center mt-5">
-        <form>
-          <div className="flex flex-col items-center justify-center gap-4">
-            <div className="flex flex-col items-center gap-1">
-              <p className="text-white text-3xl text-center">
-                Ready to elevate your team?
-              </p>
-              <p className="text-white text-sm">
-                Subscribe to our mailing list
-              </p>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="border border-white rounded-md w-64 px-4 py-2"
-              />
-              <Button text="Subscribe" />
-            </div>
-          </div>
-        </form>
       </div>
     </main>
   );

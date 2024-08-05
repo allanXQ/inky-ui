@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Outlet, useNavigate } from "react-router";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 
@@ -13,6 +13,20 @@ const ScrollToTop = () => {
   }, [pathname]);
 
   return null;
+};
+
+const Button = ({ text }) => {
+  const navigate = useNavigate();
+  return (
+    <div
+      id="hero-book-btn"
+      className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 "
+    >
+      <button className="py-2" onClick={() => navigate("/about")}>
+        {text}
+      </button>
+    </div>
+  );
 };
 
 const Layout = () => {
@@ -118,6 +132,26 @@ const Layout = () => {
         )}
         <Outlet />
         <footer className="flex flex-col items-center justify-center gap-2 mt-10 w-screen">
+          <div id="cta" className=" flex items-center justify-center mt-5">
+            <form>
+              <div className="flex flex-col items-center justify-center gap-4">
+                <div className="flex flex-col items-center gap-1">
+                  <p className="text-white text-3xl text-center">
+                    Ready to elevate your team?
+                  </p>
+                  <p className="text-white text-sm">Request a Service Quote</p>
+                </div>
+                <div className="flex flex-col items-center justify-center gap-4">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="border border-white rounded-md w-64 px-4 py-2"
+                  />
+                  <Button text="Get Quote" />
+                </div>
+              </div>
+            </form>
+          </div>
           <img src="./footerlogo.png" alt="Footer Logo" />
           <div className="flex items-center justify-center gap-2">
             <img src="./ig.webp" alt="Instagram" />
