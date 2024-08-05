@@ -26,31 +26,6 @@ const ImageSlider = () => {
   );
 };
 
-const ButtonArrow = ({ text }) => {
-  return (
-    <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-40 ">
-      <button id="hero-book-btn" className=" px-5 py-2 border-r-2 border-black">
-        {text}
-      </button>
-
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={1.5}
-        stroke="currentColor"
-        className="size-8 pl-3"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-        />
-      </svg>
-    </div>
-  );
-};
-
 const messages = [
   "Transformational leadership",
   "Customer service excellence",
@@ -62,10 +37,11 @@ const messages = [
 
 const Button = ({ text }) => {
   return (
-    <div className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 ">
-      <button id="hero-book-btn" className="  py-2 ">
-        {text}
-      </button>
+    <div
+      id="hero-book-btn"
+      className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 "
+    >
+      <button className="py-2">{text}</button>
     </div>
   );
 };
