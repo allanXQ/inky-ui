@@ -4,17 +4,32 @@ import { Link, NavLink } from "react-router-dom";
 const Layout = () => {
   return (
     <div className="w-screen flex flex-col items-center justify-center relative">
-      <nav className="flex items-center justify-between text-white w-screen px-10 absolute top-0">
-        <div className="">
-          <img
-            src="./inkylogo.png"
-            width={110}
-            height={110}
-            alt="Inky Logo"
-            className="ml-28 mt-2"
-          />
-        </div>
-        <ul className="flex items-center gap-8">
+      <nav className="flex items-center justify-between text-white w-[95vw] px-10 absolute top-0 ">
+        <img
+          src="./inkylogo.png"
+          width={110}
+          height={110}
+          alt="Inky Logo"
+          className=""
+        />
+        <ul className="hidden sm:flex items-center gap-8">
+          <li>
+            <NavLink activeClassName="active" to="/home">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink activeClassName="active" to="/about">
+              About
+            </NavLink>
+          </li>
+          <li className="bg-[#F6C228] text-black font-bold py-1 px-3 rounded-lg">
+            <Link to="/book">Book Now</Link>
+          </li>
+        </ul>
+      </nav>
+      <nav className="p-5 bg-transparent absolute top-0 right-5">
+        <ul className="flex flex-col text-white items-center gap-8">
           <li>
             <NavLink activeClassName="active" to="/home">
               Home
