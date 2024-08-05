@@ -325,39 +325,43 @@ export default function Home() {
         className="flex flex-col sm:flex-row gap-10 md:gap24 items-center justify-center px-4 sm:px-0"
       >
         <div className="flex gap-5">
-          <div className="flex flex-col gap-10 sm:gap-5 flex-wrap items-center justify-center">
+          <div className="flex flex-col gap-10 sm:gap-1 flex-wrap items-center justify-center">
             <div className="flex items-center">
               <img src="./lines.png" className="hidden sm:block" />
               <div className="flex flex-col font-bold gap-2 text-5xl">
-                <div className="flex  gap-2">
-                  <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
-                </div>
-                <p>TODAY!</p>
-              </div>
-            </div>
-            <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36 ">
-              <button
-                id="hero-book-btn"
-                className="py-2 px-4 border-r border-black"
-                onClick={() => navigate("/book")}
-              >
-                <p className="text-md">Book Now</p>
-              </button>
+                <div className="flex flex-col gap-4 items-center">
+                  <div>
+                    <div className="flex  gap-2">
+                      <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
+                    </div>
+                    <p>TODAY!</p>
+                  </div>
+                  <div className="bg-[#F6C228] text-black flex items-center text-sm font-normal rounded-lg w-36 ">
+                    <button
+                      id="hero-book-btn"
+                      className="py-2 px-4 border-r border-black"
+                      onClick={() => navigate("/book")}
+                    >
+                      <p className="text-md">Book Now</p>
+                    </button>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-8 pl-3"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                />
-              </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-8 pl-3"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
