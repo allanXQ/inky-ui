@@ -248,12 +248,12 @@ export default function Home() {
           <p className="font-bold text-xl">- MD</p>
         </div>
       </div>
-      {/* <div
+      <div
         id="booking"
         className="flex flex-col items-center justify-center gap-4"
       >
         <p className="about-h3 text-[#F6C228]">MD IS CURRENTLY BOOKING FOR:</p>
-        <div className="flex gap-4 items-center flex-wrap">
+        <div className="flex gap-4 items-center justify-center flex-wrap">
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
             <img src="./keynote.png" />
             <p className="text-center">Live & Virtual Keynotes</p>
@@ -281,7 +281,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center gap-8">
+      {/* <div className="flex flex-col items-center gap-8">
         <p className="about-h3 text-[#F6C228]">SIGNATURE MESSAGE TOPICS:</p>
         <div className="flex items-center justify-center gap-4">
           {messages.map((message) => (
