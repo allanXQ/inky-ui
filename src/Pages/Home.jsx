@@ -89,7 +89,7 @@ export default function Home() {
             />
             <div
               id="hero-text"
-              className="flex flex-col items-center justify-center z-20 mt-20 sm:mt-56 gap-6"
+              className="flex flex-col items-center justify-center z-20 mt-60 sm:mt-56 gap-6"
             >
               <div className="flex flex-col items-start sm:items-center justify-start leading-none gap-2">
                 <p className="hero-big text-[#F6C228]">THE PROCESS:</p>
@@ -320,103 +320,104 @@ export default function Home() {
           </svg>
         </div>
       </div>
-      <div
-        id="testimonials"
-        className="flex flex-col sm:flex-row gap-20 md:gap-24 items-center justify-center px-4 sm:px-0"
-      >
-        <div className="flex gap-5">
-          <div className="flex flex-col gap-10 sm:gap-4 flex-wrap items-center justify-center">
-            <div className="flex items-center">
-              <img src="./lines.png" className="hidden sm:block" />
-              <div className="flex flex-col font-bold gap-2 text-5xl">
-                <div className="flex flex-col gap-4 items-center">
-                  <div>
-                    <div className="flex flex-wrap gap-2">
-                      <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
+      <div id="testimonials">
+        <div className="flex flex-col sm:flex-row gap-20 md:gap-24 mt-4 items-center justify-center px-2 sm:px-0 max-w-[98vw]">
+          <div className="flex gap-5">
+            <div className="flex flex-col gap-10 sm:gap-4 flex-wrap items-center justify-center">
+              <div className="flex items-center">
+                <img src="./lines.png" className="hidden sm:block" />
+                <div className="flex flex-col font-bold gap-2 text-5xl">
+                  <div className="flex flex-col gap-4 items-center">
+                    <div>
+                      <div className="flex flex-wrap gap-2">
+                        <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
+                      </div>
+                      <p>TODAY!</p>
                     </div>
-                    <p>TODAY!</p>
-                  </div>
-                  <div className="bg-[#F6C228] text-black flex items-center text-sm font-normal rounded-lg w-36 ">
-                    <button
-                      id="hero-book-btn"
-                      className="py-2 px-4 border-r border-black"
-                      onClick={() => navigate("/book")}
-                    >
-                      <p className="text-md">Book Now</p>
-                    </button>
+                    <div className="bg-[#F6C228] text-black flex items-center text-sm font-normal rounded-lg w-36 ">
+                      <button
+                        id="hero-book-btn"
+                        className="py-2 px-4 border-r border-black"
+                        onClick={() => navigate("/book")}
+                      >
+                        <p className="text-md">Book Now</p>
+                      </button>
 
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-8 pl-3"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                      />
-                    </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="size-8 pl-3"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl max-w-[600px] h-fit p-10 relative ">
-          <img
-            src="./topquote.png"
-            width={50}
-            height={50}
-            className="absolute top-[-30px] left-[-10px]"
-          />
-          <p>
-            The messages of dealing with adversity, building character and
-            having faith could not have been more timely. Throughout 2020 I was
-            always able to refer back to the message that Inky conveyed as the
-            people of Smithereen navigated an uncertain and challenging time. I
-            truly believe that Inky played a key role in my company's continued
-            success.
-          </p>
-          <div className="flex flex-col items-end gap-2">
-            <p className="font-bold">-JACK JENNINGS</p>
-            <p className="clients-h2">PRESIDENT, SMITHEREEN PEST MANAGEMENT</p>
-            <div className="flex items-center border border-white rounded-lg w-56 ">
-              <button
-                id="about-btn"
-                className="py-2 px-4 border-r border-white"
-                onClick={() => navigate("/about")}
-              >
-                <p className="text-md">Read Full Testimonial</p>
-              </button>
+          <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl lg:max-w-[30vw] h-fit p-10 relative ">
+            <img
+              src="./topquote.png"
+              width={50}
+              height={50}
+              className="absolute top-[-30px] left-[-10px]"
+            />
+            <p>
+              The messages of dealing with adversity, building character and
+              having faith could not have been more timely. Throughout 2020 I
+              was always able to refer back to the message that Inky conveyed as
+              the people of Smithereen navigated an uncertain and challenging
+              time. I truly believe that Inky played a key role in my company's
+              continued success.
+            </p>
+            <div className="flex flex-col items-end gap-2">
+              <p className="font-bold">-JACK JENNINGS</p>
+              <p className="clients-h2">
+                PRESIDENT, SMITHEREEN PEST MANAGEMENT
+              </p>
+              <div className="flex items-center border border-white rounded-lg w-56 ">
+                <button
+                  id="about-btn"
+                  className="py-2 px-4 border-r border-white"
+                  onClick={() => navigate("/about")}
+                >
+                  <p className="text-md">Read Full Testimonial</p>
+                </button>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-8 pl-3"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                />
-              </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-8 pl-3"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </div>
             </div>
+            <img
+              src="./bottomquote.png"
+              width={50}
+              height={50}
+              className="absolute bottom-[-30px] right-[-10px]"
+            />
           </div>
-          <img
-            src="./bottomquote.png"
-            width={50}
-            height={50}
-            className="absolute bottom-[-30px] right-[-10px]"
-          />
         </div>
       </div>
-      {/* <div id="cta" className=" flex items-center justify-center mt-5">
+      <div id="cta" className=" flex items-center justify-center mt-5">
         <form>
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex flex-col items-center gap-1">
@@ -437,7 +438,7 @@ export default function Home() {
             </div>
           </div>
         </form>
-      </div> */}
+      </div>
     </main>
   );
 }
