@@ -63,24 +63,28 @@ const inputs = [
         label: "Venue Name and Address",
         id: "VenueNameAddress",
         type: "text",
-        width: "full",
       },
       {
         label: "Closest Airport",
         id: "ClosestAirport",
         type: "text",
-        width: "full",
-      },
-      {
-        label: "Will tickets be sold for this event?",
-        id: "TicketsSold",
-        type: "radio",
-        options: ["Yes", "No"],
       },
       {
         label: "Planned Number of Attendees",
         id: "Attendees",
         type: "text",
+      },
+      {
+        label: "What are you booking MD for?",
+        id: "BookingFor",
+        type: "select",
+        options: [
+          "Corporate Training",
+          "Live and Virtual Keynotes",
+          "Breakout Sessions",
+          "Corporate Emcee",
+          "Professional Development Consulting",
+        ],
       },
       {
         label: "Will this event be open to the public?",
@@ -95,16 +99,10 @@ const inputs = [
         options: ["Yes", "No"],
       },
       {
-        label: "What are you booking MD for?",
-        id: "BookingFor",
-        type: "select",
-        options: [
-          "Corporate Training",
-          "Live and Virtual Keynotes",
-          "Breakout Sessions",
-          "Corporate Emcee",
-          "Professional Development Consulting",
-        ],
+        label: "Will tickets be sold for this event?",
+        id: "TicketsSold",
+        type: "radio",
+        options: ["Yes", "No"],
       },
     ],
   },
@@ -115,13 +113,13 @@ const inputs = [
         label: "Event Start Time",
         id: "EventStartTime",
         type: "time",
-        width: "half",
+        // width: "half",
       },
       {
         label: "Speaking Time",
         id: "SpeakingTime",
         type: "text",
-        width: "half",
+        // width: "half",
         placeholder: "Include the time MD would speak",
       },
       {
@@ -129,13 +127,13 @@ const inputs = [
         id: "ExpectedDuration",
         type: "text",
         placeholder: "30 min, 1 hour, etc",
-        width: "half",
+        // width: "half",
       },
       {
         label: "Email",
         id: "Email",
         type: "email",
-        width: "half",
+        // width: "half",
       },
       {
         label: "Additional Information",
@@ -163,7 +161,11 @@ const TextField = ({
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
+        width === "full"
+          ? "w-72 sm:w-80 md:w-96 lg:w-full"
+          : width === "half"
+          ? "w-[30rem]"
+          : "w-72 sm:w-80 lg:w-60"
       }`}
     >
       <label htmlFor={id}>
@@ -200,7 +202,11 @@ const TextArea = ({
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
+        width === "full"
+          ? "w-72 sm:w-80 md:w-96 lg:w-full"
+          : width === "half"
+          ? "w-[30rem]"
+          : "w-72 sm:w-80 lg:w-60"
       }`}
     >
       <label htmlFor={id}>
@@ -234,7 +240,11 @@ const SelectField = ({
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
+        width === "full"
+          ? "w-[65rem]"
+          : width === "half"
+          ? "w-[30rem]"
+          : "w-72 sm:w-80 lg:w-60"
       }`}
     >
       <label htmlFor={id}>
@@ -272,7 +282,7 @@ const RadioField = ({
   options,
 }) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 self-start min-w-72 sm:min-w-80">
       <label htmlFor={id}>
         {label} {required && <span className="text-red-500">*</span>}
       </label>
@@ -310,7 +320,11 @@ const TimeField = ({
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
+        width === "full"
+          ? "w-[65rem]"
+          : width === "half"
+          ? "w-[30rem]"
+          : "w-72 sm:w-80 lg:w-60"
       }`}
     >
       <label htmlFor={id}>
@@ -343,7 +357,11 @@ const DateField = ({
   return (
     <div
       className={`flex flex-col gap-2 ${
-        width === "full" ? "w-full" : width === "half" ? "w-[32rem]" : "w-60"
+        width === "full"
+          ? "w-[65rem]"
+          : width === "half"
+          ? "w-[30rem]"
+          : "w-72 sm:w-80 lg:w-60"
       }`}
     >
       <label htmlFor={id}>
@@ -386,100 +404,102 @@ const BookForm = () => {
   };
 
   return (
-    <form className="flex flex-col gap-2 p-4 w-[70rem]">
-      {inputs.map((input) => (
-        <div className="flex flex-col gap-5 p-4 " key={input.title}>
-          <h2 className="text-[30px] font-bold text-[#F6C228] uppercase">
-            {input.title}
-          </h2>
-          <div className="flex flex-wrap gap-6">
-            {input.fields.map(
-              ({ label, id, type, width, placeholder, options }) => {
-                const isRequired = !input.notrequired;
-                switch (type) {
-                  case "text":
-                  case "email":
-                  case "tel":
-                    return (
-                      <TextField
-                        key={id}
-                        label={label}
-                        id={id}
-                        type={type}
-                        width={width}
-                        placeholder={placeholder}
-                        required={isRequired}
-                        value={formData[id]}
-                        onChange={(e) => handleChange(id, e.target.value)}
-                        onBlur={() => handleBlur(id, isRequired)}
-                        error={errors[id]}
-                      />
-                    );
-                  case "textarea":
-                    return (
-                      <TextArea
-                        label={label}
-                        id={id}
-                        type={type}
-                        width={width}
-                        required={isRequired}
-                        placeholder={placeholder}
-                        key={id}
-                      />
-                    );
-                  case "select":
-                    return (
-                      <SelectField
-                        label={label}
-                        id={id}
-                        type={type}
-                        options={options}
-                        required={isRequired}
-                        width={width}
-                        key={id}
-                      />
-                    );
-                  case "radio":
-                    return (
-                      <RadioField
-                        label={label}
-                        id={id}
-                        type={type}
-                        options={options}
-                        required={isRequired}
-                        key={id}
-                      />
-                    );
-                  case "time":
-                    return (
-                      <TimeField
-                        label={label}
-                        id={id}
-                        type={type}
-                        width={width}
-                        required={isRequired}
-                        key={id}
-                      />
-                    );
-                  case "date":
-                    return (
-                      <DateField
-                        label={label}
-                        id={id}
-                        type={type}
-                        key={id}
-                        required={isRequired}
-                      />
-                    );
-                  default:
-                    return null;
+    <form className="flex flex-col items-center justify-center gap-2">
+      <div className="flex flex-col gap-5 max-w-screen-sm sm:max-w-screen-md md:max-w-[67rem]">
+        {inputs.map((input) => (
+          <div className="flex flex-col gap-5 px-5" key={input.title}>
+            <h2 className="text-xl text-center lg:text-start font-bold text-[#F6C228] uppercase text-wrap ">
+              {input.title}
+            </h2>
+            <div className="flex flex-wrap gap-6 justify-center lg:justify-normal">
+              {input.fields.map(
+                ({ label, id, type, width, placeholder, options }) => {
+                  const isRequired = !input.notrequired;
+                  switch (type) {
+                    case "text":
+                    case "email":
+                    case "tel":
+                      return (
+                        <TextField
+                          key={id}
+                          label={label}
+                          id={id}
+                          type={type}
+                          width={width}
+                          placeholder={placeholder}
+                          required={isRequired}
+                          value={formData[id]}
+                          onChange={(e) => handleChange(id, e.target.value)}
+                          onBlur={() => handleBlur(id, isRequired)}
+                          error={errors[id]}
+                        />
+                      );
+                    case "textarea":
+                      return (
+                        <TextArea
+                          label={label}
+                          id={id}
+                          type={type}
+                          width={width}
+                          required={isRequired}
+                          placeholder={placeholder}
+                          key={id}
+                        />
+                      );
+                    case "select":
+                      return (
+                        <SelectField
+                          label={label}
+                          id={id}
+                          type={type}
+                          options={options}
+                          required={isRequired}
+                          width={width}
+                          key={id}
+                        />
+                      );
+                    case "radio":
+                      return (
+                        <RadioField
+                          label={label}
+                          id={id}
+                          type={type}
+                          options={options}
+                          required={isRequired}
+                          key={id}
+                        />
+                      );
+                    case "time":
+                      return (
+                        <TimeField
+                          label={label}
+                          id={id}
+                          type={type}
+                          width={width}
+                          required={isRequired}
+                          key={id}
+                        />
+                      );
+                    case "date":
+                      return (
+                        <DateField
+                          label={label}
+                          id={id}
+                          type={type}
+                          key={id}
+                          required={isRequired}
+                        />
+                      );
+                    default:
+                      return null;
+                  }
                 }
-              }
-            )}
+              )}
+            </div>
           </div>
-        </div>
-      ))}
-      <button className="mt-4 ml-4 bg-[#F6C228] text-black p-2 rounded-md w-52">
+        ))}
+      </div>
+      <button className="lg:self-start mt-4 ml-4 bg-[#F6C228] text-black p-2 rounded-md w-52">
         Submit
       </button>
     </form>
@@ -488,12 +508,10 @@ const BookForm = () => {
 
 const Book = () => {
   return (
-    <main id="book" className=" ">
-      <div id="book-hero">
-        <img src="./bookhero.webp" />
-      </div>
+    <main id="book" className="w-full">
+      <div id="book-hero">{/* <img src="./bookhero.webp" /> */}</div>
 
-      <div className="flex flex-col justify-center items-center gap-10 pt-10">
+      <div className="flex justify-center items-center pt-10">
         <BookForm />
       </div>
     </main>

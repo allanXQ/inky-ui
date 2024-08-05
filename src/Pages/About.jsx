@@ -2,65 +2,79 @@ import React from "react";
 
 const About = () => {
   return (
-    <main id="about" className="w-screen ">
+    <main id="about" className=" flex flex-col gap-5">
       <div id="about-hero"></div>
 
-      <div className="flex flex-col justify-center items-center gap-10 pt-10">
-        <div className="w-[60rem] flex flex-col gap-5">
-          <p className="font-bold">
-            Husband, father, collegiate athlete, entrepreneur and author, Inky
-            Johnson is one of the most highly sought after speakers in the
-            world. For over a decade, executives, professional sports teams,
-            business owners and people all over have benefited from the raw
-            energy of his thought provoking and inspirational presentations.
-            Whether the topic is leadership, teamwork, excelling in the midst of
-            adversity, embracing change, mental agility or perseverance, Inky’s
-            message is effective and efficient.
+      <div className="flex flex-col justify-center items-center gap-10 pt-10 px-10 ">
+        <div className=" flex flex-col gap-5 ">
+          <p className="about-text font-bold">
+            MD brings a rich reservoir of experience and proficiency, boasting a
+            distinguished history of triumph in leadership development and
+            business growth strategies, MD has finely tuned his skills through
+            years of devoted study, hands-on application, and coaching diverse
+            teams and leaders across industries and institutions. Acknowledged
+            for his knack for sparking transformation, MD is a highly
+            sought-after speaker and trainer. His educational background
+            includes a master's degree in strategic management, a bachelor's
+            degree in entrepreneurship, and a plethora of additional
+            certificates from esteemed institutions. These include
+            certifications in people management, corporate governance, business
+            analysis and process modeling, and trainer of trainers, among
+            others.
           </p>
-          <p>
-            Inky’s gift of being an effective communicator has allowed him to
-            crossover into different industries. He is a leader called upon by
-            leaders. A partial list of his clients include Chick-fil-A, Dell
-            Technologies, Aflac Insurance, Cooks Pest Control, State Farm, AT&T
-            Comcast, Coca Cola, Bank of America, Stryker, The University Of
-            Alabama, The University of Texas, The University of Oregon. UCLA,
-            Clemson University, Orlando Magic, New York Knicks, Minnesota
-            Timberwolves, The New England Patriots, Tampa Bay Buccaneers, Los
-            Angeles Rams, New York Knicks, Baltimore Ravens, Chicago Cubs and
-            Atlanta Braves.
+          <p className="about-text">
+            Throughout his illustrious career spanning over a decade, he has
+            successfully worked with national and international corporations,
+            steadily progressing from a subordinate position to ultimately
+            becoming a respected business leader. MD's narrative within the
+            business sector exudes confidence and highlights exponential
+            development prospects. He captivates his audience by emphasizing the
+            importance of avoiding complacency and aiming high, demonstrating
+            how one can achieve great success and positively impact others. It
+            is not only his impressive personality but also his exceptional way
+            with words and life-changing anecdotes that inspire people to take
+            unprecedented action.
           </p>
-          <p>
-            Inky earned his Master’s Degree in Sports Psychology from The
-            University of Tennessee. He was a three year letterman and two year
-            Captain on the Football team, where he started as a cornerback. In
-            his junior year he was projected as a top thirty draft pick.
-            Unfortunately, on September 9th, 2006, he sustained a life
-            threatening, career ending injury that paralyzed his right arm and
-            hand. From that day to present day Inky has had a burning desire to
-            use his situation and experiences to add value to people’s lives.
+          <p className="about-text">
+            MD's remarkable credentials, combined with his inspiring stories and
+            ability to convey his message effectively, make him a truly
+            influential figure who motivates individuals to reach new heights
+            and make a lasting difference in their lives, the lives of others
+            and that of the organization. With a fervent dedication to achieving
+            excellence in every endeavor and a consistent history of remarkable
+            accomplishments,
           </p>
         </div>
         <div id="midbg"></div>
-        <div className="w-[60rem] flex flex-col gap-5">
-          <p>
-            Inky’s words have resonated all over the world— “The one thing we
-            all have in common is that we will encounter adversity, but we have
-            to decide how we respond to it. My arm and my hand are paralyzed but
-            my heart isn’t, my mind isn’t, my dedication isn’t, my work ethic
-            isn’t, my commitment isn’t.” Inky is on a mission to serve and is
-            someone that takes tremendous pride in what he does.
+        <div className="flex flex-col gap-5">
+          <p className="about-text">
+            MD offers a rich reservoir of knowledge and experience poised to
+            elevate any project or initiative. He brings a relentless commitment
+            to excellence, a keen eye for detail, and a collaborative spirit
+            that fosters synergy and drives results. His track record speaks
+            volumes, characterized by a string of successes and accolades that
+            underscore his ability to deliver tangible value and exceed
+            expectations. As He embark on new ventures, He remains steadfast in
+            his pursuit of excellence, poised to make a lasting impact and
+            inspire positive change. MD stands as a towering figure in the
+            realms of speaking and training, basking in widespread acclaim and
+            recognition garnered through a multitude of avenues.
           </p>
-          <p>
-            Inky is the host of Serendipity with Inky Johnson Podcast. He
-            devotes time to mentoring athletes and underprivileged youth and is
-            one of the founders of The Inky and Allison Johnson Foundation. Inky
-            and his wife, Allison, lives in Atlanta, Georgia with their two
-            children, Jada and Inky Jr and their puppy, Chase.
+          <p className="about-text">
+            From delivering spellbinding keynote addresses at prestigious
+            conferences to making impactful appearances in the media spotlight,
+            MD's influence resonates far and wide. Testimonials from esteemed
+            executives serve as a testament to the transformative power of MD's
+            teachings, with clients hailing the lasting change and exceptional
+            results they have witnessed firsthand. Through a seamless blend of
+            expertise, charisma, and unwavering dedication, MD continues to
+            leave an indelible mark on individuals and organizations alike,
+            shaping futures and inspiring greatness with each engagement.
           </p>
         </div>
-        <div>
-          <img src="./aboutinkys.png" width={2000} />
-        </div>
+      </div>
+      <div>
+        <img src="./aboutinkys.png" width={2000} />
       </div>
     </main>
   );

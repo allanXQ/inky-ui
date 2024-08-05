@@ -129,3 +129,17 @@
   font-size: 15px;
   letter-spacing: 1px;
 }
+
+.about-text {
+  text-wrap: wrap;
+  max-width: 60rem;
+}
+
+#book-hero {
+  background-image: url("../public/bookhero.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-origin: border-box;
+  height: 70vh;
+}
