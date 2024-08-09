@@ -302,13 +302,13 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36 ">
+        <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-40 ">
           <button
             id="hero-book-btn"
-            className="py-2 px-4 border-r border-black"
+            className="py-3 px-6 border-r border-black"
             onClick={() => navigate("/book")}
           >
-            <p className="text-md">Book Now</p>
+            <p className="text-md font-medium">Book Now</p>
           </button>
 
           <svg

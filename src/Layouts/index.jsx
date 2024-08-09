@@ -124,7 +124,7 @@ const Layout = () => {
                   About
                 </NavLink>
               </li>
-              <li className="bg-[#F6C228] text-black font-bold py-1 px-3 rounded-lg">
+              <li className="bg-[#F6C228] text-black font-bold py-2 px-4 rounded-lg">
                 <Link className="book-nav" to="/book" onClick={closeSideNav}>
                   Book Now
                 </Link>
