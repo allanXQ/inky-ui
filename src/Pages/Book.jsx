@@ -399,21 +399,22 @@ const BookForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formData);
     try {
       const response = await axios.post(
         "http://localhost:8000/api/bookings",
         formData
       );
-      console.log("Response:", response.data);
       alert("Form submitted successfully!");
       // Clear form or redirect user as needed
     } catch (error) {
       console.error("Error submitting form:", error);
       if (error.response) {
-        console.log(error.response.data);
-        setErrors(error.response.data);
-        alert(error.response.data);
+        const error_res = error.response.data;
+        console.log(error_res);
+        setErrors(error_res);
+
+        const msg = Object.keys(error_res);
+        alert(error_res[msg[0]]);
       }
     }
   };
