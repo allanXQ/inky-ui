@@ -147,19 +147,18 @@ const RadioField = ({
       </label>
       <div className="flex gap-2">
         {Array.isArray(options) &&
-          options.map((option) => (
-            <div className="flex items-center gap-2" key={option}>
+          options.map((option, index) => (
+            <div className="flex items-center gap-2" key={index}>
               <input
                 type="radio"
-                id={option}
+                id={`${id}-${option}`}
                 name={id}
-                value={
-                  option.toLowerCase() === "No".toLowerCase() ? false : true
-                }
-                className="bg-[#f6f6f6]"
+                value={option === "Yes"}
+                checked={value === (option === "Yes")}
                 onChange={onChange}
+                className="bg-[#f6f6f6]"
               />
-              <label htmlFor={option}>{option}</label>
+              <label htmlFor={`${id}-${option}`}>{option}</label>
             </div>
           ))}
       </div>
@@ -266,9 +265,9 @@ const BookForm = () => {
         { label: "Company Website", id: "company_website", type: "text" },
         {
           label: "Organization Type",
-          id: "organization_type_id", // Assuming you fetch the options from the backend
+          id: "organization_type_name",
           type: "select",
-          options: ["Select", ...organizationTypes], // Assuming organizationTypes is fetched
+          options: ["Select", ...organizationTypes],
         },
         {
           label: "Company Address",
@@ -298,9 +297,9 @@ const BookForm = () => {
         },
         {
           label: "What are you booking MD for?",
-          id: "booking_type_id", // Assuming you fetch the options from the backend
+          id: "booking_type_name",
           type: "select",
-          options: ["Select", ...bookingTypes], // Assuming bookingTypes is fetched
+          options: ["Select", ...bookingTypes],
         },
         {
           label: "Will this event be open to the public?",
@@ -338,7 +337,7 @@ const BookForm = () => {
           type: "text",
           placeholder: "30 min, 1 hour, etc",
         },
-        { label: "Email", id: "additional_email", type: "email" }, // Assuming this is meant to be additional email, adjust if needed
+        { label: "Email", id: "additional_email", type: "email" },
         {
           label: "Additional Information",
           id: "additional_information",
@@ -388,11 +387,14 @@ const BookForm = () => {
     fetchBookingTypes();
   }, []);
 
-  const handleChange = (id, value) => {
+  const handleChange = (id, value, type) => {
+    if (type === "radio") {
+      value = value === "true";
+    }
     setFormData({ ...formData, [id]: value });
     if (errors[id]) {
       setErrors({ ...errors, [id]: "" });
-    } else setErrors({ ...errors });
+    }
   };
 
   const handleSubmit = async (event) => {
@@ -487,7 +489,9 @@ const BookForm = () => {
                           required={isRequired}
                           key={id}
                           value={formData[id]}
-                          onChange={(e) => handleChange(id, e.target.value)}
+                          onChange={(e) =>
+                            handleChange(id, e.target.value, "radio")
+                          }
                         />
                       );
                     case "time":
