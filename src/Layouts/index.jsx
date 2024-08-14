@@ -1,7 +1,6 @@
-import { Outlet, useNavigate } from "react-router";
-import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
-
+import React, { useState } from "react";
+import axios from "axios";
+import { Outlet, useNavigate, NavLink, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -15,14 +14,13 @@ const ScrollToTop = () => {
   return null;
 };
 
-const Button = ({ text }) => {
-  const navigate = useNavigate();
+const Button = ({ text, onClick }) => {
   return (
     <div
-      id="hero-book-btn"
-      className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 "
+      className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 cursor-pointer"
+      onClick={onClick}
     >
-      <button className="py-2" onClick={() => navigate("/about")}>
+      <button className="py-2" type="button">
         {text}
       </button>
     </div>
@@ -31,6 +29,9 @@ const Button = ({ text }) => {
 
 const Layout = () => {
   const [sideNavOpen, setSideNavOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleSideNav = () => {
     setSideNavOpen(!sideNavOpen);
@@ -38,6 +39,31 @@ const Layout = () => {
 
   const closeSideNav = () => {
     setSideNavOpen(false);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleRequestQuote = async () => {
+    if (!email) {
+      setMessage("Please enter a valid email address.");
+      return;
+    }
+    setIsLoading(true);
+    setMessage("");
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/request-quote",
+        { email }
+      );
+      setMessage("Quote requested successfully! Please check your email.");
+      setEmail(""); // Clear the input after successful submission
+    } catch (error) {
+      setMessage("Failed to request quote. Please try again.");
+      console.error("Error requesting quote:", error);
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -134,8 +160,8 @@ const Layout = () => {
         )}
         <Outlet />
         <footer className="flex flex-col items-center justify-center gap-2 mt-10 w-screen">
-          <div id="cta" className=" flex items-center justify-center mt-5">
-            <form>
+          <div id="cta" className="flex items-center justify-center mt-5">
+            <form onSubmit={(e) => e.preventDefault()}>
               <div className="flex flex-col items-center justify-center gap-4">
                 <div className="flex flex-col items-center gap-1">
                   <p className="text-white text-3xl text-center">
@@ -148,9 +174,17 @@ const Layout = () => {
                     type="email"
                     placeholder="Enter your email address"
                     className="border border-white rounded-md w-64 px-4 py-2"
+                    value={email}
+                    onChange={handleEmailChange}
                   />
-                  <Button text="Get Quote" />
+                  <Button
+                    text={isLoading ? "Loading..." : "Get Quote"}
+                    onClick={handleRequestQuote}
+                  />
                 </div>
+                {message && (
+                  <p className="text-center text-white mt-2">{message}</p>
+                )}
               </div>
             </form>
           </div>
