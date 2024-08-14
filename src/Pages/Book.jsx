@@ -1,150 +1,5 @@
-import React, { useState } from "react";
-
-const inputs = [
-  {
-    title: "About You",
-    fields: [
-      { label: "First Name", id: "FirstName", type: "text" },
-      { label: "Last Name", id: "LastName", type: "text" },
-      { label: "Position", id: "Position", type: "text" },
-      { label: "Email", id: "Email", type: "email" },
-    ],
-  },
-  {
-    title: "Company Information",
-    fields: [
-      { label: "Company Name", id: "CompanyName", type: "text" },
-      { label: "Company Phone", id: "CompanyPhone", type: "tel" },
-      { label: "Company Website", id: "CompanyWebsite", type: "text" },
-      {
-        label: "Organization Type",
-        id: "OrganizationType",
-        type: "select",
-        options: [
-          "Religious Organisation",
-          "Small and Medium Enterprises(SMEs)",
-          "Corporate",
-          "Educational Institution",
-          "Other",
-        ],
-      },
-      {
-        label: "Company Address",
-        id: "CompanyAddress",
-        type: "text",
-        width: "full",
-      },
-    ],
-  },
-  {
-    title: "Event Details",
-    fields: [
-      {
-        label: "Event Name",
-        id: "EventName",
-        type: "text",
-      },
-      {
-        label: "Event Topic",
-        id: "EventTopic",
-        type: "text",
-      },
-      {
-        label: "Event Date(s) of Interest",
-        id: "EventDate",
-        type: "date",
-      },
-      {
-        label: "Event Budget for Speaker",
-        id: "EventBudget",
-        type: "text",
-      },
-      {
-        label: "Venue Name and Address",
-        id: "VenueNameAddress",
-        type: "text",
-      },
-      {
-        label: "Closest Airport",
-        id: "ClosestAirport",
-        type: "text",
-      },
-      {
-        label: "Planned Number of Attendees",
-        id: "Attendees",
-        type: "text",
-      },
-      {
-        label: "What are you booking MD for?",
-        id: "BookingFor",
-        type: "select",
-        options: [
-          "Corporate Training",
-          "Live and Virtual Keynotes",
-          "Breakout Sessions",
-          "Corporate Emcee",
-          "Professional Development Consulting",
-        ],
-      },
-      {
-        label: "Will this event be open to the public?",
-        id: "OpenToPublic",
-        type: "radio",
-        options: ["Yes", "No"],
-      },
-      {
-        label: "Will you record this event?",
-        id: "Recorded",
-        type: "radio",
-        options: ["Yes", "No"],
-      },
-      {
-        label: "Will tickets be sold for this event?",
-        id: "TicketsSold",
-        type: "radio",
-        options: ["Yes", "No"],
-      },
-    ],
-  },
-  {
-    title: "Presentation/Speech Details",
-    fields: [
-      {
-        label: "Event Start Time",
-        id: "EventStartTime",
-        type: "time",
-        // width: "half",
-      },
-      {
-        label: "Speaking Time",
-        id: "SpeakingTime",
-        type: "text",
-        // width: "half",
-        placeholder: "Include the time MD would speak",
-      },
-      {
-        label: "Expected Duration",
-        id: "ExpectedDuration",
-        type: "text",
-        placeholder: "30 min, 1 hour, etc",
-        // width: "half",
-      },
-      {
-        label: "Email",
-        id: "Email",
-        type: "email",
-        // width: "half",
-      },
-      {
-        label: "Additional Information",
-        id: "AdditionalInformation",
-        type: "textarea",
-        width: "full",
-        notrequired: true,
-      },
-    ],
-  },
-];
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const TextField = ({
   label,
@@ -219,6 +74,8 @@ const TextArea = ({
         className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
           error ? "border-red-500" : "border-gray-300"
         } outline-none`}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );
@@ -256,6 +113,8 @@ const SelectField = ({
         className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
           error ? "border-red-500" : "border-gray-300"
         } outline-none`}
+        value={value}
+        onChange={onChange}
       >
         {Array.isArray(options) &&
           options.map((option) => (
@@ -294,8 +153,11 @@ const RadioField = ({
                 type="radio"
                 id={option}
                 name={id}
-                value={option}
+                value={
+                  option.toLowerCase() === "No".toLowerCase() ? false : true
+                }
                 className="bg-[#f6f6f6]"
+                onChange={onChange}
               />
               <label htmlFor={option}>{option}</label>
             </div>
@@ -334,6 +196,8 @@ const TimeField = ({
         type={type}
         id={id}
         name={id}
+        value={value}
+        onChange={onChange}
         className={`border-2 rounded-md p-2 w-72 sm:w-80 lg:w-60 h-11 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
           error ? "border-red-500" : "border-gray-300"
         } outline-none`}
@@ -371,6 +235,8 @@ const DateField = ({
         type={type}
         id={id}
         name={id}
+        value={value}
+        onChange={onChange}
         className={`border-2 rounded-md w-72 sm:w-80 lg:w-60 h-11 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
           error ? "border-red-500" : "border-gray-300"
         } outline-none`}
@@ -380,6 +246,110 @@ const DateField = ({
 };
 
 const BookForm = () => {
+  const [organizationTypes, setOrganizationTypes] = useState([]);
+  const [bookingTypes, setBookingTypes] = useState([]);
+  const inputs = [
+    {
+      title: "About You",
+      fields: [
+        { label: "First Name", id: "first_name", type: "text" },
+        { label: "Last Name", id: "last_name", type: "text" },
+        { label: "Position", id: "position", type: "text" },
+        { label: "Email", id: "email", type: "email" },
+      ],
+    },
+    {
+      title: "Company Information",
+      fields: [
+        { label: "Company Name", id: "company_name", type: "text" },
+        { label: "Company Phone", id: "company_phone", type: "tel" },
+        { label: "Company Website", id: "company_website", type: "text" },
+        {
+          label: "Organization Type",
+          id: "organization_type_id", // Assuming you fetch the options from the backend
+          type: "select",
+          options: ["Select", ...organizationTypes], // Assuming organizationTypes is fetched
+        },
+        {
+          label: "Company Address",
+          id: "company_address",
+          type: "text",
+          width: "full",
+        },
+      ],
+    },
+    {
+      title: "Event Details",
+      fields: [
+        { label: "Event Name", id: "event_name", type: "text" },
+        { label: "Event Topic", id: "event_topic", type: "text" },
+        { label: "Event Date(s) of Interest", id: "event_date", type: "date" },
+        { label: "Event Budget for Speaker", id: "event_budget", type: "text" },
+        {
+          label: "Venue Name and Address",
+          id: "venue_name_address",
+          type: "text",
+        },
+        { label: "Closest Airport", id: "closest_airport", type: "text" },
+        {
+          label: "Planned Number of Attendees",
+          id: "planned_number_of_attendees",
+          type: "text",
+        },
+        {
+          label: "What are you booking MD for?",
+          id: "booking_type_id", // Assuming you fetch the options from the backend
+          type: "select",
+          options: ["Select", ...bookingTypes], // Assuming bookingTypes is fetched
+        },
+        {
+          label: "Will this event be open to the public?",
+          id: "open_to_public",
+          type: "radio",
+          options: ["Yes", "No"],
+        },
+        {
+          label: "Will you record this event?",
+          id: "recorded",
+          type: "radio",
+          options: ["Yes", "No"],
+        },
+        {
+          label: "Will tickets be sold for this event?",
+          id: "tickets_sold",
+          type: "radio",
+          options: ["Yes", "No"],
+        },
+      ],
+    },
+    {
+      title: "Presentation/Speech Details",
+      fields: [
+        { label: "Event Start Time", id: "event_start_time", type: "time" },
+        {
+          label: "Speaking Time",
+          id: "speaking_time",
+          type: "text",
+          placeholder: "Include the time MD would speak",
+        },
+        {
+          label: "Expected Duration",
+          id: "expected_duration",
+          type: "text",
+          placeholder: "30 min, 1 hour, etc",
+        },
+        { label: "Email", id: "additional_email", type: "email" }, // Assuming this is meant to be additional email, adjust if needed
+        {
+          label: "Additional Information",
+          id: "additional_information",
+          type: "textarea",
+          width: "full",
+          notrequired: true,
+        },
+      ],
+    },
+  ];
+
   const [formData, setFormData] = useState(
     inputs.reduce((acc, section) => {
       section.fields.forEach((field) => {
@@ -388,30 +358,76 @@ const BookForm = () => {
       return acc;
     }, {})
   );
+
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    const fetchOrganizationTypes = async () => {
+      const response = await axios.get(
+        "http://localhost:8000/api/admin/organization-types"
+      );
+      const orgtypes = [];
+      response.data.forEach((org) => {
+        orgtypes.push(org.name);
+      });
+      setOrganizationTypes(orgtypes);
+    };
+
+    const fetchBookingTypes = async () => {
+      const response = await axios.get(
+        "http://localhost:8000/api/admin/booking-types"
+      );
+      const booktypes = [];
+      response.data.forEach((book) => {
+        booktypes.push(book.name);
+      });
+      setBookingTypes(booktypes);
+    };
+
+    fetchOrganizationTypes();
+    fetchBookingTypes();
+  }, []);
 
   const handleChange = (id, value) => {
     setFormData({ ...formData, [id]: value });
     if (errors[id]) {
       setErrors({ ...errors, [id]: "" });
-    }
+    } else setErrors({ ...errors });
   };
 
-  const handleBlur = (id, required) => {
-    if (required && !formData[id]) {
-      setErrors({ ...errors, [id]: "This field is required" });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formData);
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/bookings",
+        formData
+      );
+      console.log("Response:", response.data);
+      alert("Form submitted successfully!");
+      // Clear form or redirect user as needed
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      if (error.response) {
+        console.log(error.response.data);
+        setErrors(error.response.data);
+        alert(error.response.data);
+      }
     }
   };
 
   return (
-    <form className="flex flex-col items-center justify-center gap-2">
+    <form
+      className="flex flex-col items-center justify-center gap-2"
+      onSubmit={handleSubmit}
+    >
       <div className="flex flex-col gap-5 max-w-screen-sm sm:max-w-screen-md md:max-w-[67rem]">
         {inputs.map((input) => (
           <div className="flex flex-col gap-5 px-5" key={input.title}>
             <h2 className="text-xl text-center lg:text-start font-bold text-[#F6C228] uppercase text-wrap ">
               {input.title}
             </h2>
-            <div className="flex flex-wrap gap-6 justify-center lg:justify-normal">
+            <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
               {input.fields.map(
                 ({ label, id, type, width, placeholder, options }) => {
                   const isRequired = !input.notrequired;
@@ -430,20 +446,21 @@ const BookForm = () => {
                           required={isRequired}
                           value={formData[id]}
                           onChange={(e) => handleChange(id, e.target.value)}
-                          onBlur={() => handleBlur(id, isRequired)}
-                          error={errors[id]}
+                          // error={errors[id]}
                         />
                       );
                     case "textarea":
                       return (
                         <TextArea
+                          key={id}
                           label={label}
                           id={id}
                           type={type}
                           width={width}
-                          required={isRequired}
                           placeholder={placeholder}
-                          key={id}
+                          required={isRequired}
+                          value={formData[id]}
+                          onChange={(e) => handleChange(id, e.target.value)}
                         />
                       );
                     case "select":
@@ -456,6 +473,8 @@ const BookForm = () => {
                           required={isRequired}
                           width={width}
                           key={id}
+                          value={formData[id]}
+                          onChange={(e) => handleChange(id, e.target.value)}
                         />
                       );
                     case "radio":
@@ -467,6 +486,8 @@ const BookForm = () => {
                           options={options}
                           required={isRequired}
                           key={id}
+                          value={formData[id]}
+                          onChange={(e) => handleChange(id, e.target.value)}
                         />
                       );
                     case "time":
@@ -478,6 +499,8 @@ const BookForm = () => {
                           width={width}
                           required={isRequired}
                           key={id}
+                          value={formData[id]}
+                          onChange={(e) => handleChange(id, e.target.value)}
                         />
                       );
                     case "date":
@@ -488,6 +511,8 @@ const BookForm = () => {
                           type={type}
                           key={id}
                           required={isRequired}
+                          value={formData[id]}
+                          onChange={(e) => handleChange(id, e.target.value)}
                         />
                       );
                     default:
@@ -499,7 +524,10 @@ const BookForm = () => {
           </div>
         ))}
       </div>
-      <button className="lg:self-start mt-4 ml-4 bg-[#F6C228] text-black p-2 rounded-md w-52">
+      <button
+        type="submit"
+        className="lg:self-start mt-4 ml-4 bg-[#F6C228] text-black p-2 rounded-md w-52"
+      >
         Submit
       </button>
     </form>
@@ -530,9 +558,9 @@ const Book = () => {
               className="size-6"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
             <p>254798765432</p>
