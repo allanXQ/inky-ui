@@ -64,13 +64,13 @@ export default function Home() {
               className="flex flex-col items-center justify-center z-20 mt-60 sm:mt-56 gap-6"
             >
               <div className="flex flex-col items-start sm:items-center justify-start leading-none gap-2 uppercase">
-                <p className="hero-big text-[#F6C228]">THE PROCESS:</p>
+                <p className="hero-big text-[#F6C228]">MD DELIVERS:</p>
                 <p className="hero-big">Insight.</p>
                 <p className="hero-big">Inspiration.</p>
                 <p className="hero-big">Action.</p>
               </div>
               <p className="hero-long max-w-[530px] text-center  text[#efefef]">
-                MD's insights, fueled by his personal story, spark leadership,
+                His insights, fueled by his personal story, spark leadership,
                 inspire greatness, and elevate service.
               </p>
               <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36 ">
@@ -249,7 +249,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
-          <p className="text-2xl">
+          <p className="text-2xl text-center">
             The one thing we all have in common is that we will encounter
             adversity, but we have to decide how we respond to it. My arm and my
             hand are paralyzed but my heart isn’t, my mind isn’t, my dedication
@@ -267,23 +267,26 @@ export default function Home() {
         </p>
         <div className="flex gap-4 items-center justify-center flex-wrap">
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./keynote.png" />
+
+            <img src="./icons/speaker.png" />
             <p className="text-center">Live & Virtual Keynotes</p>
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./breakout.png" />
+
+            <img src="./icons/happy-children.png" />
             <p className="text-center">Breakout Sessions</p>
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./breakout.png" />
+            <img src="./icons/microphone.png" />
             <p className="text-center">Corporate Emcee </p>
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./breakout.png" />
+            <img src="./icons/breakout.png" />
             <p className="text-center">Corporate Training </p>
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./breakout.png" />
+
+            <img src="./icons/arm-wrestling.png" />
             <p className="text-center">Team Building</p>
           </div>
         </div>
