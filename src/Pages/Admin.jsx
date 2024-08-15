@@ -52,19 +52,31 @@ const AdminDashboard = () => {
   };
 
   const handleAddNew = async (type) => {
-    if (!newItem) {
+    if (!newItem.trim()) {
       setError("Input cannot be empty");
       setShowModal(true);
       return;
     }
-    console.log(type, newItem);
+
+    let endpoint = `http://localhost:8000/api/${type}`;
+    if (!endpoint.endsWith("s")) {
+      endpoint += "s";
+    }
+
+    const data = {
+      name: newItem,
+    };
     try {
-      await axios.post(`http://localhost:8000/api/${type}`, { name: newItem });
-      setNewItem(""); // Clear the input after posting
-      fetchAllData(); // Refresh data after adding new item
-      setShowModal(false); // Close modal after adding
+      const response = await axios.post(endpoint, data);
+      setNewItem("");
+      fetchAllData();
+      setShowModal(false);
+      console.log("Add new item response:", response.data);
     } catch (err) {
-      setError("Failed to add new item");
+      console.error("Failed to add new item:", err);
+      setError(
+        "Failed to add new item: " + (err.response?.data.message || err.message)
+      );
       setShowModal(true);
     }
   };
@@ -79,14 +91,18 @@ const AdminDashboard = () => {
     setNewItem("");
   };
 
-  const renderAddButton = (type) => (
-    <button
-      onClick={() => openAddModal(type)}
-      className="mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-    >
-      Add New
-    </button>
-  );
+  const renderAddButton = (type) => {
+    return (
+      type !== "bookings" && (
+        <button
+          onClick={() => openAddModal(type)}
+          className="mt-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Add New
+        </button>
+      )
+    );
+  };
 
   const renderTable = (data, type) => (
     <div>
@@ -133,11 +149,12 @@ const AdminDashboard = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="container sm:px-8 text-white mt-24">
-        <div className="py-8">
-          {loading && <p>Loading...</p>}
+      {loading && <p>Loading...</p>}
+
+      <div className="container sm:px-8 text-white mt-24 ">
+        <div className="py-8 ">
           {bookings.length > 0 && (
-            <div>
+            <div className="overflow-x-scroll">
               <h2 className="text-2xl font-semibold leading-tight">Bookings</h2>
               {renderTable(bookings, "bookings")}
             </div>
