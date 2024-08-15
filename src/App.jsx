@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Layout from "./Layouts";
 import About from "./Pages/About";
 import Book from "./Pages/Book";
+import AdminPanel from "./Pages/Admin";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/book" element={<Book />} />
+        <Route path="/admin" element={<AdminPanel />} />
       </Route>
     </Routes>
   );
