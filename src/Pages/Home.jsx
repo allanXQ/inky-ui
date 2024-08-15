@@ -1,21 +1,42 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Modal from "../Components/Modal";
-
-const messages = [
-  "Transformational leadership",
-  "Customer service excellence",
-  "Capacity Building",
-  "Mental health",
-  "Professional development",
-  "Personal branding",
-];
+import axios from "axios";
 
 export default function Home() {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
   const [isTestimonial, setIsTestimonial] = useState(false);
+  const [bookingTypes, setBookingTypes] = useState([]);
+  const [signatureMessages, setSignatureMessages] = useState([]);
+
+  useEffect(() => {
+    const fetchBookingTypes = async () => {
+      const response = await axios.get(
+        "http://localhost:8000/api/booking-types"
+      );
+      const booktypes = [];
+      response.data.forEach((book) => {
+        booktypes.push(book.name);
+      });
+      setBookingTypes(booktypes);
+    };
+    const fetchSignatureMessages = async () => {
+      const response = await axios.get(
+        "http://localhost:8000/api/signature-message-topics"
+      );
+      const signaturemsg = [];
+      response.data.forEach((msg) => {
+        signaturemsg.push(msg.topic);
+      });
+
+      setSignatureMessages(signaturemsg);
+    };
+
+    fetchBookingTypes();
+    fetchSignatureMessages();
+  }, []);
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -267,12 +288,10 @@ export default function Home() {
         </p>
         <div className="flex gap-4 items-center justify-center flex-wrap">
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-
             <img src="./icons/speaker.png" />
             <p className="text-center">Live & Virtual Keynotes</p>
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-
             <img src="./icons/happy-children.png" />
             <p className="text-center">Breakout Sessions</p>
           </div>
@@ -285,7 +304,6 @@ export default function Home() {
             <p className="text-center">Corporate Training </p>
           </div>
           <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-
             <img src="./icons/arm-wrestling.png" />
             <p className="text-center">Team Building</p>
           </div>
@@ -296,7 +314,7 @@ export default function Home() {
           SIGNATURE MESSAGE TOPICS:
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
-          {messages.map((message) => (
+          {signatureMessages.map((message) => (
             <div
               key={message}
               className="flex  items-center justify-center gap-2 px-2 w-40 h-16 border border-[#636363] rounded-lg"

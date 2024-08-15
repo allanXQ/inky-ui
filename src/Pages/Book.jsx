@@ -363,7 +363,7 @@ const BookForm = () => {
   useEffect(() => {
     const fetchOrganizationTypes = async () => {
       const response = await axios.get(
-        "http://localhost:8000/api/admin/organization-types"
+        "http://localhost:8000/api/organization-types"
       );
       const orgtypes = [];
       response.data.forEach((org) => {
@@ -374,7 +374,7 @@ const BookForm = () => {
 
     const fetchBookingTypes = async () => {
       const response = await axios.get(
-        "http://localhost:8000/api/admin/booking-types"
+        "http://localhost:8000/api/booking-types"
       );
       const booktypes = [];
       response.data.forEach((book) => {
