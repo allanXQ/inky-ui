@@ -38,6 +38,30 @@ export default function Home() {
     fetchSignatureMessages();
   }, []);
 
+  const typeswithicons = [];
+
+  bookingTypes.forEach((type) => {
+    switch (type) {
+      case "Live & Virtual Keynotes":
+        typeswithicons.push({ type, icon: "./icons/speaker.png" });
+        break;
+      case "Breakout Sessions":
+        typeswithicons.push({ type, icon: "./icons/happy-children.png" });
+        break;
+      case "Corporate Emcee":
+        typeswithicons.push({ type, icon: "./icons/microphone.png" });
+        break;
+      case "Corporate Training":
+        typeswithicons.push({ type, icon: "./icons/breakout.png" });
+        break;
+      case "Team Building":
+        typeswithicons.push({ type, icon: "./icons/arm-wrestling.png" });
+        break;
+      default:
+        break;
+    }
+  });
+
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
@@ -287,26 +311,15 @@ export default function Home() {
           MD IS CURRENTLY BOOKING FOR:
         </p>
         <div className="flex gap-4 items-center justify-center flex-wrap">
-          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./icons/speaker.png" />
-            <p className="text-center">Live & Virtual Keynotes</p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./icons/happy-children.png" />
-            <p className="text-center">Breakout Sessions</p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./icons/microphone.png" />
-            <p className="text-center">Corporate Emcee </p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./icons/breakout.png" />
-            <p className="text-center">Corporate Training </p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md">
-            <img src="./icons/arm-wrestling.png" />
-            <p className="text-center">Team Building</p>
-          </div>
+          {typeswithicons.map((type) => (
+            <div
+              key={type.type}
+              className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md"
+            >
+              <img src={type.icon} />
+              <p className="text-center">{type.type}</p>
+            </div>
+          ))}
         </div>
       </div>
       <div className="flex flex-col items-center gap-8">
