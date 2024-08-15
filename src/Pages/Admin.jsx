@@ -7,16 +7,17 @@ const AdminDashboard = () => {
   const [organizationTypes, setOrganizationTypes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const fetchAllData = async () => {
     try {
       setLoading(true);
       const bookingsRes = await axios.get("http://localhost:8000/api/bookings");
       const bookingTypesRes = await axios.get(
-        "http://localhost:8000/api/admin/booking-types"
+        "http://localhost:8000/api/booking-types"
       );
       const organizationTypesRes = await axios.get(
-        "http://localhost:8000/api/admin/organization-types"
+        "http://localhost:8000/api/organization-types"
       );
       setBookings(bookingsRes.data);
       setBookingTypes(bookingTypesRes.data);
@@ -24,7 +25,7 @@ const AdminDashboard = () => {
       setLoading(false);
     } catch (err) {
       setError("Failed to fetch data");
-      console.error(err);
+      setShowModal(true);
       setLoading(false);
     }
   };
@@ -39,7 +40,12 @@ const AdminDashboard = () => {
       fetchAllData(); // Refresh data after deletion
     } catch (err) {
       setError("Failed to delete the item");
+      setShowModal(true);
     }
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   const renderTable = (data, type) => (
@@ -63,12 +69,12 @@ const AdminDashboard = () => {
             {Object.values(item).map((val, index) => (
               <td
                 key={index}
-                className="px-5 py-5 border-b border-gray-200 lg:max-w-[40vw] text-sm"
+                className="px-5 py-5 border-b border-gray-200  text-sm"
               >
                 {val}
               </td>
             ))}
-            <td className="px-5 py-5 border-b border-gray-200 lg:max-w-[40vw] text-sm">
+            <td className="px-5 py-5 border-b border-gray-200  text-sm">
               <button
                 onClick={() => handleDelete(item.id, type)}
                 className="text-red-500 hover:text-red-700"
@@ -83,12 +89,10 @@ const AdminDashboard = () => {
   );
 
   return (
-    <div
-      className="
-    flex flex-col items-center"
-    >
-      <div className="container sm:px-8 text-white mt-24 ">
+    <div className="flex flex-col items-center">
+      <div className="container sm:px-8 text-white mt-24">
         <div className="py-8">
+          {loading && <p>Loading...</p>}
           <div className="overflow-x-scroll">
             <h2 className="text-2xl font-semibold leading-tight">Bookings</h2>
             {bookings.length > 0 ? (
@@ -119,6 +123,20 @@ const AdminDashboard = () => {
           </div>
         </div>
       </div>
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 text-white flex justify-center items-center">
+          <div className=" p-5 rounded-lg">
+            <h2 className="text-lg font-bold">Error</h2>
+            <p className="mb-4">{error}</p>
+            <button
+              onClick={handleCloseModal}
+              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
