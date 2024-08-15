@@ -5,6 +5,7 @@ const AdminDashboard = () => {
   const [bookings, setBookings] = useState([]);
   const [bookingTypes, setBookingTypes] = useState([]);
   const [organizationTypes, setOrganizationTypes] = useState([]);
+  const [signatureMessages, setSignatureMessages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -19,9 +20,13 @@ const AdminDashboard = () => {
       const organizationTypesRes = await axios.get(
         "http://localhost:8000/api/organization-types"
       );
+      const signaturemsg = await axios.get(
+        "http://localhost:8000/api/signature-message-topics"
+      );
       setBookings(bookingsRes.data);
       setBookingTypes(bookingTypesRes.data);
       setOrganizationTypes(organizationTypesRes.data);
+      setSignatureMessages(signaturemsg.data);
       setLoading(false);
     } catch (err) {
       setError("Failed to fetch data");
@@ -119,6 +124,17 @@ const AdminDashboard = () => {
               renderTable(organizationTypes, "organization-types")
             ) : (
               <p>No organization types available</p>
+            )}
+          </div>
+
+          <div className="mt-8">
+            <h2 className="text-2xl font-semibold leading-tight">
+              Signature Messages
+            </h2>
+            {signatureMessages.length > 0 ? (
+              renderTable(signatureMessages, "signature-message-topics")
+            ) : (
+              <p>No signature messages available</p>
             )}
           </div>
         </div>
