@@ -73,8 +73,8 @@ const Layout = () => {
         <nav className="flex items-center justify-between text-white w-[95vw] px-10 absolute top-0">
           <img
             src="./inkylogo.png"
-            width={110}
-            height={110}
+            width={150}
+            height={150}
             alt="Inky Logo"
             className=""
           />
@@ -188,7 +188,12 @@ const Layout = () => {
               </div>
             </form>
           </div>
-          <img src="./footerlogo.png" alt="Footer Logo" />
+          <img
+            src="./footerlogo.png"
+            alt="Footer Logo"
+            width={150}
+            height={150}
+          />
           <div className="flex items-center justify-center gap-2">
             <img src="./ig.webp" alt="Instagram" />
             <img src="./fb.webp" alt="Facebook" />

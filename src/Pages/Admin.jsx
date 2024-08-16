@@ -81,6 +81,16 @@ const AdminDashboard = () => {
     }
   };
 
+  const markBookingAsDone = async (id) => {
+    try {
+      await axios.post(`http://localhost:8000/api/bookings/${id}/done`, {});
+      fetchAllData();
+    } catch (err) {
+      setError("Failed to mark booking as done");
+      setShowModal(true);
+    }
+  };
+
   const openAddModal = (type) => {
     setModalType(type);
     setShowModal(true);
@@ -123,22 +133,41 @@ const AdminDashboard = () => {
         <tbody>
           {data.map((item) => (
             <tr key={item.id}>
+              {console.log(item)}
               {Object.values(item).map((val, index) => (
                 <td
                   key={index}
                   className="px-5 py-5 border-b border-gray-200 text-sm"
                 >
-                  {val}
+                  {type === "bookings" && val == 1 && index === 5
+                    ? "Yes"
+                    : type === "bookings" && val == 0
+                    ? "No"
+                    : val}
                 </td>
               ))}
-              <td className="px-5 py-5 border-b border-gray-200 text-sm">
-                <button
-                  onClick={() => handleDelete(item.id, type)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  Delete
-                </button>
-              </td>
+              {
+                // Render a button to mark booking as done
+                type !== "bookings" ? (
+                  <td className="px-5 py-5 border-b border-gray-200 text-sm">
+                    <button
+                      onClick={() => handleDelete(item.id, type)}
+                      className="text-red-500 hover:text-red-700"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                ) : (
+                  <td className="px-5 py-5 border-b border-gray-200 text-sm">
+                    <button
+                      onClick={() => markBookingAsDone(item.id)}
+                      className="text-green-500 hover:text-green-700"
+                    >
+                      Mark as Done
+                    </button>
+                  </td>
+                )
+              }
             </tr>
           ))}
         </tbody>
@@ -155,13 +184,15 @@ const AdminDashboard = () => {
         <div className="py-8 ">
           {bookings.length > 0 && (
             <div className="overflow-x-scroll">
-              <h2 className="text-2xl font-semibold leading-tight">Bookings</h2>
+              <h2 className="text-2xl font-semibold leading-tight py-2">
+                Bookings
+              </h2>
               {renderTable(bookings, "bookings")}
             </div>
           )}
           {bookingTypes.length > 0 && (
             <div className="mt-8">
-              <h2 className="text-2xl font-semibold leading-tight">
+              <h2 className="text-2xl font-semibold leading-tight py-2">
                 Booking Types
               </h2>
               {renderTable(bookingTypes, "booking-types")}
@@ -169,7 +200,7 @@ const AdminDashboard = () => {
           )}
           {organizationTypes.length > 0 && (
             <div className="mt-8">
-              <h2 className="text-2xl font-semibold leading-tight">
+              <h2 className="text-2xl font-semibold leading-tight py-2">
                 Organization Types
               </h2>
               {renderTable(organizationTypes, "organization-types")}
@@ -177,7 +208,7 @@ const AdminDashboard = () => {
           )}
           {signatureMessages.length > 0 && (
             <div className="mt-8">
-              <h2 className="text-2xl font-semibold leading-tight">
+              <h2 className="text-2xl font-semibold leading-tight py-2">
                 Signature Messages
               </h2>
               {renderTable(signatureMessages, "signature-message-topics")}
