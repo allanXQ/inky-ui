@@ -102,17 +102,17 @@ export default function Home() {
               src="./Inky.webp"
               width={349}
               height={700}
-              className="absolute  md:left-48 top-32 md:top-20"
+              className="absolute  md:left-48 top-32 md:top-24"
             />
             <div
               id="hero-text"
-              className="flex flex-col items-center justify-center z-20 mt-60 sm:mt-56 gap-6"
+              className="flex flex-col items-center justify-center z-20 mt-60 sm:mt gap-6"
             >
               <div className="flex flex-col items-start sm:items-center justify-start leading-none gap-2 uppercase">
-                <p className="hero-big text-[#F6C228]">MD DELIVERS:</p>
-                <p className="hero-big">Insight.</p>
-                <p className="hero-big">Inspiration.</p>
-                <p className="hero-big">Action.</p>
+                <p className="text-[#F6C228] anton-large">MD DELIVERS:</p>
+                <p className="anton-large">Insight.</p>
+                <p className="anton-large">Inspiration.</p>
+                <p className="anton-large">Action.</p>
               </div>
               <p className="hero-long max-w-[530px] text-center  text[#efefef]">
                 His insights, fueled by his personal story, spark leadership,
@@ -368,17 +368,17 @@ export default function Home() {
               <div className="flex items-center">
                 <img src="./lines.png" className="hidden sm:block" />
                 <div className="flex flex-col font-bold gap-2 text-5xl">
-                  <div className="flex flex-col gap-4 items-center">
+                  <div className="flex flex-col gap-4 ">
                     <div>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-2 anton-larger">
                         <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
                       </div>
                       <p>TODAY!</p>
                     </div>
-                    <div className="bg-[#F6C228] text-black flex items-center text-sm font-normal rounded-lg w-36 ">
+                    <div className="bg-[#F6C228] text-black flex items-center text-[1rem] font-normal rounded-lg w-36 h-10">
                       <button
                         id="hero-book-btn"
-                        className="py-2 px-4 border-r border-black"
+                        className="bg-[#F6C228] py-2 px-4 border-r border-black"
                         onClick={() => navigate("/book")}
                       >
                         <p className="text-md">Book Now</p>
