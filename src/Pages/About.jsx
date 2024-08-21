@@ -14,7 +14,7 @@ const About = () => {
       </div>
 
       <div className="flex flex-col justify-center items-center gap-10 pt-10">
-        <div className="flex flex-col gap-5 md:max-w-[80vw] px-2 md:px-2">
+        <div className="flex flex-col gap-5 max-w-[95vw] md:max-w-[80vw]">
           <p className="about-text font-bold">
             MD brings a rich reservoir of experience and proficiency, boasting a
             distinguished history of triumph in leadership development and
@@ -55,9 +55,9 @@ const About = () => {
         </div>
         <div
           id="about-midbg"
-          className="about-text h-[50vh] w-full sm:h-[80vh] sm:bg-fixed md:max-w-[80vw]"
+          className="about-text h-[20vh] w-[100%] sm:h-[80vh] sm:bg-fixed md:max-w-[80vw]"
         ></div>
-        <div className="flex flex-col gap-5 md:max-w-[80vw] px-2 md:px-2">
+        <div className="flex flex-col gap-5 max-w-[95vw] md:max-w-[80vw]">
           <p className="about-text">
             MD offers a rich reservoir of knowledge and experience poised to
             elevate any project or initiative. He brings a relentless commitment
