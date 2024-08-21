@@ -98,12 +98,11 @@
   width: 75vw;
 }
 
-.about-p1-text,
-.about-p2-text {
+.about-text {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   line-height: 27px;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.9px;
 }
 
 .about-p1-text {

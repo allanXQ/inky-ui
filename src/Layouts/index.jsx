@@ -96,7 +96,7 @@ const Layout = () => {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="#F6C228"
-              className="size-6"
+              className="size-10"
             >
               <path
                 fillRule="evenodd"
