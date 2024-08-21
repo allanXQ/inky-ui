@@ -2,24 +2,19 @@ import React from "react";
 
 const About = () => {
   return (
-    <main id="about" className=" flex flex-col gap-5">
+    <main id="about" className="flex flex-col gap-5 w-[100vw]">
       <div
         id="about-hero"
-        className="flex flex-col justify-center text-white gap-2 pl-5  md:pl-52 pt-10"
+        className="flex flex-col justify-center text-white gap-2 pl-5  md:pl-52 pt-10 sm:bg-fixed"
       >
         <div className="flex  gap-2 text-5xl anton-larger">
           <p className="text-[#F6C228]">WHO IS</p>
           <p>MD?</p>
         </div>
-        {/* <h2 className="clients-h2 max-w-[520px]  text[#efefef]">
-          MD is a highly sought-after speaker and trainer, with a rich reservoir
-          of experience and proficiency in leadership development and business
-          growth strategies.
-        </h2> */}
       </div>
 
-      <div className="flex flex-col justify-center items-center gap-10 pt-10 px-10 ">
-        <div className=" flex flex-col gap-5 ">
+      <div className="flex flex-col justify-center items-center gap-10 pt-10">
+        <div className="flex flex-col gap-5 md:max-w-[80vw] px-2 md:px-2">
           <p className="about-text font-bold">
             MD brings a rich reservoir of experience and proficiency, boasting a
             distinguished history of triumph in leadership development and
@@ -58,8 +53,11 @@ const About = () => {
             accomplishments,
           </p>
         </div>
-        <div id="midbg" className="about-text"></div>
-        <div className="flex flex-col gap-5">
+        <div
+          id="about-midbg"
+          className="about-text h-[50vh] w-full sm:h-[80vh] sm:bg-fixed md:max-w-[80vw]"
+        ></div>
+        <div className="flex flex-col gap-5 md:max-w-[80vw] px-2 md:px-2">
           <p className="about-text">
             MD offers a rich reservoir of knowledge and experience poised to
             elevate any project or initiative. He brings a relentless commitment

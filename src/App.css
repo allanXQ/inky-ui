@@ -1,15 +1,11 @@
 .anton-large {
   font-family: "Anton", sans-serif;
-  /* font-style: bold; */
-  /* font-weight: 100; */
   font-size: 3rem;
   letter-spacing: 1px;
   word-spacing: 3px;
 }
 .anton-larger {
   font-family: "Anton", sans-serif;
-  /* font-style: bold; */
-  /* font-weight: 100; */
   font-size: 3rem;
   letter-spacing: 3px;
   word-spacing: 3px;
@@ -80,7 +76,6 @@
   background-image: url("../public/inkyabt.webp");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   height: 70vh;
 }
 
@@ -89,13 +84,10 @@
   background-color: white;
 }
 
-#midbg {
+#about-midbg {
   background-image: url("../public/midbg.webp");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  height: 80vh;
-  width: 75vw;
 }
 
 .about-text {
@@ -103,6 +95,7 @@
   font-size: 15px;
   line-height: 27px;
   letter-spacing: 0.9px;
+  text-wrap: wrap;
 }
 
 .about-p1-text {
@@ -127,11 +120,6 @@
   letter-spacing: 1px;
 }
 
-.about-text {
-  text-wrap: wrap;
-  max-width: 60rem;
-}
-
 #book-hero {
   background-image: url("../public/bookhero.webp");
   background-size: cover;
@@ -139,6 +127,14 @@
   background-attachment: fixed;
   background-origin: border-box;
   height: 70vh;
+  width: 100vw;
+}
+
+@media screen and (max-width: 768px) {
+  #book-hero {
+    background-image: url("../public/bgsm.webp");
+    height: 40vh;
+  }
 }
 
 .bg-gradient {
