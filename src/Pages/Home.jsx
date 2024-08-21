@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Modal from "../Components/Modal";
 import axios from "axios";
+import BookButton from "../Components/BookButton";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -114,34 +115,11 @@ export default function Home() {
                 <p className="anton-large">Inspiration.</p>
                 <p className="anton-large">Action.</p>
               </div>
-              <p className="hero-long max-w-[530px] text-center  text[#efefef]">
+              <p className="montserrat-regular max-w-[530px] text-center  text[#efefef]">
                 His insights, fueled by his personal story, spark leadership,
                 inspire greatness, and elevate service.
               </p>
-              <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-36 ">
-                <button
-                  id="hero-book-btn"
-                  className="py-2 px-4 border-r border-black"
-                  onClick={() => navigate("/book")}
-                >
-                  <p className="text-sm">Book MD</p>
-                </button>
-
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-8 pl-3"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </div>
+              <BookButton text="Book MD" path="book" />
             </div>
           </div>
         </div>
@@ -336,30 +314,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-40 ">
-          <button
-            id="hero-book-btn"
-            className="py-3 px-6 border-r border-black"
-            onClick={() => navigate("/book")}
-          >
-            <p className="text-md font-medium">Book Now</p>
-          </button>
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-8 pl-3"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-            />
-          </svg>
-        </div>
+        <BookButton text="Book Now" path="book" />
       </div>
       <div id="testimonials">
         <div className="flex flex-col sm:flex-row gap-20 md:gap-24 mt-4 items-center justify-center px-2 sm:px-0 max-w-[98vw]">
@@ -367,38 +322,15 @@ export default function Home() {
             <div className="flex flex-col gap-10 sm:gap-4 flex-wrap items-center justify-center">
               <div className="flex items-center">
                 <img src="./lines.png" className="hidden sm:block" />
-                <div className="flex flex-col font-bold gap-2 text-5xl">
+                <div className="flex flex-col gap-2 ">
                   <div className="flex flex-col gap-4 ">
-                    <div>
+                    <div className="font-bold text-5xl">
                       <div className="flex flex-wrap gap-2 anton-larger">
                         <p>BOOK</p> <p className="text-[#F6C228]">MD</p>
                       </div>
                       <p>TODAY!</p>
                     </div>
-                    <div className="bg-[#F6C228] text-black flex items-center text-[1rem] font-normal rounded-lg w-36 h-10">
-                      <button
-                        id="hero-book-btn"
-                        className="bg-[#F6C228] py-2 px-4 border-r border-black"
-                        onClick={() => navigate("/book")}
-                      >
-                        <p className="text-md">Book Now</p>
-                      </button>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1.5}
-                        stroke="currentColor"
-                        className="size-8 pl-3"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                        />
-                      </svg>
-                    </div>
+                    <BookButton text="Book Now" path="book" />
                   </div>
                 </div>
               </div>
