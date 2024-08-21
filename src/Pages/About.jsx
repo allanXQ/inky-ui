@@ -55,7 +55,7 @@ const About = () => {
         </div>
         <div
           id="about-midbg"
-          className="about-text h-[20vh] w-[100%] sm:h-[80vh] sm:bg-fixed md:max-w-[80vw]"
+          className="about-text h-[50vh] w-[100%] sm:h-[80vh] sm:bg-fixed md:max-w-[80vw]"
         ></div>
         <div className="flex flex-col gap-5 max-w-[95vw] md:max-w-[80vw]">
           <p className="about-text">
