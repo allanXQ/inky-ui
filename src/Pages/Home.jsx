@@ -108,7 +108,7 @@ export default function Home() {
               id="hero-text"
               className="flex flex-col items-center justify-center z-20 mt-60 sm:mt gap-6"
             >
-              <div className="flex flex-col items-start sm:items-center justify-start leading-none gap-2 uppercase">
+              <div className="flex flex-col items-center justify-start leading-none gap-2 uppercase">
                 <p className="text-[#F6C228] anton-large">MD DELIVERS:</p>
                 <p className="anton-large">Insight.</p>
                 <p className="anton-large">Inspiration.</p>

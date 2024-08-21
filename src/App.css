@@ -148,6 +148,14 @@
     font-size: 13px;
     line-height: 24px;
   }
+
+  .anton-large {
+    font-size: 2rem;
+  }
+
+  .montserrat-regular {
+    font-size: 13px;
+  }
 }
 
 .bg-gradient {
