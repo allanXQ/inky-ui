@@ -339,9 +339,9 @@ export default function Home() {
           <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl lg:max-w-[40vw] h-fit p-10 relative ">
             <img
               src="./topquote.png"
-              width={40}
-              height={40}
-              className="absolute top-[-30px] left-[1px]"
+              width={70}
+              height={30}
+              className="absolute top-[-30px] left-[-30px]"
             />
             <p>
               The messages of dealing with adversity, building character and
@@ -383,9 +383,9 @@ export default function Home() {
             </div>
             <img
               src="./bottomquote.png"
-              width={40}
-              height={40}
-              className="absolute bottom-[-30px] right-[1px]"
+              width={70}
+              height={30}
+              className="absolute bottom-[-30px] right-[-20px]"
             />
           </div>
         </div>
