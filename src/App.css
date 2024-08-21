@@ -40,16 +40,15 @@
   }
 }
 
-.book-nav {
-  &:hover {
-    color: black;
-  }
-}
-
 .montserrat-regular {
   font-family: "Montserrat", sans-serif;
   font-size: 17px;
   letter-spacing: 2px;
+}
+.montserrat-nav {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
 }
 
 #comp-ky2hvz0a {

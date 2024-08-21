@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Outlet, useNavigate, NavLink, Link } from "react-router-dom";
+import { Outlet, NavLink, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BookButton from "../Components/BookButton";
@@ -13,19 +13,6 @@ const ScrollToTop = () => {
   }, [pathname]);
 
   return null;
-};
-
-const Button = ({ text, onClick }) => {
-  return (
-    <div
-      className="bg-[#F6C228] text-black flex items-center justify-center rounded-lg w-40 cursor-pointer"
-      onClick={onClick}
-    >
-      <button className="py-2" type="button">
-        {text}
-      </button>
-    </div>
-  );
 };
 
 const Layout = () => {
@@ -79,19 +66,27 @@ const Layout = () => {
             alt="Inky Logo"
             className=""
           />
-          <ul className="hidden sm:flex items-center gap-8">
+          <ul className="hidden sm:flex items-center gap-8 ">
             <li>
-              <NavLink activeClassName="active" to="/home">
+              <NavLink
+                activeClassName="active"
+                to="/home"
+                className="montserrat-nav"
+              >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/about">
+              <NavLink
+                activeClassName="active"
+                to="/about"
+                className="montserrat-nav"
+              >
                 About
               </NavLink>
             </li>
-            <li className="bg-[#F6C228] text-black font-bold py-1 px-3 rounded-lg">
-              <Link to="/book" className="book-nav">
+            <li className="bg-[#F6C228] text-black font-semibold w-[6.5rem] h-[2rem] rounded-md flex items-center justify-center hover:bg-white hover:text-black">
+              <Link to="/book" className="book-nav text-lg hover:text-black">
                 Book Now
               </Link>
             </li>
