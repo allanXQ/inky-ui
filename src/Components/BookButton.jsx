@@ -10,7 +10,7 @@ const BookButton = ({ text, path, onClick }) => {
         className="py-2 px-4  hover:bg-black hover:text-white flex items-center h-[2.6rem]"
         onClick={onClick ? onClick : () => navigate(`/${path}`)}
       >
-        <p className="montserrat-regular text-sm">{text}</p>
+        <p className="montserrat-regular text-sm font-medium">{text}</p>
       </button>
 
       <div
