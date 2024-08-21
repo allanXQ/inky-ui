@@ -99,11 +99,10 @@ export default function Home() {
         >
           <div className="flex items-center justify-center gap-4 w-2/3">
             <img
-              id="hero-inky"
-              src="./Inky.webp"
+              src="./mdhero.webp"
               width={349}
               height={700}
-              className="absolute  md:left-48 top-32 md:top-24"
+              className="mirror-image absolute  md:left-48 top-32 md:top-24"
             />
             <div
               id="hero-text"
