@@ -1,14 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-const BookButton = ({ text, path }) => {
+const BookButton = ({ text, path, onClick }) => {
   const navigate = useNavigate();
   return (
-    <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-[10rem] h-[2.5rem] hover:rounded-lg hover:cursor-pointer">
+    <div className="bg-[#F6C228] text-black flex items-center rounded-lg w-[10rem] h-[2.6rem] hover:rounded-lg hover:cursor-pointer">
       <button
         id="hero-book-btn"
-        className="py-2 px-4  hover:bg-black hover:text-white flex items-center h-[2.5rem]"
-        onClick={() => navigate(`/${path}`)}
+        className="py-2 px-4  hover:bg-black hover:text-white flex items-center h-[2.6rem]"
+        onClick={onClick ? onClick : () => navigate(`/${path}`)}
       >
         <p className="montserrat-regular text-sm">{text}</p>
       </button>
@@ -16,7 +16,7 @@ const BookButton = ({ text, path }) => {
       <div
         style={{
           borderRight: "1px solid black",
-          height: "2.5rem",
+          height: "2.6rem",
         }}
       ></div>
 
@@ -26,7 +26,7 @@ const BookButton = ({ text, path }) => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className=" size-8 pl-2"
+        className="size-8 pl-2"
       >
         <path
           strokeLinecap="round"

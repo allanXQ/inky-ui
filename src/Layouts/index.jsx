@@ -3,6 +3,7 @@ import axios from "axios";
 import { Outlet, useNavigate, NavLink, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import BookButton from "../Components/BookButton";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -177,7 +178,7 @@ const Layout = () => {
                     value={email}
                     onChange={handleEmailChange}
                   />
-                  <Button
+                  <BookButton
                     text={isLoading ? "Loading..." : "Get Quote"}
                     onClick={handleRequestQuote}
                   />
