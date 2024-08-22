@@ -127,7 +127,7 @@ export default function Home() {
       </div>
       <div
         id="clients"
-        className="flex flex-col items-center justify-center mt-80 xl:mt-10"
+        className="flex flex-col items-center justify-center mt-10 xl:mt-10"
       >
         <h2 className="clients-h2 max-w-[530px] text-center text[#efefef]">
           SOME OF MD'S CLIENTS INCLUDE
