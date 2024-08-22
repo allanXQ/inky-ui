@@ -99,7 +99,7 @@ export default function Home() {
         >
           <div className="flex items-center justify-center gap-4 w-2/3">
             <img
-              src="./mdhero.webp"
+              src="./mdhero.png"
               width={349}
               height={700}
               className="mirror-image absolute  md:left-48 top-32 md:top-24"
@@ -110,9 +110,11 @@ export default function Home() {
             >
               <div className="flex flex-col items-center justify-start leading-none gap-2 uppercase">
                 <p className="text-[#F6C228] anton-large">MD DELIVERS:</p>
-                <p className="anton-large">Insight.</p>
-                <p className="anton-large">Inspiration.</p>
-                <p className="anton-large">Action.</p>
+                <p className="anton-large animate-slideInLeft-1">Insight.</p>
+                <p className="anton-large animate-slideInRight-1">
+                  Inspiration.
+                </p>
+                <p className="anton-large animate-slideInLeft-2">Action.</p>
               </div>
               <p className="montserrat-regular max-w-[530px] text-center  text[#efefef]">
                 His insights, fueled by his personal story, spark leadership,
