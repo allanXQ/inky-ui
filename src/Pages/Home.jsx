@@ -385,7 +385,7 @@ export default function Home() {
               src="./bottomquote.png"
               width={70}
               height={30}
-              className="absolute bottom-[-35px] right-[-20px]"
+              className="absolute bottom-[-35px] right-[-10px] md:right-[-20px]"
             />
           </div>
         </div>
