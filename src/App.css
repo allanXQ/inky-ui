@@ -183,6 +183,11 @@
   pointer-events: none;
 }
 
+.meetmd-img {
+  max-width: 100%; /* Image won't exceed the width of its container */
+  max-height: 500px;
+}
+
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
@@ -206,11 +211,12 @@
 }
 
 .animate-slideInLeft-1 {
-  animation: slideInLeft 0.5s ease-out forwards;
+  /* animation: slideInLeft 1s ease-in 1s running; */
+  animation: slideInLeft 1s ease-out 0s forwards;
 }
 
 .animate-slideInRight-1 {
-  animation: slideInRight 2s ease-out forwards;
+  animation: slideInRight 2s ease-out running;
 }
 
 .animate-slideInLeft-2 {

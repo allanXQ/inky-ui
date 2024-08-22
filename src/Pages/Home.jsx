@@ -342,7 +342,7 @@ export default function Home() {
               src="./topquote.png"
               width={70}
               height={30}
-              className="absolute top-[-30px] left-[-30px]"
+              className="absolute top-[-30px] left-[-30px] animate-slideInLeft-1"
             />
             <p>
               The messages of dealing with adversity, building character and
