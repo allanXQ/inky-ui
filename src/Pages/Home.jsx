@@ -187,9 +187,9 @@ export default function Home() {
 
       <div
         id="meetinky"
-        className="flex items-center justify-center flex-wrap gap-4"
+        className="flex items-center justify-center flex-wrap gap-10"
       >
-        <div className="flex flex-col gap-4 max-w-[600px] px-2">
+        <div className="flex flex-col gap-4 max-w-[600px] px-2 mt-20">
           <div className="flex">
             <img src="./lines.png" className="" />
 
@@ -243,15 +243,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img src="./inky2.webp" />
+        <img src="./meetmd.png" className="max-w-[500px] " />
       </div>
       <div
         id="quote"
-        className="flex flex-col items-center justify-center w-full relative px-4"
+        className="flex flex-col items-center justify-center w-full relative px-4 mt-24"
       >
         <div>
           <div id="comp-ky2hvz0a" data-motion-enter="done">
-            <div data-testid="svgRoot-comp-ky2hvz0a">
+            <div data-testid="svgRoot-comp-ky2hvz0a" className="max-w-36">
               <svg
                 preserveAspectRatio="xMidYMid meet"
                 data-bbox="0 0 770.35 1260.4"
