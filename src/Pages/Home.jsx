@@ -76,7 +76,7 @@ export default function Home() {
     setModalContent(
       <div className=" max-h-[400px]">
         <h2 className="text-2xl font-bold mb-4">Full Testimonial</h2>
-        <div className="montserrat-regular text-center">
+        <div className="big-shoulders-regular text-center">
           <p className="flex text-center">
             My sincere appreciation for the exceptional training you delivered
             to our team of managers on transformational leadership. Your
@@ -362,7 +362,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row gap-20 md:gap-24 mt-4 items-center justify-center px-2 sm:px-0 max-w-[98vw]">
           <div className="flex gap-5">
             <div className="flex flex-col gap-10 sm:gap-4 flex-wrap items-center justify-center">
-              <div className="flex items-center">
+              <div className="flex items-center gap-5">
                 <img src="./lines.png" className="hidden sm:block" />
                 <div className="flex flex-col gap-2 ">
                   <div className="flex flex-col gap-4 ">
@@ -378,7 +378,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl lg:max-w-[40vw] h-fit p-10 relative ">
+          <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl lg:max-w-[45vw] h-fit p-10 relative ">
             <img
               src="./topquote.png"
               className="absolute top-[-40px]  left-[-10px] md:left-[-20px] animate-slideInLeft-1 w-18"

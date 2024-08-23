@@ -47,13 +47,8 @@
 
 .montserrat-regular {
   font-family: "Montserrat", sans-serif;
-  font-size: 26px;
-  /* letter-spacing: 2px; */
-  font-stretch: 100%;
-  font-weight: 600;
-  line-height: 26px;
-  letter-spacing: 1.3px;
-  word-spacing: 0px;
+  font-size: 17px;
+  letter-spacing: 2px;
 }
 
 .montserrat-btn {
