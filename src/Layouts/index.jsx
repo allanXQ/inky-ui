@@ -61,8 +61,8 @@ const Layout = () => {
         <nav className="flex items-center justify-between text-white w-[95vw] px-10 fixed top-0 z-10">
           <img
             src="./inkylogo.png"
-            width={150}
-            height={150}
+            width={120}
+            height={120}
             alt="Inky Logo"
             className=""
           />
