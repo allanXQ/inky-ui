@@ -9,7 +9,6 @@ export default function Home() {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
-  const [isTestimonial, setIsTestimonial] = useState(false);
   const [bookingTypes, setBookingTypes] = useState([]);
   const [signatureMessages, setSignatureMessages] = useState([]);
 
@@ -68,13 +67,14 @@ export default function Home() {
     setIsModalOpen(!isModalOpen);
   };
 
-  const toggleTestimonial = () => {
-    setIsTestimonial(!isTestimonial);
-  };
-
   const openTestimonialModal = () => {
     setModalContent(
       <div className="flex flex-col items-center justify-center w-full p-3">
+        <img
+          src="./topquote.png"
+          className="absolute top-[-20px]  left-[-10px] md:left-[-20px]  w-18"
+        />
+
         <div className=" flex flex-col gap-5 big-shoulders-regular text-center">
           <p className="flex text-center">
             My sincere appreciation for the exceptional training you delivered
@@ -105,10 +105,15 @@ export default function Home() {
         </div>
         <p className="mt-4 text-2xl font-bold">- WINNIE</p>
         <p className="clients-h2">HR MANAGER, MERIDIAN EQUATOR</p>
+        <img
+          src="./bottomquote.png"
+          width={70}
+          height={30}
+          className="absolute bottom-[-20px] right-[-10px] md:right-[-30px]"
+        />
       </div>
     );
     toggleModal();
-    toggleTestimonial();
   };
 
   const clientimages = [
@@ -210,11 +215,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient"></div>
       </div>
 
-      <Modal
-        show={isModalOpen}
-        onClose={toggleModal}
-        isTestimonial={isTestimonial}
-      >
+      <Modal show={isModalOpen} onClose={toggleModal}>
         {modalContent}
       </Modal>
 
