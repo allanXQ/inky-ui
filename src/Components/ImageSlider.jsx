@@ -2,33 +2,29 @@ import React, { useState, useEffect } from "react";
 import "./ImageSlider.css"; // Importing CSS for animations
 
 const ImageSlider = ({ images }) => {
-  const [currentBatch, setCurrentBatch] = useState(0);
-  const batchCount = 8; // Number of images per batch
+  const [currentBatchIndex, setCurrentBatchIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentBatch(
-        (prev) => (prev + 1) % Math.ceil(images.length / batchCount)
-      );
-    }, 3000); // Change image set every 3 seconds
+      setCurrentBatchIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Rotate batches every 3 seconds
 
     return () => clearInterval(interval);
-  }, [images.length, batchCount]);
-
-  const batchImages = images.slice(
-    currentBatch * batchCount,
-    (currentBatch + 1) * batchCount
-  );
+  }, [images.length]);
 
   return (
     <div className="image-slider">
-      {batchImages.map((src, index) => (
-        <img
+      {images.map((batch, index) => (
+        <div
           key={index}
-          src={src}
-          alt={`Slide ${index}`}
-          className="slide-animation"
-        />
+          className={`batch-container ${
+            index === currentBatchIndex ? "active" : ""
+          }`}
+        >
+          {batch.map((src, idx) => (
+            <img key={idx} src={src} alt={`Slide ${idx}`} className="w-32" />
+          ))}
+        </div>
       ))}
     </div>
   );

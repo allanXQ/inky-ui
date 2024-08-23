@@ -92,22 +92,17 @@ export default function Home() {
   };
 
   const clientimages = [
-    "1.png",
-    "2.png",
-    "3.png",
-    "4.png",
-    "5.png",
-    "6.png",
-    "7.png",
-    "8.png",
+    [
+      "clients/coi.png",
+      "clients/meridian.png",
+      "clients/nokras.png",
+      "clients/noname.png",
+      "clients/noname2.png",
+      "clients/y254.png",
+      "clients/zetech.png",
+    ],
 
-    "coi.png",
-    "meridian.png",
-    "nokras.png",
-    "noname.png",
-    "noname2.png",
-    "y254.png",
-    "zetech.png",
+    ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"],
   ];
 
   return (
