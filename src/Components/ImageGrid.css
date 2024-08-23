@@ -11,6 +11,7 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 10px;
+  overflow: hidden; /* Ensures no scroll bars are visible */
 }
 
 .gallery img {
