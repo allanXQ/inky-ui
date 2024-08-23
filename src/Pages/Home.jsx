@@ -237,6 +237,12 @@ export default function Home() {
                 >
                   <p className="text-md">Learn More</p>
                 </button>
+                <div
+                  style={{
+                    borderRight: "1px solid white",
+                    height: "2.5rem",
+                  }}
+                ></div>
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -372,11 +378,17 @@ export default function Home() {
               <div className="flex items-center border border-white rounded-lg w-56 ">
                 <button
                   id="about-btn"
-                  className="py-2 px-4 border-r border-white"
+                  className="py-2 px-4"
                   onClick={openTestimonialModal}
                 >
                   <p className="text-md">Read Full Testimonial</p>
                 </button>
+                <div
+                  style={{
+                    borderRight: "1px solid white",
+                    height: "2.5rem",
+                  }}
+                ></div>
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
