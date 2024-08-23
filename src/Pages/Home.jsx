@@ -74,9 +74,8 @@ export default function Home() {
 
   const openTestimonialModal = () => {
     setModalContent(
-      <div className=" max-h-[400px]">
-        <h2 className="text-2xl font-bold mb-4">Full Testimonial</h2>
-        <div className="big-shoulders-regular text-center">
+      <div className="flex flex-col items-center justify-center w-full p-3">
+        <div className=" flex flex-col gap-5 big-shoulders-regular text-center">
           <p className="flex text-center">
             My sincere appreciation for the exceptional training you delivered
             to our team of managers on transformational leadership. Your
