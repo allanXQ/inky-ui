@@ -177,10 +177,7 @@ export default function Home() {
         </h2>
         <ImageSlider images={clientimages} />
       </div>
-      <div
-        id="video"
-        className="video-container faded-top faded-bottom relative w-full"
-      >
+      <div id="video" className="video-container  relative w-full">
         <video
           id="hero-video"
           autoPlay
