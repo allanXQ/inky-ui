@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import Modal from "../Components/Modal";
 import axios from "axios";
 import BookButton from "../Components/BookButton";
+import ImageSlider from "../Components/ImageSlider";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -90,6 +91,25 @@ export default function Home() {
     toggleTestimonial();
   };
 
+  const clientimages = [
+    "1.png",
+    "2.png",
+    "3.png",
+    "4.png",
+    "5.png",
+    "6.png",
+    "7.png",
+    "8.png",
+
+    "coi.png",
+    "meridian.png",
+    "nokras.png",
+    "noname.png",
+    "noname2.png",
+    "y254.png",
+    "zetech.png",
+  ];
+
   return (
     <main id="home" className="w-screen  text-white flex flex-col gap-8">
       <div id="nav-hero" className="h-screen">
@@ -132,9 +152,7 @@ export default function Home() {
         <h2 className="clients-h2 max-w-[530px] text-center text[#efefef]">
           SOME OF MD'S CLIENTS INCLUDE
         </h2>
-        <div className="animate-fade-down">
-          <img src="./clientlogos.png" />
-        </div>
+        <ImageSlider images={clientimages} />
       </div>
       <div
         id="video"
