@@ -1,25 +1,6 @@
 import React from "react";
 import ImageGrid from "../Components/ImageGrid";
 
-const images = [
-  "about/img1.jpeg",
-  "about/img2.jpeg",
-  "about/img3.jpeg",
-  "about/img4.jpeg",
-  "about/img5.jpeg",
-  "about/img6.jpeg",
-  "about/img7.jpeg",
-  "about/img8.jpeg",
-  "about/img1.jpeg",
-  "about/img2.jpeg",
-  "about/img3.jpeg",
-  "about/img4.jpeg",
-  "about/img5.jpeg",
-  "about/img6.jpeg",
-  "about/img7.jpeg",
-  "about/img8.jpeg",
-];
-
 const About = () => {
   return (
     <main id="about" className="flex flex-col gap-5 w-[100vw]">
@@ -105,7 +86,7 @@ const About = () => {
         </div>
       </div>
       <div>
-        <ImageGrid images={images} />
+        <ImageGrid />
       </div>
     </main>
   );

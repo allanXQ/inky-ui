@@ -1,7 +1,39 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./ImageGrid.css";
 
-const ImageGallery = ({ images }) => {
+const images = [
+  "about/img1.jpeg",
+  "about/img2.jpeg",
+  "about/img3.jpeg",
+  "about/img4.jpeg",
+  "about/img5.jpeg",
+  "about/img6.jpeg",
+  "about/img7.jpeg",
+  "about/img8.jpeg",
+  "about/img1.jpeg",
+  "about/img2.jpeg",
+  "about/img3.jpeg",
+  "about/img4.jpeg",
+];
+
+const images2 = [
+  "about/img6.jpeg",
+  "about/img3.jpeg",
+
+  "about/img6.jpeg",
+
+  "about/img7.jpeg",
+  "about/img4.jpeg",
+  "about/img8.jpeg",
+  "about/img4.jpeg",
+  "about/img1.jpeg",
+  "about/img5.jpeg",
+  "about/img2.jpeg",
+  "about/img8.jpeg",
+  "about/img3.jpeg",
+];
+
+const ImageGallery = () => {
   const galleryRef = useRef(null);
 
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -59,10 +91,18 @@ const ImageGallery = ({ images }) => {
         </button>
       )}
       <div className="gallery" ref={galleryRef}>
-        {images.map((src, index) => (
-          <img key={index} src={src} alt={`Image ${index}`} />
-        ))}
+        <div className="inner-gallery">
+          {images.map((src, index) => (
+            <img key={index} src={src} alt={`Image ${index}`} />
+          ))}
+        </div>
+        <div className="inner-gallery">
+          {images2.map((src, index) => (
+            <img key={index} src={src} alt={`Image ${index}`} />
+          ))}
+        </div>
       </div>
+
       {canScrollRight && (
         <button onClick={() => scroll("right")} className="absolute right-5">
           <svg
