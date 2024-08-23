@@ -131,8 +131,11 @@ export default function Home() {
   ];
 
   return (
-    <main id="home" className="w-screen  text-white flex flex-col gap-8">
-      <div id="nav-hero" className="h-screen">
+    <main
+      id="home"
+      className="w-screen  text-white flex flex-col items-center gap-8"
+    >
+      <div id="nav-hero" className="h-screen w-full">
         <div
           id="inner-hero"
           className="flex flex-col  gap-4 items-center justify-center  min-h-screen "
@@ -167,7 +170,7 @@ export default function Home() {
       </div>
       <div
         id="clients"
-        className="flex flex-col items-center justify-center mt-10 xl:mt-10"
+        className="flex flex-col w-full items-center justify-center mt-10 xl:mt-10"
       >
         <h2 className="clients-h2 max-w-[530px] text-center text[#efefef]">
           SOME OF MD'S CLIENTS INCLUDE
@@ -176,7 +179,7 @@ export default function Home() {
       </div>
       <div
         id="video"
-        className="video-container faded-top faded-bottom relative"
+        className="video-container faded-top faded-bottom relative w-full"
       >
         <video
           id="hero-video"
@@ -283,7 +286,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img src="./meetmd.png" className="max-w-[350px] md:max-w-[500px]" />
+        <img src="./meetmd.png" className="max-w-[300px] md:max-w-[500px]" />
       </div>
       <div
         id="quote"
@@ -358,13 +361,15 @@ export default function Home() {
         </div>
         <BookButton text="Book Now" path="book" />
       </div>
-      <div
-        id="podcasts"
-        className="w-100vw flex flex-col items-center relative gap-5"
-      >
-        <div className="pod-img h-[90vh] w-full relative">
-          <img src="./inky and oak-final.webp" className="w-full mt-36" />
-          <img src="./seren.webp" className="absolute top-20 left-[550px]" />
+      <div id="podcasts" className="w-full flex flex-col items-center  gap-5">
+        <div className="pod-img">
+          <div className=" w-full flex items-center justify-center ">
+            <img src="./inky and oak-final.webp" className=" mt-36 z-0" />
+            <img
+              src="./seren.webp"
+              className=" w-24 sm:w-36 md:w-56 absolute"
+            />
+          </div>
         </div>
         <div className="h-12 flex items-center">
           <svg
@@ -449,8 +454,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="testimonials">
-        <div className="flex flex-col sm:flex-row gap-20 md:gap-24 mt-4 items-center justify-center px-2 sm:px-0 max-w-[98vw]">
+      <div id="testimonials" className="w-full">
+        <div className="flex flex-col gap-20 sm:flex-row sm:gap-0 md:gap-24 mt-4 items-center justify-center px-2 sm:px-0 w-full">
           <div className="flex gap-5">
             <div className="flex flex-col gap-10 sm:gap-4 flex-wrap items-center justify-center">
               <div className="flex items-center gap-5">
@@ -472,7 +477,7 @@ export default function Home() {
           <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl lg:max-w-[45vw] h-fit p-10 relative ">
             <img
               src="./topquote.png"
-              className="absolute top-[-40px]  left-[-10px] md:left-[-20px] animate-slideInLeft-1 w-18"
+              className="absolute top-[-40px]  left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
             />
             <p className="big-shoulders-regular">
               My sincere appreciation for the exceptional training you delivered
@@ -523,7 +528,7 @@ export default function Home() {
               src="./bottomquote.png"
               width={70}
               height={30}
-              className="absolute bottom-[-35px] right-[-10px] md:right-[-20px]"
+              className="absolute bottom-[-35px] right-[5px] md:right-[-5px]"
             />
           </div>
         </div>
