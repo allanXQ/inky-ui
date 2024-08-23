@@ -7,7 +7,7 @@ const ImageSlider = ({ images }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBatchIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Rotate batches every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [images.length]);
