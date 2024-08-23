@@ -24,6 +24,15 @@
 .inner-gallery {
   display: flex;
   gap: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-img {
+  min-width: 200px;
+  max-width: 500px;
+  min-height: 300px;
+  max-height: 500px;
 }
 
 button {
