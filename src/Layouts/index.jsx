@@ -58,7 +58,7 @@ const Layout = () => {
     <>
       <ScrollToTop />
       <div className="w-screen flex flex-col items-center justify-center relative">
-        <nav className="flex items-center justify-between text-white w-[95vw] px-10 absolute top-0">
+        <nav className="flex items-center justify-between text-white w-[95vw] px-10 fixed top-0 z-10">
           <img
             src="./inkylogo.png"
             width={150}
