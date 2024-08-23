@@ -1,4 +1,24 @@
 import React from "react";
+import ImageGrid from "../Components/ImageGrid";
+
+const images = [
+  "about/img1.jpeg",
+  "about/img2.jpeg",
+  "about/img3.jpeg",
+  "about/img4.jpeg",
+  "about/img5.jpeg",
+  "about/img6.jpeg",
+  "about/img7.jpeg",
+  "about/img8.jpeg",
+  "about/img1.jpeg",
+  "about/img2.jpeg",
+  "about/img3.jpeg",
+  "about/img4.jpeg",
+  "about/img5.jpeg",
+  "about/img6.jpeg",
+  "about/img7.jpeg",
+  "about/img8.jpeg",
+];
 
 const About = () => {
   return (
@@ -85,7 +105,7 @@ const About = () => {
         </div>
       </div>
       <div>
-        <img src="./aboutinkys.png" />
+        <ImageGrid images={images} />
       </div>
     </main>
   );

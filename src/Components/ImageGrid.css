@@ -1,0 +1,36 @@
+.gallery-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Ensures no scroll bars are visible */
+}
+
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+  overflow: hidden; /* Ensures no scroll bars are visible */
+}
+
+.gallery img {
+  width: auto; /* Maintain aspect ratio */
+  /* height: 150px;  */
+  margin-right: 10px;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+}
