@@ -103,7 +103,7 @@ export default function Home() {
             growth and success.
           </p>
         </div>
-        <p className="mt-4 font-bold">- Winnie</p>
+        <p className="mt-4 text-2xl font-bold">- WINNIE</p>
         <p className="clients-h2">HR MANAGER, MERIDIAN EQUATOR</p>
       </div>
     );
@@ -393,10 +393,9 @@ export default function Home() {
               created a valuable learning environment.
             </p>
             <div className="flex flex-col items-end gap-2">
-              <p className="font-bold">-JACK JENNINGS</p>
-              <p className="clients-h2">
-                PRESIDENT, SMITHEREEN PEST MANAGEMENT
-              </p>
+              <p className="font-bold text-2xl">- WINNIE</p>
+              <p className="clients-h2">HR MANAGER, MERIDIAN EQUATOR</p>
+
               <div className="flex items-center border border-white rounded-lg w-56 ">
                 <button
                   id="about-btn"
