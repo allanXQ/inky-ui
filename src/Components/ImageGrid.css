@@ -4,6 +4,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  border-bottom: 5px solid gray;
 }
 
 .gallery {
@@ -12,14 +13,17 @@
   gap: 5px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding: 10px;
   overflow: hidden;
 }
 
 .gallery img {
   width: auto;
   max-height: 300px;
-  margin-right: 10px;
+}
+
+.inner-gallery {
+  display: flex;
+  gap: 5px;
 }
 
 button {
@@ -35,8 +39,4 @@ button {
 
 button:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
-
-.inner-gallery {
-  display: flex;
 }
