@@ -383,7 +383,7 @@ export default function Home() {
               src="./topquote.png"
               className="absolute top-[-40px]  left-[-10px] md:left-[-20px] animate-slideInLeft-1 w-18"
             />
-            <p className="montserrat-regular">
+            <p className="big-shoulders-regular">
               My sincere appreciation for the exceptional training you delivered
               to our team of managers on transformational leadership. Your
               expertise and engaging approach made a significant impact on our
