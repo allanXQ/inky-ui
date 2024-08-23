@@ -198,7 +198,7 @@ const Layout = () => {
             <img src="./yt.webp" alt="YouTube" />
           </div>
           <p className="text-white text-center">
-            © 2023 by Inky Johnson. All Rights Reserved.
+            © 2024 by MD. All Rights Reserved.
           </p>
         </footer>
       </div>
