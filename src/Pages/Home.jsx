@@ -76,7 +76,7 @@ export default function Home() {
     setModalContent(
       <div className=" max-h-[400px]">
         <h2 className="text-2xl font-bold mb-4">Full Testimonial</h2>
-        <div className="text-xl md:text-xl text-center">
+        <div className="montserrat-regular text-center">
           <p className="flex text-center">
             My sincere appreciation for the exceptional training you delivered
             to our team of managers on transformational leadership. Your
@@ -383,7 +383,7 @@ export default function Home() {
               src="./topquote.png"
               className="absolute top-[-40px]  left-[-10px] md:left-[-20px] animate-slideInLeft-1 w-18"
             />
-            <p>
+            <p className="montserrat-regular">
               My sincere appreciation for the exceptional training you delivered
               to our team of managers on transformational leadership. Your
               expertise and engaging approach made a significant impact on our
