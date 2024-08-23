@@ -11,6 +11,12 @@
   word-spacing: 3px;
   font-stretch: extra-expanded;
 }
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
 
 #nav-hero {
   background-image: url("../public/hero.jpg");
@@ -48,7 +54,14 @@
 .montserrat-regular {
   font-family: "Montserrat", sans-serif;
   font-size: 17px;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
+}
+
+.montserrat-small {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  line-height: 26px;
 }
 
 .montserrat-btn {

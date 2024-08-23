@@ -358,12 +358,97 @@ export default function Home() {
         </div>
         <BookButton text="Book Now" path="book" />
       </div>
-      <div id="podcasts" className="w-100vw flex flex-col items-end relative">
+      <div
+        id="podcasts"
+        className="w-100vw flex flex-col items-center relative gap-5"
+      >
         <div className="pod-img h-[90vh] w-full relative">
           <img src="./inky and oak-final.webp" className="w-full mt-36" />
           <img src="./seren.webp" className="absolute top-20 left-[550px]" />
         </div>
+        <div className="h-12 flex items-center">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            data-bbox="0.005 0.008 415.034 71.514"
+            viewBox="0.005 0.008 415.034 71.514"
+            xmlns="http://www.w3.org/2000/svg"
+            data-type="color"
+            role="presentation"
+            aria-hidden="true"
+            className="size-44"
+          >
+            <g>
+              <g>
+                <path
+                  d="m39.28 1.18 9.54 22.58 24.42 2.1a1.92 1.92 0 0 1 1.1 3.37L55.81 45.28l5.56 23.88a1.92 1.92 0 0 1-2.87 2.08l-21-12.65-21 12.65a1.92 1.92 0 0 1-2.86-2.08l5.56-23.88L.67 29.23a1.93 1.93 0 0 1 1.09-3.38l24.43-2.09 9.54-22.58a1.93 1.93 0 0 1 3.55 0z"
+                  fill="#F6C228"
+                  data-color="1"
+                ></path>
+                <path
+                  d="m124.28 1.18 9.55 22.58 24.42 2.1a1.92 1.92 0 0 1 1.1 3.37l-18.53 16.05 5.55 23.88a1.92 1.92 0 0 1-2.87 2.08l-21-12.65-21 12.65a1.92 1.92 0 0 1-2.87-2.08l5.56-23.88-18.54-16a1.93 1.93 0 0 1 1.1-3.38l24.43-2.09 9.54-22.58a1.92 1.92 0 0 1 3.54 0z"
+                  fill="#F6C228"
+                  data-color="1"
+                ></path>
+                <path
+                  d="m209.29 1.18 9.54 22.58 24.43 2.1a1.93 1.93 0 0 1 1.1 3.37l-18.53 16.05 5.55 23.88a1.92 1.92 0 0 1-2.87 2.08l-21-12.65-21 12.65a1.92 1.92 0 0 1-2.87-2.08l5.55-23.88-18.53-16a1.93 1.93 0 0 1 1.1-3.38l24.43-2.09 9.54-22.58a1.92 1.92 0 0 1 3.54 0z"
+                  fill="#F6C228"
+                  data-color="1"
+                ></path>
+                <path
+                  d="m294.3 1.18 9.54 22.58 24.43 2.1a1.92 1.92 0 0 1 1.09 3.37l-18.52 16.05 5.55 23.88a1.92 1.92 0 0 1-2.87 2.08l-21-12.65-21 12.65a1.92 1.92 0 0 1-2.87-2.08l5.55-23.88-18.53-16a1.93 1.93 0 0 1 1.1-3.38l24.42-2.09 9.54-22.58a1.93 1.93 0 0 1 3.55 0z"
+                  fill="#F6C228"
+                  data-color="1"
+                ></path>
+                <path
+                  d="m379.31 1.18 9.54 22.58 24.42 2.1a1.92 1.92 0 0 1 1.1 3.37l-18.53 16.05 5.56 23.88a1.92 1.92 0 0 1-2.87 2.08l-21-12.65-21 12.65a1.92 1.92 0 0 1-2.86-2.08l5.55-23.88-18.53-16a1.93 1.93 0 0 1 1.09-3.38l24.43-2.09 9.54-22.58a1.93 1.93 0 0 1 3.55 0z"
+                  fill="#F6C228"
+                  data-color="1"
+                ></path>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <p className="anton-regular">RATED 5 STARS</p>
+        <div>
+          <img src="./youtube.webp" />
+        </div>
+        <p className="max-w-[750px] montserrat-small text-center">
+          Join Inky Johnson for an insightful dialogue about the occurrence and
+          development of events in one's life that happen by chance in a happy
+          or beneficial way.
+        </p>
+        <div className="flex items-center border border-white rounded-lg w-40 ml-2">
+          <button
+            id="about-btn"
+            className="py-2 px-4 border-r border-white"
+            onClick={() => navigate("/about")}
+          >
+            <p className="text-md">Learn More</p>
+          </button>
+          <div
+            style={{
+              borderRight: "1px solid white",
+              height: "2.5rem",
+            }}
+          ></div>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-8 pl-3"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+            />
+          </svg>
+        </div>
       </div>
+
       <div id="testimonials">
         <div className="flex flex-col sm:flex-row gap-20 md:gap-24 mt-4 items-center justify-center px-2 sm:px-0 max-w-[98vw]">
           <div className="flex gap-5">
