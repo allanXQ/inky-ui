@@ -133,7 +133,7 @@ export default function Home() {
   return (
     <main
       id="home"
-      className="w-screen  text-white flex flex-col items-center gap-8"
+      className="w-screen  text-white flex flex-col items-center gap-8 overflow-x-hidden"
     >
       <div id="nav-hero" className="h-screen w-full">
         <div
@@ -474,7 +474,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl lg:max-w-[45vw] h-fit p-10 relative ">
+          <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl sm:max-w-[60vw] md:max-w-[45vw] h-fit p-10 relative ">
             <img
               src="./topquote.png"
               className="absolute top-[-40px]  left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
