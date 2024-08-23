@@ -74,17 +74,38 @@ export default function Home() {
 
   const openTestimonialModal = () => {
     setModalContent(
-      <div>
+      <div className=" max-h-[400px]">
         <h2 className="text-2xl font-bold mb-4">Full Testimonial</h2>
-        <p>
-          The messages of dealing with adversity, building character and having
-          faith could not have been more timely. Throughout 2020 I was always
-          able to refer back to the message that Inky conveyed as the people of
-          Smithereen navigated an uncertain and challenging time. I truly
-          believe that Inky played a key role in my company's continued success.
-        </p>
-        <p className="mt-4 font-bold">- JACK JENNINGS</p>
-        <p className="clients-h2">PRESIDENT, SMITHEREEN PEST MANAGEMENT</p>
+        <div className="text-xl md:text-xl text-center">
+          <p className="flex text-center">
+            My sincere appreciation for the exceptional training you delivered
+            to our team of managers on transformational leadership. Your
+            expertise and engaging approach made a significant impact on our
+            managers' leadership skills and their ability to inspire their
+            teams. Your training sessions were informative, thought-provoking,
+            and highly relevant to our organization. Your ability to convey
+            complex concepts clearly and encourage active participation created
+            a valuable learning environment. The feedback from our managers was
+            overwhelmingly positive, highlighting the practicality and
+            effectiveness of the training. Your professionalism, punctuality,
+            and dedication were evident throughout the training program.
+          </p>
+          <p>
+            Your passion for empowering leaders to reach their full potential
+            was inspiring and left a lasting impression on our team. We are
+            grateful for your contribution in fostering a culture of
+            transformational leadership within our organization. I highly
+            recommend your services to any organization seeking to enhance the
+            leadership capabilities of their managers. Your expertise and
+            ability to connect with participants make you an invaluable resource
+            in the field of leadership development. Thank you once again for
+            your outstanding training, and we look forward to future
+            collaborations that will continue to enrich our organization's
+            growth and success.
+          </p>
+        </div>
+        <p className="mt-4 font-bold">- Winnie</p>
+        <p className="clients-h2">HR MANAGER, MERIDIAN EQUATOR</p>
       </div>
     );
     toggleModal();
@@ -363,12 +384,14 @@ export default function Home() {
               className="absolute top-[-40px]  left-[-10px] md:left-[-20px] animate-slideInLeft-1 w-18"
             />
             <p>
-              The messages of dealing with adversity, building character and
-              having faith could not have been more timely. Throughout 2020 I
-              was always able to refer back to the message that Inky conveyed as
-              the people of Smithereen navigated an uncertain and challenging
-              time. I truly believe that Inky played a key role in my company's
-              continued success.
+              My sincere appreciation for the exceptional training you delivered
+              to our team of managers on transformational leadership. Your
+              expertise and engaging approach made a significant impact on our
+              managers' leadership skills and their ability to inspire their
+              teams. Your training sessions were informative, thought-provoking,
+              and highly relevant to our organization. Your ability to convey
+              complex concepts clearly and encourage active participation
+              created a valuable learning environment.
             </p>
             <div className="flex flex-col items-end gap-2">
               <p className="font-bold">-JACK JENNINGS</p>
