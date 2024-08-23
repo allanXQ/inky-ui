@@ -11,12 +11,11 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 10px;
-  overflow: hidden; /* Ensures no scroll bars are visible */
 }
 
 .gallery img {
   width: auto; /* Maintain aspect ratio */
-  /* height: 150px;  */
+  height: 150px; /* Set height to match your design */
   margin-right: 10px;
 }
 
