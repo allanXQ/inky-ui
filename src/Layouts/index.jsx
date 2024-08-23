@@ -190,12 +190,16 @@ const Layout = () => {
             width={150}
             height={150}
           />
-          <div className="flex items-center justify-center gap-2">
-            <img src="./ig.webp" alt="Instagram" />
-            <img src="./fb.webp" alt="Facebook" />
-            <img src="./x.webp" alt="X" />
-            <img src="./linkedin.webp" alt="LinkedIn" />
-            <img src="./yt.webp" alt="YouTube" />
+          <div className="flex items-center justify-center gap-2 w-[100%] h-14">
+            <img src="./ig.webp" alt="Instagram" className="social-icons" />
+            <img src="./fb.webp" alt="Facebook" className="social-icons" />
+            <img src="./x.webp" alt="X" className="social-icons" />
+            <img
+              src="./linkedin.webp"
+              alt="LinkedIn"
+              className="social-icons"
+            />
+            <img src="./yt.webp" alt="YouTube" className="social-icons" />
           </div>
           <p className="text-white text-center">
             © 2024 by MD. All Rights Reserved.

@@ -214,6 +214,13 @@
   max-height: 500px;
 }
 
+.social-icons {
+  width: 30px;
+  &:hover {
+    width: 35px;
+  }
+}
+
 @keyframes slideInLeft {
   from {
     transform: translateX(-100%);
