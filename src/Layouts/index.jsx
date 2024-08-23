@@ -88,7 +88,14 @@ const Layout = () => {
             <li>
               <NavLink
                 activeClassName="active"
-                to="/media"
+                to="/#podcasts"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const section = document.getElementById("podcasts");
+                  if (section) {
+                    section.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
                 className="montserrat-nav"
               >
                 Media
