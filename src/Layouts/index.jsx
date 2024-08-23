@@ -85,6 +85,15 @@ const Layout = () => {
                 About
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                activeClassName="active"
+                to="/media"
+                className="montserrat-nav"
+              >
+                Media
+              </NavLink>
+            </li>
             <li className="bg-[#F6C228] text-black font-semibold w-[6.5rem] h-[2rem] rounded-md flex items-center justify-center hover:bg-white hover:text-black">
               <Link to="/book" className="text-lg hover:text-black">
                 Book Now

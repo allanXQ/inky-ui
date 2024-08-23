@@ -358,6 +358,12 @@ export default function Home() {
         </div>
         <BookButton text="Book Now" path="book" />
       </div>
+      <div id="podcasts" className="w-100vw flex flex-col items-end relative">
+        <div className="pod-img h-[90vh] w-full relative">
+          <img src="./inky and oak-final.webp" className="w-full mt-36" />
+          <img src="./seren.webp" className="absolute top-20 left-[550px]" />
+        </div>
+      </div>
       <div id="testimonials">
         <div className="flex flex-col sm:flex-row gap-20 md:gap-24 mt-4 items-center justify-center px-2 sm:px-0 max-w-[98vw]">
           <div className="flex gap-5">
