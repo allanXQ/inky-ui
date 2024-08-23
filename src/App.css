@@ -198,12 +198,26 @@
 }
 
 .bg-gradient {
-  background: radial-gradient(
-    circle,
-    rgba(0, 0, 0, 0.2) 10%,
-    rgba(0, 0, 0, 0.2) 10%,
-    rgba(0, 0, 0, 1) 100%
+  /* margin-bottom: -5px; */
+  background: linear-gradient(
+    to bottom rgba(0, 0, 0, 1) 100% rgba(0, 0, 0, 0.8) 100%,
+    rgba(0, 0, 0, 0) 100%
   );
+  /* background-image: linear-gradient(
+    to bottom,
+    #000000,
+    #060506,
+    #0b0b0b,
+    #100f10,
+    #131314,
+    #181819,
+    #1c1c1d,
+    #212122,
+    #292929,
+    #313131,
+    #393939,
+    #414141
+  ); */
 }
 
 .video-container {
