@@ -414,8 +414,9 @@ export default function Home() {
           </svg>
         </div>
         <p className="anton-regular">RATED 5 STARS</p>
-        <div>
-          <img src="./youtube.webp" />
+        <div className="flex gap-5">
+          <img src="./googlepod.png" className="pod-logo" />
+          <img src="./youtube.webp" className="pod-logo" />
         </div>
         <p className="max-w-[750px] montserrat-small text-center">
           Join Inky Johnson for an insightful dialogue about the occurrence and
