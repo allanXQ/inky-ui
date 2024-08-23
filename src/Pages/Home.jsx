@@ -189,7 +189,7 @@ export default function Home() {
         id="meetinky"
         className="flex items-center justify-center flex-wrap gap-10"
       >
-        <div className="flex flex-col gap-4 max-w-[600px] px-2 mt-20">
+        <div className="flex flex-col gap-4 max-w-[600px] px-2 mt-10 md:mt-20">
           <div className="flex">
             <img src="./lines.png" className="" />
 
