@@ -74,6 +74,7 @@ const ImageGallery = () => {
 
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [fullScreen, setFullScreen] = useState(false);
 
   const openModal = (index) => {
     setCurrentImage(index);
@@ -82,6 +83,10 @@ const ImageGallery = () => {
 
   const closeModal = () => {
     setModalOpen(false);
+    if (document.fullscreenElement) {
+      document.exitFullscreen();
+      setFullScreen(false);
+    }
   };
 
   const nextImage = () => {
@@ -90,6 +95,18 @@ const ImageGallery = () => {
 
   const prevImage = () => {
     setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+      setFullScreen(true);
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+        setFullScreen(false);
+      }
+    }
   };
 
   return (
@@ -189,6 +206,7 @@ const ImageGallery = () => {
           <div
             className="flex flex-col gap-1 items-center justify-center w-10 absolute top-10 left-10
           "
+            onClick={toggleFullScreen}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -254,7 +272,7 @@ const ImageGallery = () => {
           <img
             src={images2[currentImage]}
             alt="Expanded view"
-            className="modal-image"
+            className={`modal-image ${fullScreen ? "full-screen" : ""}`}
           />
           {images2.length - 1 !== currentImage && (
             <button onClick={nextImage} className="right-arrow">

@@ -107,6 +107,11 @@ button:hover {
   max-height: 100%;
 }
 
+.fullscreen {
+  width: 80vw;
+  height: 90vh;
+}
+
 .close-modal {
   position: absolute;
   top: 20px;
