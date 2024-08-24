@@ -17,6 +17,12 @@
   letter-spacing: 1px;
   word-spacing: 3px;
 }
+.anton-nav {
+  font-family: "Anton", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  font-stretch: extra-expanded;
+}
 
 #nav-hero {
   background-image: url("../public/hero.jpg");
@@ -37,10 +43,6 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
-
-#side-nav {
-  background: rgba(0, 0, 0, 1);
 }
 
 #about-btn {

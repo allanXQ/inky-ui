@@ -70,6 +70,76 @@ const Layout = () => {
     }
   };
 
+  const SideNav = () => (
+    <nav
+      id="side-nav"
+      className="flex z-20 sm:hidden flex-col py-10 px-5 bg-[rgba(0,0,0,0.9)] absolute top-0 right-0 w-[70vw] h-full"
+    >
+      <div className="flex justify-end mb-10">
+        <div onClick={closeSideNav} className="cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#F6C228"
+            className="size-6"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+      <div className="flex  justify-evenly">
+        <div className="relative w-36">
+          <div data-testid="svgRoot-comp-ky2hvz0a" className="w-36 ">
+            <svg
+              preserveAspectRatio="xMidYMid meet"
+              data-bbox="0 0 770.35 1260.4"
+              viewBox="0 0 770.35 1260.4"
+              xmlns="http://www.w3.org/2000/svg"
+              data-type="color"
+              role="presentation"
+              aria-hidden="true"
+              className="absolute left-10 top-0 size-56"
+            >
+              <g>
+                <path
+                  d="M456 210.92q10.37-54.67 19.16-75C306.82 265.76 140.68 430.42 195.6 659.86Q158.89 602.47 161 498q-35.15 121.74-32.85 301.22C113 754.81 102.81 651.36 111.3 590.77 26.78 692.34-17.87 931.93 80.94 1010.4 70.76 1036.21 27.58 1167.58 0 1259.84c0 0 .48.21 1.4.56l51.27-42c94.09-377.35 281.19-808.2 547.89-1093.68q-304.69 430.2-439.83 874.42c269.69-95.91 209.45-395.57 349.6-523.35-40.48 7-78.95 42.61-102.46 70.28C446.65 453.81 551.81 462.59 592 296.2 615.42 199.05 694.48 80.87 770.35 0Q512.27 62 456 210.92z"
+                  fill="#f6c228"
+                  data-color="1"
+                ></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <ul className="flex flex-col text-white items-end gap-8 anton-nav max-w-44 mt-44">
+          <li>
+            <NavLink activeClassName="active" to="/home" onClick={closeSideNav}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              activeClassName="active"
+              to="/about"
+              onClick={closeSideNav}
+            >
+              About
+            </NavLink>
+          </li>
+          <li className="bg-[#F6C228] text-black font-bold py-2 px-4 rounded-lg anton-large">
+            <Link className="book-nav" to="/book" onClick={closeSideNav}>
+              Book MD
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+
   return (
     <>
       <ScrollToTop />
@@ -132,54 +202,7 @@ const Layout = () => {
             </svg>
           </div>
         </nav>
-        {sideNavOpen && (
-          <nav
-            id="side-nav"
-            className="flex z-20 sm:hidden flex-col py-10 px-5 bg-black bg-opacity-90 absolute top-0 right-0 w-40 h-fit"
-          >
-            <div className="flex justify-end mb-10">
-              <div onClick={closeSideNav} className="cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="#F6C228"
-                  className="size-6"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-            </div>
-            <ul className="flex flex-col text-white items-center gap-8">
-              <li>
-                <NavLink
-                  activeClassName="active"
-                  to="/home"
-                  onClick={closeSideNav}
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  activeClassName="active"
-                  to="/about"
-                  onClick={closeSideNav}
-                >
-                  About
-                </NavLink>
-              </li>
-              <li className="bg-[#F6C228] text-black font-bold py-2 px-4 rounded-lg">
-                <Link className="book-nav" to="/book" onClick={closeSideNav}>
-                  Book Now
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        )}
+        {sideNavOpen && <SideNav />}
         <Outlet />
         <footer className="flex flex-col items-center justify-center gap-2 mt-10 w-screen">
           <div id="cta" className="flex items-center justify-center mt-5">
