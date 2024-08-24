@@ -72,6 +72,26 @@ const ImageGallery = () => {
     };
   }, []);
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const openModal = (index) => {
+    setCurrentImage(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className="gallery-container">
       {canScrollLeft && (
@@ -114,7 +134,11 @@ const ImageGallery = () => {
         </div>
         <div className="inner-gallery">
           {images2.map((src, index) => (
-            <div className="relative hover-wrapper" key={index}>
+            <div
+              className="relative hover-wrapper"
+              key={index}
+              onClick={() => openModal(index)}
+            >
               <div className="absolute bottom-5 left-5 z-50 icon-hide flex gap-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -159,6 +183,50 @@ const ImageGallery = () => {
             />
           </svg>
         </button>
+      )}
+      {modalOpen && (
+        <div className="modal">
+          <button onClick={closeModal} className="close-modal">
+            ✖
+          </button>
+          {currentImage !== 0 && (
+            <button onClick={prevImage} className="left-arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="white"
+                className="size-10"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+          )}
+          <img
+            src={images2[currentImage]}
+            alt="Expanded view"
+            className="modal-image"
+          />
+          {images2.length - 1 !== currentImage && (
+            <button onClick={nextImage} className="right-arrow">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="white"
+                className="size-10"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </button>
+          )}
+        </div>
       )}
     </div>
   );
