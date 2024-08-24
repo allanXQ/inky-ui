@@ -58,14 +58,11 @@ const Layout = () => {
   const location = useLocation();
 
   const handleNavigation = (e) => {
-    e.preventDefault(); // Prevent the default anchor behavior
+    e.preventDefault();
 
-    // Check if we're already on the home page
     if (location.pathname !== "/home") {
-      // If not, navigate to home and tell it to scroll to the section
       navigate("/home", { state: { scrollTo: "podcasts" } });
     } else {
-      // If already on home, just scroll to the section
       const section = document.getElementById("podcasts");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
