@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Outlet, NavLink, Link } from "react-router-dom";
+import { Outlet, NavLink, Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BookButton from "../Components/BookButton";
@@ -54,6 +54,25 @@ const Layout = () => {
     setIsLoading(false);
   };
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (e) => {
+    e.preventDefault(); // Prevent the default anchor behavior
+
+    // Check if we're already on the home page
+    if (location.pathname !== "/home") {
+      // If not, navigate to home and tell it to scroll to the section
+      navigate("/home", { state: { scrollTo: "podcasts" } });
+    } else {
+      // If already on home, just scroll to the section
+      const section = document.getElementById("podcasts");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <>
       <ScrollToTop />
@@ -88,14 +107,7 @@ const Layout = () => {
             <li>
               <NavLink
                 activeClassName="active"
-                to="/#podcasts"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const section = document.getElementById("podcasts");
-                  if (section) {
-                    section.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+                onClick={handleNavigation}
                 className="montserrat-nav"
               >
                 Media

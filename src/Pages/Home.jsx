@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import Modal from "../Components/Modal";
 import axios from "axios";
 import BookButton from "../Components/BookButton";
@@ -11,6 +11,18 @@ export default function Home() {
   const [modalContent, setModalContent] = useState(null);
   const [bookingTypes, setBookingTypes] = useState([]);
   const [signatureMessages, setSignatureMessages] = useState([]);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if we need to scroll to a section
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location.state]);
 
   useEffect(() => {
     const fetchBookingTypes = async () => {
