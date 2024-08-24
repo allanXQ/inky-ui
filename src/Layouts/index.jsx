@@ -104,6 +104,7 @@ const Layout = () => {
             <li>
               <NavLink
                 activeClassName="active"
+                to="podcasts"
                 onClick={handleNavigation}
                 className="montserrat-nav"
               >
