@@ -108,8 +108,9 @@ button:hover {
 }
 
 .fullscreen {
+  align-self: center;
   width: 80vw;
-  height: 90vh;
+  height: 80vh;
 }
 
 .close-modal {
