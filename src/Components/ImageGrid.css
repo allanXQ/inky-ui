@@ -33,6 +33,39 @@
   max-width: 500px;
   min-height: 300px;
   max-height: 500px;
+  display: block;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.hover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-wrapper .icon-hide {
+  visibility: hidden;
+  transition: visibility 0.2s ease-in-out;
+}
+
+.hover-wrapper:hover .icon-hide {
+  visibility: visible;
+}
+
+.hover-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.hover-wrapper:hover::after {
+  opacity: 1;
 }
 
 button {
