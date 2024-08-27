@@ -83,7 +83,7 @@ export default function Home() {
     setModalContent(
       <div className="flex flex-col items-center justify-center w-full p-3">
         <img
-          src="./topquote.png"
+          src="./pixelcut-export.png"
           className="absolute top-[-20px]  left-[-10px] md:left-[-20px]  w-18"
         />
 
@@ -150,15 +150,15 @@ export default function Home() {
       <div id="nav-hero" className="h-screen w-full">
         <div
           id="inner-hero"
-          className="flex flex-col  gap-4 items-center justify-center  min-h-screen "
+          className="flex flex-col  gap-4 items-top justify-top  min-h-screen "
         >
-          <div className="flex items-center justify-center gap-4 w-2/3">
-            <img
-              src="./mdhero.png"
-              width={349}
-              height={700}
-              className="mirror-image absolute  md:left-48 top-32 md:top-24"
-            />
+          <div className="flex items-center justify-center gap-4 -full">
+            {/*<img*/}
+            {/*  src="./pixelcut-export.png"*/}
+            {/*  width={349}*/}
+            {/*  height={700}*/}
+            {/*  className="mirror-image absolute  md:left-48 top-32 md:top-24"*/}
+            {/*/>*/}
             <div
               id="hero-text"
               className="flex flex-col items-center justify-center z-20 mt-60 sm:mt gap-6"
@@ -325,13 +325,10 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
-          <p className="text-xl md:text-2xl text-center">
-            The one thing we all have in common is that we will encounter
-            adversity, but we have to decide how we respond to it. My arm and my
-            hand are paralyzed but my heart isn’t, my mind isn’t, my dedication
-            isn’t, my work ethic isn’t, my commitment isn’t.”
+          <p className="text-xl md:text-2xl text-center anton-regular">
+            In the <span className={'text-[#F6C228]'}>corporate world</span> , resilience isn't just a trait—it's a skill we must cultivate. I've faced my own hurdles, but what I've learned is that true strength lies not in avoiding challenges, but in transforming them into opportunities for growth. My mission as a corporate trainer is to <span className={'text-[#F6C228]'}>empower others to harness their potential</span>, no matter the obstacles, and to <span className={'text-[#F6C228]'}>inspire a relentless commitment to excellence</span> in every aspect of their professional journey.
           </p>
-          <p className="font-bold text-xl">- MD</p>
+          <p className="font-bold text-xl">- MD, Corporate Trainer</p>
         </div>
       </div>
       <div
@@ -353,7 +350,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center gap-8">
+      <div className="flex flex-col items-center gap-8 mb-5">
         <p className="about-h3 text-[#F6C228] text-center">
           SIGNATURE MESSAGE TOPICS:
         </p>
@@ -371,10 +368,10 @@ export default function Home() {
       </div>
       <div id="podcasts" className="w-full flex flex-col  gap-5">
         <div className="pod-img">
-          <div className=" w-full flex items-center justify-center ">
-            <img src="./inky and oak-final.webp" className=" mt-36 z-0" />
+          <div className=" w-full flex items-center justify-center min-h-96">
+            {/*<img src="./inky and oak-final.webp" className=" mt-36 z-0" />*/}
             <img
-              src="./seren.webp"
+              src="./Black and White Simple Podcast YouTube Channel Logo.png"
               className=" w-24 sm:w-36 md:w-56 absolute"
             />
           </div>
@@ -429,18 +426,17 @@ export default function Home() {
             <img src="./youtube.webp" className="pod-logo" />
           </div>
           <p className="max-w-[750px] montserrat-small text-center">
-            Join Inky Johnson for an insightful dialogue about the occurrence
-            and development of events in one's life that happen by chance in a
-            happy or beneficial way.
+            Join MD for a transformative session where you'll discover how to turn challenges into growth opportunities, empowering both individuals and businesses to reach their full potential and drive excellence in every facet of the corporate world.
           </p>
-          <div className="flex items-center border border-white rounded-lg w-40 ml-2">
-            <button
+          <div className="flex items-center border border-white rounded-lg w-40 ml-2 mb-5">
+            <a
               id="about-btn"
               className="py-2 px-4 border-r border-white"
-              onClick={() => navigate("/about")}
+              href={"https://www.youtube.com/@skillfixeditionwithmd6203"}
+              target={'_blank'}
             >
-              <p className="text-md">Learn More</p>
-            </button>
+              <p className="text-md">Follow MD</p>
+            </a>
             <div
               style={{
                 borderRight: "1px solid white",
@@ -492,18 +488,12 @@ export default function Home() {
               className="absolute top-[-40px]  left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
             />
             <p className="big-shoulders-regular">
-              My sincere appreciation for the exceptional training you delivered
-              to our team of managers on transformational leadership. Your
-              expertise and engaging approach made a significant impact on our
-              managers' leadership skills and their ability to inspire their
-              teams. Your training sessions were informative, thought-provoking,
-              and highly relevant to our organization. Your ability to convey
-              complex concepts clearly and encourage active participation
-              created a valuable learning environment.
+              I am writing to express our appreciation and commendation for the outstanding customer experience training session you conducted on 24th of June 2024 for our team. Your ability to connect with the participants, convey complex concepts with clarity, and foster an interactive learning environment was very much appreciated. The feedback from our team has been very positive. The hands-on exercises and real-world examples you incorporated into the training made the material accessible and relatable.
+              We are grateful for the time and effort you invested in this training.
             </p>
             <div className="flex flex-col items-end gap-2">
-              <p className="font-bold text-2xl">- WINNIE</p>
-              <p className="clients-h2">HR MANAGER, MERIDIAN EQUATOR</p>
+              <p className="font-bold text-2xl">- JOHN K KARIUIKI</p>
+              <p className="clients-h2 uppercase">GROUP CEO, fincredit Ltd</p>
 
               <div className="flex items-center border border-white rounded-lg w-56 ">
                 <button

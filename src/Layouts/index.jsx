@@ -144,13 +144,11 @@ const Layout = () => {
     <>
       <ScrollToTop />
       <div className="w-screen flex flex-col items-center justify-center relative">
-        <nav className="flex items-center justify-between text-white w-[95vw] px-10 fixed top-0 z-10">
+        <nav className="flex items-center justify-between text-white w-full px-10 fixed top-0 z-10 py-2 mt-4 bg-opacity-85">
           <img
             src="./inkylogo.png"
-            width={120}
-            height={120}
             alt="Inky Logo"
-            className=""
+            className="h-14"
           />
           <ul className="hidden sm:flex items-center gap-8 ">
             <li>
@@ -209,19 +207,19 @@ const Layout = () => {
             <form onSubmit={(e) => e.preventDefault()}>
               <div className="flex flex-col items-center justify-center gap-4">
                 <div className="flex flex-col items-center gap-1">
-                  <p className="text-white text-3xl text-center">
+                  <p className="text-white text-3xl text-center anton-regular">
                     Ready to elevate your team?
                   </p>
                   <p className="text-white text-sm">Request a Service Quote</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-4">
-                  <input
-                    type="email"
-                    placeholder="Enter your email address"
-                    className="border border-white rounded-md w-64 px-4 py-2"
-                    value={email}
-                    onChange={handleEmailChange}
-                  />
+                  {/*<input*/}
+                  {/*  type="email"*/}
+                  {/*  placeholder="Enter your email address"*/}
+                  {/*  className="border border-white rounded-md w-64 px-4 py-2"*/}
+                  {/*  value={email}*/}
+                  {/*  onChange={handleEmailChange}*/}
+                  {/*/>*/}
                   <BookButton
                     text={isLoading ? "Loading..." : "Get Quote"}
                     onClick={handleRequestQuote}
@@ -236,9 +234,25 @@ const Layout = () => {
           <img
             src="./footerlogo.png"
             alt="Footer Logo"
-            width={150}
-            height={150}
+            width={100}
+            height={100}
           />
+          <div>
+            <p className="text-white text-md text-center">Affiliated Businesses</p>
+            <div className={'flex justify-center text-sm'}>
+              <a href={"#"} className={'text-gray-500 hover: text-[#F6C228] m-2'}>
+                Skillfix
+              </a>
+
+              <a href={"#"} className={'text-gray-500 hover: text-[#F6C228] m-2'}>
+                Viri
+              </a>
+
+              <a href={"#"} className={'text-gray-500 hover: text-[#F6C228] m-2'}>
+                Techlup
+              </a>
+            </div>
+          </div>
           <div className="flex items-center justify-center gap-2 w-[100%] h-14">
             <img src="./ig.webp" alt="Instagram" className="social-icons" />
             <img src="./fb.webp" alt="Facebook" className="social-icons" />
@@ -250,8 +264,8 @@ const Layout = () => {
             />
             <img src="./yt.webp" alt="YouTube" className="social-icons" />
           </div>
-          <p className="text-white text-center">
-            © 2024 by MD. All Rights Reserved.
+          <p className="text-white text-center mb-4">
+            © 2024. All Rights Reserved.
           </p>
         </footer>
       </div>

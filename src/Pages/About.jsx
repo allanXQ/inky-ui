@@ -9,8 +9,8 @@ const About = () => {
         className="flex flex-col justify-center text-white gap-2 pl-5  md:pl-52 pt-10 sm:bg-fixed"
       >
         <div className="flex  gap-2 text-5xl anton-larger">
-          <p className="text-[#F6C228]">WHO IS</p>
-          <p>MD?</p>
+          <p >WHO IS</p>
+          <p className="text-[#F6C228]">MD?</p>
         </div>
       </div>
 

@@ -426,8 +426,8 @@ const BookForm = () => {
     >
       <div className="flex flex-col gap-5 max-w-screen-sm sm:max-w-screen-md md:max-w-[67rem]">
         {inputs.map((input) => (
-          <div className="flex flex-col gap-5 px-5" key={input.title}>
-            <h2 className="text-xl text-center lg:text-start font-bold text-[#F6C228] uppercase text-wrap ">
+          <div className="flex flex-col gap-5 px-5 mb-5" key={input.title}>
+            <h2 className="text-xl text-center lg:text-start font-bold text-[#F6C228] uppercase text-wrap anton-regular">
               {input.title}
             </h2>
             <div className="flex flex-wrap gap-6 justify-center lg:justify-start">
@@ -544,9 +544,9 @@ const Book = () => {
     <main id="book" className="w-full">
       <div
         id="book-hero"
-        className="flex flex-col justify-center text-white gap-2 pl-5  md:pl-52 pt-20"
+        className="flex flex-col justify-center text-white gap-2 pl-5  md:pl-52 pt-20 space-y-4"
       >
-        <div className="flex  gap-2 text-5xl text-wrap flex-wrap font-extrabold">
+        <div className="flex  gap-2 text-5xl text-wrap flex-wrap font-extrabold anton-regular">
           <p className="text-[#F6C228]">BOOKING</p>
           <p>FORM</p>
         </div>
