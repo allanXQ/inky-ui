@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import Modal from "../Components/Modal";
-import axios from "axios";
 import BookButton from "../Components/BookButton";
 import ImageSlider from "../Components/ImageSlider";
+import MeetMD from "../Components/Home/Meet";
+import SignatureMessages from "../Components/Home/SignatureMessages";
+import BookingFor from "../Components/Home/BookingFor";
 
 export default function Home() {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
-  const [bookingTypes, setBookingTypes] = useState([]);
-  const [signatureMessages, setSignatureMessages] = useState([]);
 
   const location = useLocation();
 
@@ -23,57 +23,6 @@ export default function Home() {
       }
     }
   }, [location.state]);
-
-  useEffect(() => {
-    const fetchBookingTypes = async () => {
-      const response = await axios.get(
-        "http://localhost:8000/api/booking-types"
-      );
-      const booktypes = [];
-      response.data.forEach((book) => {
-        booktypes.push(book.name);
-      });
-      setBookingTypes(booktypes);
-    };
-    const fetchSignatureMessages = async () => {
-      const response = await axios.get(
-        "http://localhost:8000/api/signature-message-topics"
-      );
-      const signaturemsg = [];
-      response.data.forEach((msg) => {
-        signaturemsg.push(msg.name);
-      });
-
-      setSignatureMessages(signaturemsg);
-    };
-
-    fetchBookingTypes();
-    fetchSignatureMessages();
-  }, []);
-
-  const typeswithicons = [];
-
-  bookingTypes.forEach((type) => {
-    switch (type) {
-      case "Live & Virtual Keynotes":
-        typeswithicons.push({ type, icon: "./icons/speaker.png" });
-        break;
-      case "Breakout Sessions":
-        typeswithicons.push({ type, icon: "./icons/happy-children.png" });
-        break;
-      case "Corporate Emcee":
-        typeswithicons.push({ type, icon: "./icons/microphone.png" });
-        break;
-      case "Corporate Training":
-        typeswithicons.push({ type, icon: "./icons/breakout.png" });
-        break;
-      case "Team Building":
-        typeswithicons.push({ type, icon: "./icons/arm-wrestling.png" });
-        break;
-      default:
-        break;
-    }
-  });
 
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -218,74 +167,7 @@ export default function Home() {
         {modalContent}
       </Modal>
 
-      <div
-        id="meetinky"
-        className="flex items-center justify-center flex-wrap gap-10"
-      >
-        <div className="flex flex-col gap-4 max-w-[600px] px-2 mt-10 md:mt-20">
-          <div className="flex">
-            <img src="./lines.png" className="" />
-
-            <div className="flex flex-col gap-4 max-w-[600px] px-2">
-              <h3 className="about-h3 text-[#F6C228]">MEET MD</h3>
-              <p className="about-p1-text">
-                MD is a dynamic personality and highly sought-after resource in
-                corporate & professional circles, small business owners, and
-                community/church leaders from all sectors of society striving to
-                expand prospects.
-              </p>
-              <p className="about-p2-text">
-                MD, is a trailblazing figure in the realms of Transformational
-                Leadership Coaching, Motivational Speaking and Customer service
-                Training. With a magnetic presence and an unwavering commitment
-                to igniting change, MD Has redefined the very essence of
-                inspiration, leaving an indelible mark on all who encounter his
-                teachings. Prepare to embark on a profound journey of
-                transformation as MD shares invaluable insights, equipping you
-                with the essential tools, mindset, and strategies needed to not
-                only lead with purpose but to soar to unparalleled heights of
-                success. Through electrifying presentations and unparalleled
-                expertise, MD empowers individuals and organizations alike to
-                unlock their fullest potential, fostering a culture of
-                excellence and achievement
-              </p>
-              <div className="flex items-center border border-white rounded-lg w-40 ml-2">
-                <button
-                  id="about-btn"
-                  className="py-2 px-4 border-r border-white"
-                  onClick={() => navigate("/about")}
-                >
-                  <p className="text-md">Learn More</p>
-                </button>
-                <div
-                  style={{
-                    borderRight: "1px solid white",
-                    height: "2.5rem",
-                  }}
-                ></div>
-
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-8 pl-3"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={"md:mt-20"}>
-          <img src="./meet-md.png" className="max-w-[300px] md:max-w-[500px]" />
-        </div>
-      </div>
+      <MeetMD />
       <div
         id="quote"
         className="flex flex-col items-center justify-center w-full relative px-4 mt-36 md:mt-24"
@@ -336,45 +218,11 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <div
-        id="booking"
-        className="flex flex-col items-center justify-center gap-4"
-      >
-        <p className="about-h3 text-[#F6C228] text-center">
-          MD IS CURRENTLY BOOKING FOR:
-        </p>
-        <div className="flex gap-4 items-center justify-center flex-wrap">
-          {typeswithicons.map((type) => (
-            <div
-              key={type.type}
-              className="flex flex-col items-center justify-center gap-2 w-52 h-48 border border-[#636363] rounded-md"
-            >
-              <img src={type.icon} />
-              <p className="text-center">{type.type}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="flex flex-col items-center gap-8 mb-5">
-        <p className="about-h3 text-[#F6C228] text-center">
-          SIGNATURE MESSAGE TOPICS:
-        </p>
-        <div className="flex items-center justify-center gap-4 flex-wrap">
-          {signatureMessages.map((message) => (
-            <div
-              key={message}
-              className="flex  items-center justify-center gap-2 px-2 w-40 h-16 border border-[#636363] rounded-lg"
-            >
-              <p className="text-center">{message}</p>
-            </div>
-          ))}
-        </div>
-        <BookButton text="Book Now" path="book" />
-      </div>
+      <BookingFor />
+      <SignatureMessages />
       <div id="podcasts" className="w-full flex flex-col  gap-5">
         <div className="pod-img">
           <div className=" w-full flex items-center justify-center min-h-96">
-            {/*<img src="./inky and oak-final.webp" className=" mt-36 z-0" />*/}
             <img
               src="./Black and White Simple Podcast YouTube Channel Logo.png"
               className=" w-64 md:w-96 absolute"
