@@ -8,7 +8,6 @@ import SignatureMessages from "../Components/Home/SignatureMessages";
 import BookingFor from "../Components/Home/BookingFor";
 
 export default function Home() {
-  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 
@@ -162,11 +161,6 @@ export default function Home() {
           />
         </svg>
       </div>
-
-      <Modal show={isModalOpen} onClose={toggleModal}>
-        {modalContent}
-      </Modal>
-
       <MeetMD />
       <div
         id="quote"
@@ -398,6 +392,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <Modal show={isModalOpen} onClose={toggleModal}>
+        {modalContent}
+      </Modal>
     </main>
   );
 }
