@@ -41,7 +41,7 @@ export default function Home() {
       );
       const signaturemsg = [];
       response.data.forEach((msg) => {
-        signaturemsg.push(msg.topic);
+        signaturemsg.push(msg.name);
       });
 
       setSignatureMessages(signaturemsg);
@@ -82,7 +82,6 @@ export default function Home() {
   const openTestimonialModal = () => {
     setModalContent(
       <div className="flex flex-col items-center justify-center w-full p-3">
-
         <div className=" flex flex-col gap-5 big-shoulders-regular text-center">
           <p className="flex text-center">
             My sincere appreciation for the exceptional training you delivered
@@ -137,7 +136,6 @@ export default function Home() {
 
     ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"],
   ];
-
   return (
     <main
       id="home"
@@ -284,7 +282,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className={'md:mt-20'}>
+        <div className={"md:mt-20"}>
           <img src="./meet-md.png" className="max-w-[300px] md:max-w-[500px]" />
         </div>
       </div>
@@ -318,9 +316,24 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
           <p className="text-xl md:text-2xl text-center anton-regular">
-            <span className={'text-[#F6C228]'}>Resilience</span> isn't just a trait—it's a skill we must cultivate. I've faced my own hurdles, but what I've learned is that true strength lies not in avoiding challenges, but in transforming them into opportunities for growth. My mission is to <span className={'text-[#F6C228]'}>empower others to harness their potential</span>, no matter the obstacles, and to <span className={'text-[#F6C228]'}>inspire a relentless commitment to excellence</span> in every aspect of your journey.
+            <span className={"text-[#F6C228]"}>Resilience</span> isn't just a
+            trait—it's a skill we must cultivate. I've faced my own hurdles, but
+            what I've learned is that true strength lies not in avoiding
+            challenges, but in transforming them into opportunities for growth.
+            My mission is to{" "}
+            <span className={"text-[#F6C228]"}>
+              empower others to harness their potential
+            </span>
+            , no matter the obstacles, and to{" "}
+            <span className={"text-[#F6C228]"}>
+              inspire a relentless commitment to excellence
+            </span>{" "}
+            in every aspect of your journey.
           </p>
-          <p className=" text-xl text-center"><span className={"font-bold"}>MD</span> <br/> Corporate Trainer <span className="hidden md:inline">|</span>Transformational Speaker</p>
+          <p className=" text-xl text-center">
+            <span className={"font-bold"}>MD</span> <br /> Corporate Trainer{" "}
+            <span className="hidden md:inline">|</span>Transformational Speaker
+          </p>
         </div>
       </div>
       <div
@@ -418,14 +431,17 @@ export default function Home() {
             <img src="./youtube.webp" className="pod-logo" />
           </div>
           <p className="max-w-[750px] montserrat-small text-center">
-            Join MD for a transformative session where you'll discover how to turn challenges into growth opportunities, empowering both individuals and businesses to reach their full potential and drive excellence in every facet of the corporate world.
+            Join MD for a transformative session where you'll discover how to
+            turn challenges into growth opportunities, empowering both
+            individuals and businesses to reach their full potential and drive
+            excellence in every facet of the corporate world.
           </p>
           <div className="flex items-center border border-white rounded-lg w-40 ml-2 mb-5">
             <a
               id="about-btn"
               className="py-2 px-4 border-r border-white"
               href={"https://www.youtube.com/@skillfixeditionwithmd6203"}
-              target={'_blank'}
+              target={"_blank"}
             >
               <p className="text-md">Follow MD</p>
             </a>
@@ -480,8 +496,15 @@ export default function Home() {
               className="absolute top-[-40px]  left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
             />
             <p className="big-shoulders-regular">
-              I am writing to express our appreciation and commendation for the outstanding customer experience training session you conducted on 24th of June 2024 for our team. Your ability to connect with the participants, convey complex concepts with clarity, and foster an interactive learning environment was very much appreciated. The feedback from our team has been very positive. The hands-on exercises and real-world examples you incorporated into the training made the material accessible and relatable.
-              We are grateful for the time and effort you invested in this training.
+              I am writing to express our appreciation and commendation for the
+              outstanding customer experience training session you conducted on
+              24th of June 2024 for our team. Your ability to connect with the
+              participants, convey complex concepts with clarity, and foster an
+              interactive learning environment was very much appreciated. The
+              feedback from our team has been very positive. The hands-on
+              exercises and real-world examples you incorporated into the
+              training made the material accessible and relatable. We are
+              grateful for the time and effort you invested in this training.
             </p>
             <div className="flex flex-col items-end gap-2">
               <p className="font-bold text-2xl">- JOHN K KARIUIKI</p>
