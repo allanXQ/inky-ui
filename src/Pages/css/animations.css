@@ -1,0 +1,12 @@
+@keyframes increaseHeight {
+  from {
+    height: 100px;
+  }
+  to {
+    height: 300px;
+  }
+}
+
+.increase-height {
+  animation-fill-mode: forwards; /* Make sure the animation stays at the last frame */
+}
