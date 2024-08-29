@@ -7,9 +7,6 @@ import MeetMD from "../Components/Home/Meet";
 import SignatureMessages from "../Components/Home/SignatureMessages";
 import BookingFor from "../Components/Home/BookingFor";
 import LazyVideo from "../Components/Home/Video";
-import ScrollAnimation from "react-animate-on-scroll";
-import "animate.css/animate.min.css";
-import "./css/animations.css";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
