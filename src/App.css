@@ -27,7 +27,7 @@
 #nav-hero {
   background-image: url("../public/home-bg.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: left;
   background-attachment: fixed;
   height: 100vh;
 }
@@ -182,7 +182,7 @@
 
 @media screen and (max-width: 768px) {
   #about-hero {
-    background-image: url("../public/bgsm.webp");
+    background-image: url("../public/about-hero.jpg");
     height: 50vh;
   }
   .about-text {
@@ -256,7 +256,7 @@
   background-repeat: no-repeat;
   background-clip: border-box;
   background-attachment: fixed;
-  background-position: center;
+  background-position: left;
 }
 
 .pod-logo {

@@ -82,10 +82,6 @@ export default function Home() {
   const openTestimonialModal = () => {
     setModalContent(
       <div className="flex flex-col items-center justify-center w-full p-3">
-        <img
-          src="./pixelcut-export.png"
-          className="absolute top-[-20px]  left-[-10px] md:left-[-20px]  w-18"
-        />
 
         <div className=" flex flex-col gap-5 big-shoulders-regular text-center">
           <p className="flex text-center">
@@ -153,12 +149,6 @@ export default function Home() {
           className="flex flex-col  gap-4 items-top justify-top  min-h-screen "
         >
           <div className="flex items-center justify-center gap-4 -full">
-            {/*<img*/}
-            {/*  src="./pixelcut-export.png"*/}
-            {/*  width={349}*/}
-            {/*  height={700}*/}
-            {/*  className="mirror-image absolute  md:left-48 top-32 md:top-24"*/}
-            {/*/>*/}
             <div
               id="hero-text"
               className="flex flex-col items-center justify-center z-20 mt-60 sm:mt gap-6"
@@ -294,7 +284,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <img src="./meetmd.png" className="max-w-[300px] md:max-w-[500px]" />
+        <div className={'md:mt-20'}>
+          <img src="./meet-md.png" className="max-w-[300px] md:max-w-[500px]" />
+        </div>
       </div>
       <div
         id="quote"
@@ -326,9 +318,9 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
           <p className="text-xl md:text-2xl text-center anton-regular">
-            In the <span className={'text-[#F6C228]'}>corporate world</span> , resilience isn't just a trait—it's a skill we must cultivate. I've faced my own hurdles, but what I've learned is that true strength lies not in avoiding challenges, but in transforming them into opportunities for growth. My mission as a corporate trainer is to <span className={'text-[#F6C228]'}>empower others to harness their potential</span>, no matter the obstacles, and to <span className={'text-[#F6C228]'}>inspire a relentless commitment to excellence</span> in every aspect of their professional journey.
+            <span className={'text-[#F6C228]'}>Resilience</span> isn't just a trait—it's a skill we must cultivate. I've faced my own hurdles, but what I've learned is that true strength lies not in avoiding challenges, but in transforming them into opportunities for growth. My mission is to <span className={'text-[#F6C228]'}>empower others to harness their potential</span>, no matter the obstacles, and to <span className={'text-[#F6C228]'}>inspire a relentless commitment to excellence</span> in every aspect of your journey.
           </p>
-          <p className="font-bold text-xl">- MD, Corporate Trainer</p>
+          <p className=" text-xl text-center"><span className={"font-bold"}>MD</span> <br/> Corporate Trainer <span className="hidden md:inline">|</span>Transformational Speaker</p>
         </div>
       </div>
       <div
@@ -372,7 +364,7 @@ export default function Home() {
             {/*<img src="./inky and oak-final.webp" className=" mt-36 z-0" />*/}
             <img
               src="./Black and White Simple Podcast YouTube Channel Logo.png"
-              className=" w-24 sm:w-36 md:w-56 absolute"
+              className=" w-64 md:w-96 absolute"
             />
           </div>
         </div>
