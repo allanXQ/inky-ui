@@ -7,9 +7,6 @@ import MeetMD from "../Components/Home/Meet";
 import SignatureMessages from "../Components/Home/SignatureMessages";
 import BookingFor from "../Components/Home/BookingFor";
 import LazyVideo from "../Components/Home/Video";
-import ScrollAnimation from "react-animate-on-scroll";
-import "animate.css/animate.min.css";
-import "./css/animations.css";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -286,9 +283,7 @@ export default function Home() {
           <div className="flex gap-5">
             <div className="flex flex-col gap-10 sm:gap-4 flex-wrap items-center justify-center">
               <div className="flex items-center gap-5">
-                <ScrollAnimation animateIn="increase-height" animateOnce={true}>
-                  <img src="./lines.png" className="hidden sm:block" />
-                </ScrollAnimation>
+                <img src="./lines.png" className="hidden sm:block" />
                 <div className="flex flex-col gap-2 ">
                   <div className="flex flex-col gap-4 ">
                     <div className="font-bold text-5xl">
