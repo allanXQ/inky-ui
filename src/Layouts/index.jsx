@@ -150,7 +150,7 @@ const Layout = () => {
             alt="Inky Logo"
             className="h-14"
           />
-          <ul className="hidden sm:flex items-center gap-8 ">
+          <ul className="hidden sm:flex items-end gap-8 ">
             <li>
               <NavLink
                 activeClassName="active"
@@ -176,10 +176,10 @@ const Layout = () => {
                 onClick={handleNavigation}
                 className="montserrat-nav"
               >
-                Media
+                Podcast
               </NavLink>
             </li>
-            <li className="bg-[#F6C228] text-black font-semibold w-[6.5rem] h-[2rem] rounded-md flex items-center justify-center hover:bg-white hover:text-black">
+            <li className="bg-[#F6C228] text-black font-semibold py-[0.5px] px-2 rounded-md flex items-end justify-center hover:bg-white hover:text-black">
               <Link to="/book" className="text-lg hover:text-black">
                 Book Now
               </Link>

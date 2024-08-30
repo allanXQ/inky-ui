@@ -70,7 +70,7 @@ const Quote = () => {
         </p>
         <p className=" text-xl text-center">
           <span className={"font-bold"}>MD</span> <br /> Corporate Trainer{" "}
-          <span className="hidden md:inline">|</span>Transformational Speaker
+          <span className="hidden md:inline">|</span> Transformational Speaker
         </p>
       </div>
     </div>
