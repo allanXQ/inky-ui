@@ -146,7 +146,7 @@ const Layout = () => {
       <div className="w-screen flex flex-col items-center justify-center relative">
         <nav className="flex items-center justify-between text-white w-full px-10 fixed top-0 z-10 py-2 mt-4 bg-opacity-85">
           <img
-            src="./inkylogo.png"
+            src="./gold.png"
             alt="Inky Logo"
             className="h-14"
           />
