@@ -1,7 +1,19 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const MeetMD = () => {
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const linesVariants = {
     hidden: {
       opacity: 0,
@@ -17,19 +29,27 @@ const MeetMD = () => {
     },
   };
 
+  const { scrollYProgress } = useScroll();
+  const maxTranslateX = 300;
+  const translateX = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [maxTranslateX, -maxTranslateX]
+  );
+
   return (
     <div
-      id="meetinky"
+      id="meetmd"
       className="flex items-center justify-center flex-wrap gap-10"
     >
-      <div className="flex flex-col gap-4 max-w-[600px] px-2 mt-10 md:mt-20">
-        <div className="flex">
+      <div className="flex flex-col max-w-[600px] px-2 mt-10 md:mt-20">
+        <div className="flex gap-4">
           <motion.img
             src="./lines.png"
             variants={linesVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.0 }} // Trigger the animation when 50% of the element is in view
+            viewport={{ once: true, amount: 0.0 }}
           />
 
           <div className="flex flex-col gap-4 max-w-[600px] px-2">
@@ -88,7 +108,12 @@ const MeetMD = () => {
         </div>
       </div>
       <div className={"md:mt-20"}>
-        <img src="./meet-md.png" className="max-w-[300px] md:max-w-[500px]" />
+        <motion.img
+          src="./meet-md.png"
+          className="max-w-[300px] md:max-w-[600px]"
+          style={{ x: translateX }}
+          transition={{ type: "just" }}
+        />
       </div>
     </div>
   );
