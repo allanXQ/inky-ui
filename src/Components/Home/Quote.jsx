@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 const Quote = () => {
+  const controls = useAnimation();
+
+  // Variants for the SVG animation
+  const svgVariants = {
+    hidden: { x: -300, opacity: 0 }, // Start from 300 pixels to the right
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 30, damping: 20 },
+    },
+  };
+
   return (
     <div
       id="quote"
       className="flex flex-col items-center justify-center w-full relative px-4 mt-36 md:mt-24"
     >
-      <div id="comp-ky2hvz0a" data-motion-enter="done" className="relative">
+      <motion.div
+        id="comp-ky2hvz0a"
+        className="relative"
+        initial="hidden"
+        animate={controls}
+        variants={svgVariants}
+        // Use the viewport prop to trigger the animation when the SVG comes into view
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+      >
         <div
           data-testid="svgRoot-comp-ky2hvz0a"
           className="max-w-24 md:max-w-36  mt-16 md:mt-0"
@@ -29,7 +51,7 @@ const Quote = () => {
             </g>
           </svg>
         </div>
-      </div>
+      </motion.div>
       <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
         <p className="text-xl md:text-2xl text-center anton-regular">
           <span className={"text-[#F6C228]"}>Resilience</span> isn't just a
