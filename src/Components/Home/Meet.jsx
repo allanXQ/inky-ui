@@ -1,6 +1,22 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const MeetMD = () => {
+  const linesVariants = {
+    hidden: {
+      opacity: 0,
+      clipPath: "inset(0% 0% 100% 0%)",
+    },
+    visible: {
+      opacity: 1,
+      clipPath: "inset(0% 0% 0% 0%)",
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div
       id="meetinky"
@@ -8,7 +24,13 @@ const MeetMD = () => {
     >
       <div className="flex flex-col gap-4 max-w-[600px] px-2 mt-10 md:mt-20">
         <div className="flex">
-          <img src="./lines.png" className="" />
+          <motion.img
+            src="./lines.png"
+            variants={linesVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.0 }} // Trigger the animation when 50% of the element is in view
+          />
 
           <div className="flex flex-col gap-4 max-w-[600px] px-2">
             <h3 className="about-h3 text-[#F6C228]">MEET MD</h3>
