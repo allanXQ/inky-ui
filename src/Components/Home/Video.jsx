@@ -28,7 +28,7 @@ const LazyVideo = ({ toggleModal, setModalContent }) => {
         loop
         className="h-[480px] w-full object-cover"
       >
-        {loaded && <source src="./file.mp4" type="video/mp4" />}
+        {loaded && <source src="./file2.mp4" type="video/mp4" />}
       </video>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +42,7 @@ const LazyVideo = ({ toggleModal, setModalContent }) => {
               controls
               className="w-full h-full object-cover"
             >
-              <source src="./file.mp4" type="video/mp4" />
+              <source src="./file2.mp4" type="video/mp4" />
             </video>
           );
           toggleModal();
