@@ -20,16 +20,18 @@ const LazyVideo = ({ toggleModal, setModalContent }) => {
   }, []);
   return (
     <div id="video" ref={videoRef} className="video-container  relative w-full">
-      <div className="absolute inset-0 bg-gradient"></div>
-      <video
-        id="hero-video"
-        autoPlay
-        muted
-        loop
-        className="h-[480px] w-full object-cover"
-      >
-        {loaded && <source src="./file2.mp4" type="video/mp4" />}
-      </video>
+      <div className="relative">
+        <img src="./videooverlay.webp" className="w-full absolute" />
+        <video
+          id="hero-video"
+          autoPlay
+          muted
+          loop
+          className="h-[480px] w-full object-cover"
+        >
+          {loaded && <source src="./file2.mp4" type="video/mp4" />}
+        </video>
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
