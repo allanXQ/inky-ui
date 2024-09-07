@@ -8,30 +8,27 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonialContent.length);
-    }, 3000); // Change the testimonial every 3 seconds
+    }, 5000);
     return () => clearInterval(interval);
   }, [testimonialContent.length]);
 
   const variants = {
-    enter: (direction) => ({
+    enter: {
       y: 300,
       opacity: 0,
-    }),
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
     center: {
       y: 0,
       opacity: 1,
       transition: {
-        y: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.2 },
+        opacity: { duration: 1, ease: "easeInOut" },
       },
     },
     exit: {
       y: -300,
       opacity: 0,
-      transition: {
-        y: { stiffness: 300, damping: 30 },
-        opacity: { duration: 0.2 },
-      },
+      transition: { duration: 0.6, ease: "easeInOut" },
     },
   };
 
@@ -56,23 +53,22 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
             </div>
           </div>
         </div>
-        <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl sm:max-w-[60vw] md:max-w-[45vw] h-fit p-10 relative max-h-[400px]">
+        <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl sm:max-w-[60vw] md:max-w-[45vw] h-fit p-10 relative max-h-[450px]">
           <img
             src="./topquote.png"
             className="absolute top-[-40px] left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
           />
-          <AnimatePresence initial={false}>
+          <AnimatePresence mode="wait" onExitComplete={() => null}>
             <motion.div
               key={current}
               initial="enter"
               animate="center"
               exit="exit"
               variants={variants}
-              transition={{ duration: 1 }}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center overflow-hidden"
             >
-              <div className="max-h-80 overflow-hidden">
-                <p className="big-shoulders-regular overflow-hidden">
+              <div className="max-h-[245px] overflow-y-hidden">
+                <p className="big-shoulders-regular text-ellipsis max-h-[245px] overflow-y-hidden">
                   {testimonialContent[current]?.text}
                 </p>
               </div>
