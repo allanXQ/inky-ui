@@ -70,7 +70,7 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
                 animate="center"
                 exit="exit"
                 variants={variants}
-                className="flex flex-col items-center overflow-hidden"
+                className="flex flex-col overflow-hidden"
               >
                 <div className="max-h-[245px] overflow-y-hidden">
                   <p className="big-shoulders-regular text-ellipsis max-h-[245px] overflow-y-hidden">
