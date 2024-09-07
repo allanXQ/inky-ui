@@ -4,6 +4,7 @@ import { Outlet, NavLink, Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BookButton from "../Components/BookButton";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -70,9 +71,26 @@ const Layout = () => {
     }
   };
 
+  const sidebarVariants = {
+    open: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+    closed: {
+      x: 100,
+      opacity: 0,
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  };
+
   const SideNav = () => (
-    <nav
+    <motion.nav
       id="side-nav"
+      variants={sidebarVariants}
+      initial={sideNavOpen ? "closed" : "open"}
+      animate={sideNavOpen ? "open" : "closed"}
+      exit="closed"
       className="flex z-20 sm:hidden flex-col py-10 px-5 bg-[rgba(0,0,0,0.9)] absolute top-0 right-0 w-[80vw] h-full"
     >
       <div className="flex justify-end mb-10">
@@ -147,7 +165,7 @@ const Layout = () => {
           </li>
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 
   return (
@@ -206,7 +224,7 @@ const Layout = () => {
             </svg>
           </div>
         </nav>
-        {sideNavOpen && <SideNav />}
+        <AnimatePresence>{sideNavOpen && <SideNav />}</AnimatePresence>
         <Outlet />
         <footer className="flex flex-col items-center justify-center gap-2 mt-10 w-screen">
           <div id="cta" className="flex items-center justify-center mt-5">
