@@ -97,7 +97,6 @@ const Quote = () => {
         variants={textVariants}
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
-        onViewportEnter={() => console.log("Text container entered viewport")}
         className="flex flex-col items-center"
       >
         <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
