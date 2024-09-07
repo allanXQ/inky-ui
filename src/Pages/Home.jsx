@@ -10,6 +10,14 @@ import LazyVideo from "../Components/Home/Video";
 import Quote from "../Components/Home/Quote";
 import Testimonials from "../Components/Home/Testimonials";
 
+const testimonial = [
+  {
+    text: "I am writing to express our appreciation and commendation for the outstanding customer experience training session you conducted on 24th of June 2024 for our team. Your ability to connect with the participants, convey complex concepts with clarity, and foster an interactive learning environment was very much appreciated. The feedback from our team has been very positive. The hands-on exercises and real-world examples you incorporated into the training made the material accessible and relatable. We are grateful for the time and effort you invested in this training.",
+    name: "JOHN K KARIUIKI",
+    position: "GROUP CEO, fincredit Ltd",
+  },
+];
+
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState(null);
@@ -30,39 +38,20 @@ export default function Home() {
     setIsModalOpen(!isModalOpen);
   };
 
-  const openTestimonialModal = () => {
+  const openTestimonialModal = (testimonialContent) => {
     setModalContent(
       <div className="flex flex-col items-center justify-center w-full p-3">
+        <img
+          src="./topquote.png"
+          width={70}
+          height={30}
+          className="absolute top-[-30px] left-[-10px] md:left-[-30px]"
+        />
         <div className=" flex flex-col gap-5 big-shoulders-regular text-center">
-          <p className="flex text-center">
-            My sincere appreciation for the exceptional training you delivered
-            to our team of managers on transformational leadership. Your
-            expertise and engaging approach made a significant impact on our
-            managers' leadership skills and their ability to inspire their
-            teams. Your training sessions were informative, thought-provoking,
-            and highly relevant to our organization. Your ability to convey
-            complex concepts clearly and encourage active participation created
-            a valuable learning environment. The feedback from our managers was
-            overwhelmingly positive, highlighting the practicality and
-            effectiveness of the training. Your professionalism, punctuality,
-            and dedication were evident throughout the training program.
-          </p>
-          <p>
-            Your passion for empowering leaders to reach their full potential
-            was inspiring and left a lasting impression on our team. We are
-            grateful for your contribution in fostering a culture of
-            transformational leadership within our organization. I highly
-            recommend your services to any organization seeking to enhance the
-            leadership capabilities of their managers. Your expertise and
-            ability to connect with participants make you an invaluable resource
-            in the field of leadership development. Thank you once again for
-            your outstanding training, and we look forward to future
-            collaborations that will continue to enrich our organization's
-            growth and success.
-          </p>
+          <p className="flex text-center">{testimonialContent.text}</p>
         </div>
-        <p className="mt-4 text-2xl font-bold">- WINNIE</p>
-        <p className="clients-h2">HR MANAGER, MERIDIAN EQUATOR</p>
+        <p className="mt-4 text-2xl font-bold">- {testimonialContent.name}</p>
+        <p className="clients-h2">{testimonialContent.position}</p>
         <img
           src="./bottomquote.png"
           width={70}
@@ -133,7 +122,7 @@ export default function Home() {
       <Quote />
       <BookingFor />
       <SignatureMessages />
-      <div id="podcasts" className="w-full flex flex-col  gap-5">
+      {/* <div id="podcasts" className="w-full flex flex-col  gap-5">
         <div className="pod-img">
           <div className=" w-full flex items-center justify-center min-h-96">
             <img
@@ -229,9 +218,12 @@ export default function Home() {
             </svg>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <Testimonials openTestimonialModal={openTestimonialModal} />
+      <Testimonials
+        openTestimonialModal={openTestimonialModal}
+        testimonialContent={testimonial}
+      />
 
       <Modal show={isModalOpen} onClose={toggleModal}>
         {modalContent}

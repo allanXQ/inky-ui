@@ -1,7 +1,7 @@
 import React from "react";
 import BookButton from "../BookButton";
 
-const Testimonials = ({ openTestimonialModal }) => {
+const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
   return (
     <div id="testimonials" className="w-full overflow-y-hidden">
       <div className="flex flex-col gap-20 sm:flex-row sm:gap-0 md:gap-24 mt-4 items-center justify-center px-2 sm:px-0 w-full">
@@ -28,26 +28,18 @@ const Testimonials = ({ openTestimonialModal }) => {
             src="./topquote.png"
             className="absolute top-[-40px]  left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
           />
-          <p className="big-shoulders-regular">
-            I am writing to express our appreciation and commendation for the
-            outstanding customer experience training session you conducted on
-            24th of June 2024 for our team. Your ability to connect with the
-            participants, convey complex concepts with clarity, and foster an
-            interactive learning environment was very much appreciated. The
-            feedback from our team has been very positive. The hands-on
-            exercises and real-world examples you incorporated into the training
-            made the material accessible and relatable. We are grateful for the
-            time and effort you invested in this training.
-          </p>
+          <p className="big-shoulders-regular">{testimonialContent[0].text}</p>
           <div className="flex flex-col items-end gap-2">
-            <p className="font-bold text-2xl">- JOHN K KARIUIKI</p>
-            <p className="clients-h2 uppercase">GROUP CEO, fincredit Ltd</p>
+            <p className="font-bold text-2xl">- {testimonialContent[0].name}</p>
+            <p className="clients-h2 uppercase">
+              {testimonialContent[0].position}
+            </p>
 
             <div className="flex items-center border border-white rounded-lg w-56 ">
               <button
                 id="about-btn"
                 className="py-2 px-4"
-                onClick={openTestimonialModal}
+                onClick={() => openTestimonialModal(testimonialContent[0])}
               >
                 <p className="text-md">Read Full Testimonial</p>
               </button>
