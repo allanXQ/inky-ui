@@ -152,7 +152,7 @@ export default function Home() {
       <Quote />
       <BookingFor />
       <SignatureMessages />
-      {/* <div id="podcasts" className="w-full flex flex-col  gap-5">
+      <div id="podcasts" className="w-full flex flex-col  gap-5">
         <div className="pod-img">
           <div className=" w-full flex items-center justify-center min-h-96">
             <img
@@ -248,7 +248,7 @@ export default function Home() {
             </svg>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <Testimonials
         openTestimonialModal={openTestimonialModal}
