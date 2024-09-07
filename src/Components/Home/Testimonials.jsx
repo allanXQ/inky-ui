@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useTransform,
+  useScroll,
+} from "framer-motion";
 import BookButton from "../BookButton";
 
 const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
@@ -32,6 +37,39 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
     },
   };
 
+  const topQuoteVariants = {
+    hidden: { x: -50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const bottomQuoteVariants = {
+    hidden: { x: 50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const linesVariants = {
+    hidden: {
+      opacity: 0,
+      clipPath: "inset(0% 0% 100% 0%)",
+    },
+    visible: {
+      opacity: 1,
+      clipPath: "inset(0% 0% 0% 0%)",
+      transition: {
+        duration: 2,
+        ease: "easeOut",
+      },
+    },
+  };
+
   const handleDotClick = (index) => {
     setCurrent(index);
   };
@@ -42,7 +80,13 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
         <div className="flex gap-5">
           <div className="flex flex-col gap-10 sm:gap-4 flex-wrap items-center justify-center">
             <div className="flex items-center gap-5">
-              <img src="./lines.png" className="hidden sm:block" />
+              <motion.img
+                src="./lines.png"
+                variants={linesVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.0 }}
+              />
               <div className="flex flex-col gap-2">
                 <div className="flex flex-col gap-4">
                   <div className="font-bold text-5xl">
@@ -59,9 +103,15 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
         </div>
         <div>
           <div className="testimonial-container flex flex-col gap-5  sm:max-w-[60vw] md:max-w-[45vw] h-fit relative mt-10">
-            <img
+            <motion.img
               src="./topquote.png"
-              className="absolute top-[-40px] left-[-5px] md:left-[0px] animate-slideInLeft-1 w-14"
+              initial="hidden"
+              animate="visible"
+              variants={topQuoteVariants}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
+              className="absolute top-[-40px] left-[-5px] md:left-[0px] w-14 z-20"
+              onViewportEnter={() => console.log("Top quote entered viewport")}
             />
             <AnimatePresence mode="wait" onExitComplete={() => null}>
               <motion.div
@@ -116,9 +166,17 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
                 </div>
               </motion.div>
             </AnimatePresence>
-            <img
+            <motion.img
               src="./bottomquote.png"
+              initial="hidden"
+              animate="visible"
+              variants={bottomQuoteVariants}
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.5 }}
               className="absolute bottom-[-35px] right-[5px] md:right-[-5px] w-14"
+              onViewportEnter={() =>
+                console.log("Bottom quote entered viewport")
+              }
             />
           </div>
           <div className="flex justify-center mt-5">

@@ -11,7 +11,7 @@ const MeetMD = () => {
       opacity: 1,
       clipPath: "inset(0% 0% 0% 0%)",
       transition: {
-        duration: 0.8,
+        duration: 2,
         ease: "easeOut",
       },
     },
