@@ -10,7 +10,7 @@ import LazyVideo from "../Components/Home/Video";
 import Quote from "../Components/Home/Quote";
 import Testimonials from "../Components/Home/Testimonials";
 
-const testimonial = [
+const testimonialContent = [
   {
     text: "I am writing to express our appreciation and commendation for the outstanding customer experience training session you conducted on 24th of June 2024 for our team. Your ability to connect with the participants, convey complex concepts with clarity, and foster an interactive learning environment was very much appreciated. The feedback from our team has been very positive. The hands-on exercises and real-world examples you incorporated into the training made the material accessible and relatable. We are grateful for the time and effort you invested in this training.",
     name: "JOHN K KARIUIKI",
@@ -66,7 +66,7 @@ export default function Home() {
     setIsModalOpen(!isModalOpen);
   };
 
-  const openTestimonialModal = (testimonialContent) => {
+  const openTestimonialModal = (index) => {
     setModalContent(
       <div className="flex flex-col items-center justify-center w-full p-3">
         <img
@@ -76,14 +76,12 @@ export default function Home() {
           className="absolute top-[-30px] left-[-10px] md:left-[-30px]"
         />
         <div className=" flex flex-col gap-5 big-shoulders-regular text-center">
-          <p className="flex text-center">{testimonialContent?.text}</p>
+          <p className="flex text-center">{testimonialContent[index].text}</p>
         </div>
         <p className="mt-4 text-2xl font-bold">
-          - {testimonialContent?.name.toUpperCase()}
+          - {testimonialContent[index].name}
         </p>
-        <p className="clients-h2">
-          {testimonialContent?.position.toUpperCase()}
-        </p>
+        <p className="clients-h2">{testimonialContent[index].position}</p>
         <img
           src="./bottomquote.png"
           width={70}
@@ -254,7 +252,7 @@ export default function Home() {
 
       <Testimonials
         openTestimonialModal={openTestimonialModal}
-        testimonialContent={testimonial}
+        testimonialContent={testimonialContent}
       />
 
       <Modal show={isModalOpen} onClose={toggleModal}>

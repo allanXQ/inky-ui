@@ -28,46 +28,48 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
             src="./topquote.png"
             className="absolute top-[-40px]  left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
           />
-          <p className="big-shoulders-regular">{testimonialContent[0]?.text}</p>
-          <div className="flex flex-col items-end gap-2">
-            <p className="font-bold text-2xl">
-              - {testimonialContent[0]?.name.toUpperCase()}
-            </p>
-            <p className="clients-h2 uppercase">
-              {testimonialContent[0]?.position.toUpperCase()}
-            </p>
+          {testimonialContent.map((testimonial, index) => (
+            <div key={index}>
+              <div>
+                <p className="big-shoulders-regular">{testimonial?.text}</p>
+              </div>
+              <div className="flex flex-col items-end gap-2">
+                <p className="font-bold text-2xl">- {testimonial?.name}</p>
+                <p className="clients-h2 uppercase">{testimonial?.position}</p>
 
-            <div className="flex items-center border border-white rounded-lg w-56 ">
-              <button
-                id="about-btn"
-                className="py-2 px-4"
-                onClick={() => openTestimonialModal(testimonialContent[0])}
-              >
-                <p className="text-md">Read Full Testimonial</p>
-              </button>
-              <div
-                style={{
-                  borderRight: "1px solid white",
-                  height: "2.5rem",
-                }}
-              ></div>
+                <div className="flex items-center border border-white rounded-lg w-56 ">
+                  <button
+                    id="about-btn"
+                    className="py-2 px-4"
+                    onClick={() => openTestimonialModal(index)}
+                  >
+                    <p className="text-md">Read Full Testimonial</p>
+                  </button>
+                  <div
+                    style={{
+                      borderRight: "1px solid white",
+                      height: "2.5rem",
+                    }}
+                  ></div>
 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-8 pl-3"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                />
-              </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-8 pl-3"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
           <img
             src="./bottomquote.png"
             width={70}
