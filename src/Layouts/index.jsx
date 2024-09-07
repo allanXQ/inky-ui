@@ -63,11 +63,13 @@ const Layout = () => {
 
     if (location.pathname !== "/home") {
       navigate("/home", { state: { scrollTo: "podcasts" } });
+      sideNavOpen && closeSideNav();
     } else {
       const section = document.getElementById("podcasts");
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
+      sideNavOpen && closeSideNav();
     }
   };
 
