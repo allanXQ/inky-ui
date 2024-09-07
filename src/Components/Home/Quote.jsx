@@ -3,14 +3,28 @@ import { motion, useAnimation } from "framer-motion";
 
 const Quote = () => {
   const controls = useAnimation();
+  const textControls = useAnimation();
 
-  // Variants for the SVG animation
   const svgVariants = {
-    hidden: { x: -300, opacity: 0 }, // Start from 300 pixels to the right
+    hidden: { x: -300, opacity: 0 },
     visible: {
       x: 0,
       opacity: 1,
       transition: { type: "spring", stiffness: 30, damping: 20 },
+    },
+  };
+  const textVariants = {
+    hidden: {
+      opacity: 0,
+      clipPath: "inset(0 100% 0 0)",
+    },
+    visible: {
+      opacity: 1,
+      clipPath: "inset(0 0 0 0)",
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
     },
   };
 
@@ -52,7 +66,15 @@ const Quote = () => {
           </svg>
         </div>
       </motion.div>
-      <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
+      <motion.div
+        className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12"
+        initial="hidden"
+        animate={textControls}
+        variants={textVariants}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        onViewportEnter={() => console.log("Text container entered viewport")}
+      >
         <p className="text-xl md:text-2xl text-center anton-regular">
           <span className={"text-[#F6C228]"}>Resilience</span> isn't just a
           trait—it's a skill we must cultivate. I've faced my own hurdles, but
@@ -72,7 +94,7 @@ const Quote = () => {
           <span className={"font-bold"}>MD</span> <br /> Corporate Trainer{" "}
           <span className="hidden md:inline">|</span> Transformational Speaker
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };
