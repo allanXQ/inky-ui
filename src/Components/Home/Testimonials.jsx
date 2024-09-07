@@ -58,10 +58,10 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
           </div>
         </div>
         <div>
-          <div className="testimonial-container flex flex-col gap-5  sm:max-w-[60vw] md:max-w-[45vw] h-fit relative ">
+          <div className="testimonial-container flex flex-col gap-5  sm:max-w-[60vw] md:max-w-[45vw] h-fit relative mt-10">
             <img
               src="./topquote.png"
-              className="absolute top-[-40px] left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
+              className="absolute top-[-40px] left-[-5px] md:left-[0px] animate-slideInLeft-1 w-14"
             />
             <AnimatePresence mode="wait" onExitComplete={() => null}>
               <motion.div
@@ -118,9 +118,7 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
             </AnimatePresence>
             <img
               src="./bottomquote.png"
-              width={70}
-              height={30}
-              className="absolute bottom-[-35px] right-[5px] md:right-[-5px]"
+              className="absolute bottom-[-35px] right-[5px] md:right-[-5px] w-14"
             />
           </div>
           <div className="flex justify-center mt-5">
