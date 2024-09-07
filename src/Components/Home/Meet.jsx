@@ -2,18 +2,6 @@ import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const MeetMD = () => {
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const linesVariants = {
     hidden: {
       opacity: 0,
