@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useTransform,
-  useScroll,
-} from "framer-motion";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import BookButton from "../BookButton";
 
 const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
@@ -70,6 +65,9 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
     },
   };
 
+  const controlsTop = useAnimation();
+  const controlsBottom = useAnimation();
+
   const handleDotClick = (index) => {
     setCurrent(index);
   };
@@ -106,12 +104,11 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
             <motion.img
               src="./topquote.png"
               initial="hidden"
-              animate="visible"
+              animate={controlsTop}
               variants={topQuoteVariants}
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
               className="absolute top-[-40px] left-[-5px] md:left-[0px] w-14 z-20"
-              onViewportEnter={() => console.log("Top quote entered viewport")}
             />
             <AnimatePresence mode="wait" onExitComplete={() => null}>
               <motion.div
@@ -169,14 +166,11 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
             <motion.img
               src="./bottomquote.png"
               initial="hidden"
-              animate="visible"
+              animate={controlsBottom}
               variants={bottomQuoteVariants}
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
               className="absolute bottom-[-35px] right-[5px] md:right-[-5px] w-14"
-              onViewportEnter={() =>
-                console.log("Bottom quote entered viewport")
-              }
             />
           </div>
           <div className="flex justify-center mt-5">
