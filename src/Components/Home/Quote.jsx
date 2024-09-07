@@ -14,17 +14,13 @@ const Quote = () => {
     },
   };
   const textVariants = {
-    hidden: {
-      opacity: 0,
-      width: 0, // Starts with zero width
-      overflow: "hidden",
-    },
+    hidden: { opacity: 0, scaleX: 0, transformOrigin: "left" },
     visible: {
+      scaleX: 1,
       opacity: 1,
-      width: "100%", // Animates to full width
       transition: {
         duration: 2,
-        ease: "easeOut",
+        ease: "easeInOut",
       },
     },
   };
