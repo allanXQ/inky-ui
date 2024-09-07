@@ -111,7 +111,7 @@ export default function Home() {
       id="home"
       className="w-screen  text-white flex flex-col items-center gap-8 overflow-x-hidden"
     >
-      <div id="nav-hero" className="h-screen w-full">
+      <div id="nav-hero" className="h-screen w-full z-0">
         <div
           id="inner-hero"
           className="flex flex-col  gap-4 items-top justify-top  min-h-screen "
