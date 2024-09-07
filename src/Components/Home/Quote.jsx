@@ -16,13 +16,14 @@ const Quote = () => {
   const textVariants = {
     hidden: {
       opacity: 0,
-      clipPath: "inset(0 100% 0 0)",
+      width: 0, // Starts with zero width
+      overflow: "hidden",
     },
     visible: {
       opacity: 1,
-      clipPath: "inset(0 0 0 0)",
+      width: "100%", // Animates to full width
       transition: {
-        duration: 0.8,
+        duration: 2,
         ease: "easeOut",
       },
     },
@@ -67,33 +68,35 @@ const Quote = () => {
         </div>
       </motion.div>
       <motion.div
-        className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12"
         initial="hidden"
         animate={textControls}
         variants={textVariants}
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         onViewportEnter={() => console.log("Text container entered viewport")}
+        className="flex flex-col items-center"
       >
-        <p className="text-xl md:text-2xl text-center anton-regular">
-          <span className={"text-[#F6C228]"}>Resilience</span> isn't just a
-          trait—it's a skill we must cultivate. I've faced my own hurdles, but
-          what I've learned is that true strength lies not in avoiding
-          challenges, but in transforming them into opportunities for growth. My
-          mission is to{" "}
-          <span className={"text-[#F6C228]"}>
-            empower others to harness their potential
-          </span>
-          , no matter the obstacles, and to{" "}
-          <span className={"text-[#F6C228]"}>
-            inspire a relentless commitment to excellence
-          </span>{" "}
-          in every aspect of your journey.
-        </p>
-        <p className=" text-xl text-center">
-          <span className={"font-bold"}>MD</span> <br /> Corporate Trainer{" "}
-          <span className="hidden md:inline">|</span> Transformational Speaker
-        </p>
+        <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
+          <p className="text-xl md:text-2xl text-center anton-regular">
+            <span className={"text-[#F6C228]"}>Resilience</span> isn't just a
+            trait—it's a skill we must cultivate. I've faced my own hurdles, but
+            what I've learned is that true strength lies not in avoiding
+            challenges, but in transforming them into opportunities for growth.
+            My mission is to{" "}
+            <span className={"text-[#F6C228]"}>
+              empower others to harness their potential
+            </span>
+            , no matter the obstacles, and to{" "}
+            <span className={"text-[#F6C228]"}>
+              inspire a relentless commitment to excellence
+            </span>{" "}
+            in every aspect of your journey.
+          </p>
+          <p className=" text-xl text-center">
+            <span className={"font-bold"}>MD</span> <br /> Corporate Trainer{" "}
+            <span className="hidden md:inline">|</span> Transformational Speaker
+          </p>
+        </div>
       </motion.div>
     </div>
   );
