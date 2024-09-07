@@ -16,6 +16,34 @@ const testimonial = [
     name: "JOHN K KARIUIKI",
     position: "GROUP CEO, fincredit Ltd",
   },
+  {
+    text: `
+    My sincere appreciation for the exceptional training you delivered
+            to our team of managers on transformational leadership. Your
+            expertise and engaging approach made a significant impact on our
+            managers' leadership skills and their ability to inspire their
+            teams. Your training sessions were informative, thought-provoking,
+            and highly relevant to our organization. Your ability to convey
+            complex concepts clearly and encourage active participation created
+            a valuable learning environment. The feedback from our managers was
+            overwhelmingly positive, highlighting the practicality and
+            effectiveness of the training. Your professionalism, punctuality,
+            and dedication were evident throughout the training program.
+            Your passion for empowering leaders to reach their full potential
+            was inspiring and left a lasting impression on our team. We are
+            grateful for your contribution in fostering a culture of
+            transformational leadership within our organization. I highly
+            recommend your services to any organization seeking to enhance the
+            leadership capabilities of their managers. Your expertise and
+            ability to connect with participants make you an invaluable resource
+            in the field of leadership development. Thank you once again for
+            your outstanding training, and we look forward to future
+            collaborations that will continue to enrich our organization's
+            growth and success.
+    `,
+    name: "WINNIE",
+    position: "HR MANAGER, MERIDIAN EQUATOR",
+  },
 ];
 
 export default function Home() {
@@ -48,10 +76,14 @@ export default function Home() {
           className="absolute top-[-30px] left-[-10px] md:left-[-30px]"
         />
         <div className=" flex flex-col gap-5 big-shoulders-regular text-center">
-          <p className="flex text-center">{testimonialContent.text}</p>
+          <p className="flex text-center">{testimonialContent?.text}</p>
         </div>
-        <p className="mt-4 text-2xl font-bold">- {testimonialContent.name}</p>
-        <p className="clients-h2">{testimonialContent.position}</p>
+        <p className="mt-4 text-2xl font-bold">
+          - {testimonialContent?.name.toUpperCase()}
+        </p>
+        <p className="clients-h2">
+          {testimonialContent?.position.toUpperCase()}
+        </p>
         <img
           src="./bottomquote.png"
           width={70}

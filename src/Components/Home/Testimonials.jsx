@@ -28,11 +28,13 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
             src="./topquote.png"
             className="absolute top-[-40px]  left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
           />
-          <p className="big-shoulders-regular">{testimonialContent[0].text}</p>
+          <p className="big-shoulders-regular">{testimonialContent[0]?.text}</p>
           <div className="flex flex-col items-end gap-2">
-            <p className="font-bold text-2xl">- {testimonialContent[0].name}</p>
+            <p className="font-bold text-2xl">
+              - {testimonialContent[0]?.name.toUpperCase()}
+            </p>
             <p className="clients-h2 uppercase">
-              {testimonialContent[0].position}
+              {testimonialContent[0]?.position.toUpperCase()}
             </p>
 
             <div className="flex items-center border border-white rounded-lg w-56 ">
