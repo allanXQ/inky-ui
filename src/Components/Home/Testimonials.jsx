@@ -58,7 +58,7 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
           </div>
         </div>
         <div>
-          <div className="testimonial-container flex flex-col gap-5 border border-[#636363] rounded-xl sm:max-w-[60vw] md:max-w-[45vw] h-fit p-10 relative max-h-[450px]">
+          <div className="testimonial-container flex flex-col gap-5  sm:max-w-[60vw] md:max-w-[45vw] h-fit relative ">
             <img
               src="./topquote.png"
               className="absolute top-[-40px] left-[-5px] md:left-[0px] animate-slideInLeft-1 w-18"
@@ -70,7 +70,7 @@ const Testimonials = ({ openTestimonialModal, testimonialContent }) => {
                 animate="center"
                 exit="exit"
                 variants={variants}
-                className="flex flex-col overflow-hidden"
+                className="flex flex-col overflow-hidden border border-[#636363] rounded-xl p-10"
               >
                 <div className="max-h-[245px] overflow-y-hidden">
                   <p className="big-shoulders-regular text-ellipsis max-h-[245px] overflow-y-hidden">
