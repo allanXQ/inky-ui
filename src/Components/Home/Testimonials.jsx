@@ -3,7 +3,7 @@ import BookButton from "../BookButton";
 
 const Testimonials = ({ openTestimonialModal }) => {
   return (
-    <div id="testimonials" className="w-full">
+    <div id="testimonials" className="w-full overflow-y-hidden">
       <div className="flex flex-col gap-20 sm:flex-row sm:gap-0 md:gap-24 mt-4 items-center justify-center px-2 sm:px-0 w-full">
         <div className="flex gap-5">
           <div className="flex flex-col gap-10 sm:gap-4 flex-wrap items-center justify-center">
