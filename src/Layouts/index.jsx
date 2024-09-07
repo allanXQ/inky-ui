@@ -73,7 +73,7 @@ const Layout = () => {
   const SideNav = () => (
     <nav
       id="side-nav"
-      className="flex z-20 sm:hidden flex-col py-10 px-5 bg-[rgba(0,0,0,0.9)] absolute top-0 right-0 w-[70vw] h-full"
+      className="flex z-20 sm:hidden flex-col py-10 px-5 bg-[rgba(0,0,0,0.9)] absolute top-0 right-0 w-[80vw] h-full"
     >
       <div className="flex justify-end mb-10">
         <div onClick={closeSideNav} className="cursor-pointer">
@@ -92,7 +92,10 @@ const Layout = () => {
         </div>
       </div>
       <div className="flex  justify-evenly">
-        <div data-testid="svgRoot-comp-ky2hvz0a" className="w-36 ">
+        <div
+          data-testid="svgRoot-comp-ky2hvz0a"
+          className="absolute left-0 top-20"
+        >
           <svg
             preserveAspectRatio="xMidYMid meet"
             data-bbox="0 0 770.35 1260.4"
@@ -101,7 +104,7 @@ const Layout = () => {
             data-type="color"
             role="presentation"
             aria-hidden="true"
-            className="absolute left-10 top-0 size-56"
+            className=" size-48"
           >
             <g>
               <path
@@ -113,7 +116,7 @@ const Layout = () => {
           </svg>
         </div>
 
-        <ul className="flex flex-col text-white items-end gap-8 anton-nav max-w-44 mt-44">
+        <ul className="flex flex-col text-white items-end gap-8 anton-nav max-w-44 mt-24">
           <li>
             <NavLink activeClassName="active" to="/home" onClick={closeSideNav}>
               Home
