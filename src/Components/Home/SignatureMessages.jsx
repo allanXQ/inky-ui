@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BookButton from "../BookButton";
+import { motion } from "framer-motion";
 
 const SignatureMessages = () => {
   const [signatureMessages, setSignatureMessages] = useState([]);
@@ -20,12 +21,30 @@ const SignatureMessages = () => {
     fetchSignatureMessages();
   }, []);
 
+  const overlayVariants = {
+    hidden: { x: 0 },
+    visible: {
+      x: "100%",
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <div className="flex flex-col items-center gap-8 mb-5">
       <p className="about-h3 text-[#F6C228] text-center">
         SIGNATURE MESSAGE TOPICS:
       </p>
-      <div className="flex items-center justify-center gap-4 flex-wrap">
+      <div className="flex items-center justify-center gap-4 flex-wrap relative">
+        <motion.div
+          className="absolute inset-0 bg-black z-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={overlayVariants}
+        ></motion.div>
         {signatureMessages.map((message) => (
           <div
             key={message}

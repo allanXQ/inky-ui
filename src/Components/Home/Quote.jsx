@@ -24,6 +24,16 @@ const Quote = () => {
       },
     },
   };
+  const overlayVariants = {
+    hidden: { x: 0 },
+    visible: {
+      x: "100%",
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
 
   return (
     <div
@@ -87,14 +97,14 @@ const Quote = () => {
           </svg>
         </div>
       </div>
-      <motion.div
-        initial="hidden"
-        animate={textControls}
-        variants={textVariants}
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        className="flex flex-col items-center"
-      >
+      <div className="flex flex-col items-center relative">
+        <motion.div
+          className="absolute inset-0 bg-black z-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={overlayVariants}
+        ></motion.div>
         <div className="flex flex-col gap-2 items-center max-w-[45rem] border border-[#636363] rounded-lg py-10 px-12">
           <p className="text-xl md:text-2xl text-center anton-regular">
             <span className={"text-[#F6C228]"}>Resilience</span> isn't just a
@@ -116,7 +126,7 @@ const Quote = () => {
             <span className="hidden md:inline">|</span> Transformational Speaker
           </p>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
