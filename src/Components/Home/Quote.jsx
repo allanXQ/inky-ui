@@ -3,7 +3,6 @@ import { motion, useAnimation } from "framer-motion";
 
 const Quote = () => {
   const controls = useAnimation();
-  const textControls = useAnimation();
 
   const svgVariants = {
     hidden: { x: -300, opacity: 0 },
@@ -13,23 +12,13 @@ const Quote = () => {
       transition: { type: "spring", stiffness: 30, damping: 20 },
     },
   };
-  const textVariants = {
-    hidden: { opacity: 0, scaleX: 0, transformOrigin: "left" },
-    visible: {
-      scaleX: 1,
-      opacity: 1,
-      transition: {
-        duration: 2,
-        ease: "easeInOut",
-      },
-    },
-  };
+
   const overlayVariants = {
     hidden: { x: 0 },
     visible: {
       x: "100%",
       transition: {
-        duration: 1,
+        duration: 1.5,
         ease: "easeInOut",
       },
     },
