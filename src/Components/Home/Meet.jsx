@@ -18,7 +18,7 @@ const MeetMD = () => {
   };
 
   const { scrollYProgress } = useScroll();
-  const maxTranslateX = 300;
+  const maxTranslateX = 200;
   const translateX = useTransform(
     scrollYProgress,
     [0, 1],
