@@ -2,35 +2,35 @@ import React, { useEffect, useRef, useState } from "react";
 import "./ImageGrid.css";
 
 const images = [
-  "about/img1.jpeg",
-  "about/img2.jpeg",
-  "about/img3.jpeg",
-  "about/img4.jpeg",
-  "about/img5.jpeg",
-  "about/img6.jpeg",
-  "about/img7.jpeg",
-  "about/img8.jpeg",
-  "about/img1.jpeg",
-  "about/img2.jpeg",
-  "about/img3.jpeg",
-  "about/img4.jpeg",
+  "about/1.png",
+  "about/2.png",
+  "about/3.png",
+  "about/4.png",
+  "about/5.png",
+  "about/6.png",
+  "about/7.png",
+  "about/8.png",
+  "about/1.png",
+  "about/2.png",
+  "about/3.png",
+  "about/4.png",
 ];
 
 const images2 = [
-  "about/img6.jpeg",
-  "about/img3.jpeg",
+  "about/6.png",
+  "about/3.png",
 
-  "about/img6.jpeg",
+  "about/6.png",
 
-  "about/img7.jpeg",
-  "about/img4.jpeg",
-  "about/img8.jpeg",
-  "about/img4.jpeg",
-  "about/img1.jpeg",
-  "about/img5.jpeg",
-  "about/img2.jpeg",
-  "about/img8.jpeg",
-  "about/img3.jpeg",
+  "about/7.png",
+  "about/4.png",
+  "about/8.png",
+  "about/4.png",
+  "about/1.png",
+  "about/5.png",
+  "about/2.png",
+  "about/8.png",
+  "about/3.png",
 ];
 
 const ImageGallery = () => {
