@@ -95,16 +95,12 @@ export default function Home() {
 
   const clientimages = [
     [
-      "clients/coi.png",
-      "clients/meridian.png",
-      "clients/nokras.png",
-      "clients/noname.png",
-      "clients/noname2.png",
-      "clients/y254.png",
-      "clients/zetech.png",
+      "clients/architecture.png",
+      "clients/galaxy.png",
+      "clients/globaltech.png",
+      "clients/globehorizon.png",
     ],
-
-    ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "7.png", "8.png"],
+    ["clients/logistics.png", "clients/luxury.png", "clients/realestate.png"],
   ];
   return (
     <main
