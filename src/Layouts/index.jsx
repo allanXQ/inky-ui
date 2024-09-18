@@ -246,13 +246,12 @@ const Layout = () => {
                 </div>
                 <div className="flex flex-col items-center justify-center gap-4">
                   <BookButton
-                    text={isLoading ? "Loading..." : "Get Quote"}
-                    onClick={handleRequestQuote}
+                    text="Get Quote"
+                    onClick={() => {
+                      toggleModal();
+                    }}
                   />
                 </div>
-                {message && (
-                  <p className="text-center text-white mt-2">{message}</p>
-                )}
               </div>
             </form>
           </div>
@@ -306,7 +305,7 @@ const Layout = () => {
         </footer>
       </div>
       <Modal show={isModalOpen} onClose={toggleModal}>
-        <div></div>
+        <div>test</div>
       </Modal>
     </>
   );
