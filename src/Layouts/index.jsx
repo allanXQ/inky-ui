@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BookButton from "../Components/BookButton";
 import { motion, AnimatePresence } from "framer-motion";
+import Modal from "../Components/Modal";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -21,6 +22,11 @@ const Layout = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   const toggleSideNav = () => {
     setSideNavOpen(!sideNavOpen);
@@ -239,13 +245,6 @@ const Layout = () => {
                   <p className="text-white text-sm">Request a Service Quote</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-4">
-                  {/*<input*/}
-                  {/*  type="email"*/}
-                  {/*  placeholder="Enter your email address"*/}
-                  {/*  className="border border-white rounded-md w-64 px-4 py-2"*/}
-                  {/*  value={email}*/}
-                  {/*  onChange={handleEmailChange}*/}
-                  {/*/>*/}
                   <BookButton
                     text={isLoading ? "Loading..." : "Get Quote"}
                     onClick={handleRequestQuote}
@@ -306,6 +305,9 @@ const Layout = () => {
           </p>
         </footer>
       </div>
+      <Modal show={isModalOpen} onClose={toggleModal}>
+        <div></div>
+      </Modal>
     </>
   );
 };

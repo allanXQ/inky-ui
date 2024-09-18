@@ -214,7 +214,6 @@ const BookForm = () => {
                           required={isRequired}
                           value={formData[id]}
                           onChange={(e) => handleChange(id, e.target.value)}
-                          // error={errors[id]}
                         />
                       );
                     case "textarea":
