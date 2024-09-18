@@ -10,27 +10,27 @@ const images = [
   "about/6.png",
   "about/7.png",
   "about/8.png",
-  "about/1.png",
-  "about/2.png",
-  "about/3.png",
-  "about/4.png",
+  "about/9.png",
+  "about/10.png",
+  "about/11.png",
+  "about/12.png",
+  "about/24.png",
 ];
 
 const images2 = [
-  "about/6.png",
-  "about/3.png",
+  "about/13.png",
+  "about/14.png",
 
-  "about/6.png",
+  "about/15.png",
 
-  "about/7.png",
-  "about/4.png",
-  "about/8.png",
-  "about/4.png",
-  "about/1.png",
-  "about/5.png",
-  "about/2.png",
-  "about/8.png",
-  "about/3.png",
+  "about/16.png",
+  "about/17.png",
+  "about/18.png",
+  "about/19.png",
+  "about/20.png",
+  "about/21.png",
+  "about/22.png",
+  "about/23.png",
 ];
 
 const ImageGallery = () => {
