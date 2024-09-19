@@ -31,14 +31,14 @@ const Modal = ({ show, onClose, children, title }) => {
     <AnimatePresence>
       <motion.div
         id="modal-overlay"
-        className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 overflow-x-hidden"
+        className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-40 overflow-visible"
         onClick={handleOverlayClick}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="modal block bg-black rounded-lg shadow-lg p-6 relative mx-4 w-full max-w-[60vw] border border-[#636363] max-h-[90vh] overflow-y-auto overflow-x-hidden"
+          className="modal block bg-black rounded-lg shadow-lg p-6 relative mx-4 w-full max-w-[60vw] border border-[#636363] max-h-[90vh] overflow-visible"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}

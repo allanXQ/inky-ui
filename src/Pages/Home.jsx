@@ -73,7 +73,7 @@ export default function Home() {
           src="./topquote.png"
           width={70}
           height={30}
-          className="absolute top-[20px] left-[0px] md:left-[-30px] z-20"
+          className="absolute top-[-30px] left-[0px] md:left-[-30px] z-50"
         />
         <div className=" flex flex-col gap-5 big-shoulders-regular text-center">
           <p className="flex text-center">{testimonialContent[index].text}</p>
