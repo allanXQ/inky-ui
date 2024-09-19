@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import BookButton from "../Components/BookButton";
 import { motion, AnimatePresence } from "framer-motion";
 import Modal from "../Components/Modal";
+import GetQuoteForm from "../Components/GetQuoteForm";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -22,12 +23,17 @@ const Layout = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
+  const toggleQuoteModal = () => {
+    setIsQuoteModalOpen(!isQuoteModalOpen);
   };
 
+  const handleQuoteSubmit = (formData) => {
+    // Handle form submission logic here
+    // For example, send data to your server or display a success message
+    console.log("Form data submitted:", formData);
+  };
   const toggleSideNav = () => {
     setSideNavOpen(!sideNavOpen);
   };
@@ -177,9 +183,9 @@ const Layout = () => {
   );
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       <ScrollToTop />
-      <div className="w-screen flex flex-col items-center justify-center relative">
+      <div className="w-screen flex flex-col items-center justify-center relative overflow-x-hidden">
         <nav className="flex items-center justify-between text-white w-full px-10 fixed top-0 z-10 py-2 mt-4 bg-opacity-85">
           <img src="./gold.png" alt="Inky Logo" className="h-14" />
           <ul className="hidden sm:flex items-end gap-8 ">
@@ -245,12 +251,7 @@ const Layout = () => {
                   <p className="text-white text-sm">Request a Service Quote</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-4">
-                  <BookButton
-                    text="Get Quote"
-                    onClick={() => {
-                      toggleModal();
-                    }}
-                  />
+                  <BookButton text="Get Quote" onClick={toggleQuoteModal} />
                 </div>
               </div>
             </form>
@@ -304,10 +305,14 @@ const Layout = () => {
           </p>
         </footer>
       </div>
-      <Modal show={isModalOpen} onClose={toggleModal}>
-        <div>test</div>
+      <Modal
+        show={isQuoteModalOpen}
+        onClose={toggleQuoteModal}
+        title="Request a Quote"
+      >
+        <GetQuoteForm onSubmit={handleQuoteSubmit} onClose={toggleQuoteModal} />
       </Modal>
-    </>
+    </div>
   );
 };
 
