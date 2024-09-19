@@ -1,7 +1,38 @@
+import React, { useState } from "react";
+
+// Utility function to get input class names
+const getInputClassName = (showError) => {
+  return `border-2 rounded-md p-2 bg-[#f6f6f6] focus:bg-white hover:border-[#F6C228] 
+    focus:border-t-0 focus:border-l-0 focus:border-r-0 focus:border-b-[1px] 
+    focus:border-black focus:outline-none ${
+      showError ? "border-red-500" : "border-gray-300"
+    }`;
+};
+
+// Utility function to get width class names
+const getWidthClass = (width) => {
+  return width === "full"
+    ? "w-72 sm:w-80 md:w-96 lg:w-full"
+    : width === "half"
+    ? "w-[30rem]"
+    : "w-72 sm:w-80 lg:w-60";
+};
+
+// BaseField component for shared layout and label
+const BaseField = ({ label, id, required, width, children }) => (
+  <div className={`flex flex-col gap-2 ${getWidthClass(width)}`}>
+    <label htmlFor={id}>
+      {label} {required && <span className="text-red-500">*</span>}
+    </label>
+    {children}
+  </div>
+);
+
+// TextField component
 const TextField = ({
   label,
   id,
-  type,
+  type = "text",
   width,
   placeholder,
   required,
@@ -10,19 +41,17 @@ const TextField = ({
   onBlur,
   error,
 }) => {
+  const [touched, setTouched] = useState(false);
+
+  const handleBlur = (e) => {
+    setTouched(true);
+    onBlur && onBlur(e);
+  };
+
+  const showError = error || (required && touched && !value);
+
   return (
-    <div
-      className={`flex flex-col gap-2 ${
-        width === "full"
-          ? "w-72 sm:w-80 md:w-96 lg:w-full"
-          : width === "half"
-          ? "w-[30rem]"
-          : "w-72 sm:w-80 lg:w-60"
-      }`}
-    >
-      <label htmlFor={id}>
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
+    <BaseField label={label} id={id} required={required} width={width}>
       <input
         type={type}
         id={id}
@@ -30,19 +59,17 @@ const TextField = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        onBlur={onBlur}
-        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
-          error ? "border-red-500" : "border-gray-300"
-        } outline-none`}
+        onBlur={handleBlur}
+        className={getInputClassName(showError)}
       />
-    </div>
+    </BaseField>
   );
 };
 
+// TextArea component
 const TextArea = ({
   label,
   id,
-  type,
   width,
   placeholder,
   required,
@@ -51,39 +78,35 @@ const TextArea = ({
   onBlur,
   error,
 }) => {
+  const [touched, setTouched] = useState(false);
+
+  const handleBlur = (e) => {
+    setTouched(true);
+    onBlur && onBlur(e);
+  };
+
+  const showError = error || (required && touched && !value);
+
   return (
-    <div
-      className={`flex flex-col gap-2 ${
-        width === "full"
-          ? "w-72 sm:w-80 md:w-96 lg:w-full"
-          : width === "half"
-          ? "w-[30rem]"
-          : "w-72 sm:w-80 lg:w-60"
-      }`}
-    >
-      <label htmlFor={id}>
-        {label} {!required && <span className="text-red-500">*</span>}
-      </label>
+    <BaseField label={label} id={id} required={required} width={width}>
       <textarea
         id={id}
         name={id}
         placeholder={placeholder}
-        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
-          error ? "border-red-500" : "border-gray-300"
-        } outline-none`}
         value={value}
         onChange={onChange}
+        onBlur={handleBlur}
+        className={getInputClassName(showError)}
       />
-    </div>
+    </BaseField>
   );
 };
 
+// SelectField component
 const SelectField = ({
   label,
   id,
-  type,
   width,
-  placeholder,
   required,
   options,
   value,
@@ -91,27 +114,24 @@ const SelectField = ({
   onBlur,
   error,
 }) => {
+  const [touched, setTouched] = useState(false);
+
+  const handleBlur = (e) => {
+    setTouched(true);
+    onBlur && onBlur(e);
+  };
+
+  const showError = error || (required && touched && !value);
+
   return (
-    <div
-      className={`flex flex-col gap-2 ${
-        width === "full"
-          ? "w-[65rem]"
-          : width === "half"
-          ? "w-[30rem]"
-          : "w-72 sm:w-80 lg:w-60"
-      }`}
-    >
-      <label htmlFor={id}>
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
+    <BaseField label={label} id={id} required={required} width={width}>
       <select
         id={id}
         name={id}
-        className={`border-2 rounded-md p-2 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
-          error ? "border-red-500" : "border-gray-300"
-        } outline-none`}
         value={value}
         onChange={onChange}
+        onBlur={handleBlur}
+        className={getInputClassName(showError)}
       >
         {Array.isArray(options) &&
           options.map((option) => (
@@ -120,16 +140,14 @@ const SelectField = ({
             </option>
           ))}
       </select>
-    </div>
+    </BaseField>
   );
 };
 
+// RadioField component
 const RadioField = ({
   label,
   id,
-  type,
-  width,
-  placeholder,
   required,
   value,
   onChange,
@@ -137,9 +155,18 @@ const RadioField = ({
   error,
   options,
 }) => {
+  const [touched, setTouched] = useState(false);
+
+  const handleBlur = () => {
+    setTouched(true);
+    onBlur && onBlur();
+  };
+
+  const showError = error || (required && touched && !value);
+
   return (
     <div className="flex flex-col gap-2 self-start min-w-72 sm:min-w-80">
-      <label htmlFor={id}>
+      <label htmlFor={id} className={showError ? "text-red-500" : ""}>
         {label} {required && <span className="text-red-500">*</span>}
       </label>
       <div className="flex gap-2">
@@ -153,6 +180,7 @@ const RadioField = ({
                 value={option === "Yes"}
                 checked={value === (option === "Yes")}
                 onChange={onChange}
+                onBlur={handleBlur}
                 className="bg-[#f6f6f6]"
               />
               <label htmlFor={`${id}-${option}`}>{option}</label>
@@ -163,81 +191,73 @@ const RadioField = ({
   );
 };
 
+// TimeField component
 const TimeField = ({
   label,
   id,
-  type,
   width,
-  placeholder,
   required,
   value,
   onChange,
   onBlur,
   error,
 }) => {
+  const [touched, setTouched] = useState(false);
+
+  const handleBlur = (e) => {
+    setTouched(true);
+    onBlur && onBlur(e);
+  };
+
+  const showError = error || (required && touched && !value);
+
   return (
-    <div
-      className={`flex flex-col gap-2 ${
-        width === "full"
-          ? "w-72 sm:w-80 md:w-96 lg:w-full"
-          : width === "half"
-          ? "w-[30rem]"
-          : ""
-      }`}
-    >
-      <label htmlFor={id}>
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
+    <BaseField label={label} id={id} required={required} width={width}>
       <input
-        type={type}
+        type="time"
         id={id}
         name={id}
         value={value}
         onChange={onChange}
-        className={`border-2 rounded-md p-2 w-72 sm:w-80 lg:w-60 h-11 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
-          error ? "border-red-500" : "border-gray-300"
-        } outline-none`}
+        onBlur={handleBlur}
+        className={getInputClassName(showError)}
       />
-    </div>
+    </BaseField>
   );
 };
 
+// DateField component
 const DateField = ({
   label,
   id,
-  type,
   width,
-  placeholder,
   required,
   value,
   onChange,
   onBlur,
   error,
 }) => {
+  const [touched, setTouched] = useState(false);
+
+  const handleBlur = (e) => {
+    setTouched(true);
+    onBlur && onBlur(e);
+  };
+
+  const showError = error || (required && touched && !value);
+
   return (
-    <div
-      className={`flex flex-col gap-2 ${
-        width === "full"
-          ? "w-72 sm:w-80 md:w-96 lg:w-full"
-          : width === "half"
-          ? "w-[30rem]"
-          : ""
-      }`}
-    >
-      <label htmlFor={id}>
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
+    <BaseField label={label} id={id} required={required} width={width}>
       <input
-        type={type}
+        type="date"
         id={id}
         name={id}
         value={value}
         onChange={onChange}
-        className={`border-2 rounded-md w-72 sm:w-80 lg:w-60 h-11 bg-[#f6f6f6] hover:border-[#F6C228] focus:border-[#F6C228] ${
-          error ? "border-red-500" : "border-gray-300"
-        } outline-none`}
+        onBlur={handleBlur}
+        className={getInputClassName(showError)}
       />
-    </div>
+    </BaseField>
   );
 };
 
