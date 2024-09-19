@@ -38,7 +38,7 @@ const Modal = ({ show, onClose, children, title }) => {
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="modal bg-black rounded-lg shadow-lg p-6 relative mx-4 w-full max-w-[60vw] border border-[#636363] max-h-[90vh] overflow-y-auto overflow-x-hidden"
+          className="modal block bg-black rounded-lg shadow-lg p-6 relative mx-4 w-full max-w-[60vw] border border-[#636363] max-h-[90vh] overflow-y-auto overflow-x-hidden"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
