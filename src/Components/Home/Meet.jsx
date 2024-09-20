@@ -97,8 +97,8 @@ const MeetMD = () => {
       </div>
       <div className={"md:mt-20"}>
         <motion.img
-          src="./meet-md.png"
-          className="max-w-[300px] md:max-w-[600px]"
+          src="/meet-md.png"
+          className="max-w-[300px] md:max-w-[600px] -z-1"
           style={{ x: translateX }}
           transition={{ type: "just" }}
         />

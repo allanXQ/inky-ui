@@ -39,7 +39,7 @@ const SignatureMessages = () => {
       </p>
       <div className="flex items-center justify-center gap-4 flex-wrap relative">
         <motion.div
-          className="absolute inset-0 bg-black z-10"
+          className="absolute inset-0 bg-black z-0"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}

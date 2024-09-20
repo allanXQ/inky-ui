@@ -88,7 +88,7 @@ const Quote = () => {
       </div>
       <div className="flex flex-col items-center relative">
         <motion.div
-          className="absolute inset-0 bg-black z-10"
+          className="absolute inset-0 bg-black z-0"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
